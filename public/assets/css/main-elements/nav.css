@@ -1,0 +1,475 @@
+header {
+    background: #fff;
+    border-bottom: 1px solid #edeef1;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav.nav-centered {
+    justify-content: center;
+}
+
+#nav ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul.hide_desktop {
+    display: none;
+}
+
+#nav ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li a:not(.button),
+#nav ul li span {
+    color: var(--base-900);
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    padding: 26px 10px;
+    position: relative;
+    text-decoration: none;
+}
+
+#nav ul li a span,
+#nav ul li span span {
+    padding: 0;
+}
+
+#nav .dropdown {
+    display: flex;
+    max-height: 80px;
+    position: relative;
+}
+
+#nav .dropdown span:after {
+    display: none;
+}
+
+#nav .dropdown img {
+    height: 25px;
+    margin-top: -3px;
+    transition: all 0.3s linear;
+    width: 25px;
+}
+
+#nav .dropdown-content {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(45, 55, 72, 0.1);
+    display: none;
+    min-width: 200px;
+    padding: 0;
+    position: absolute;
+    top: 63px;
+    z-index: 1;
+}
+
+#nav .dropdown-content li {
+    display: block !important;
+    padding: 8px 16px !important;
+    position: relative;
+    text-align: left;
+}
+
+#nav .dropdown-content li:hover:after {
+    background-color: var(--purple-600);
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 90%;
+}
+
+#nav .dropdown-content li a {
+    display: block !important;
+    padding: 10px 0 !important;
+    text-align: left;
+}
+
+#nav .dropdown-content li a:after {
+    display: none;
+}
+
+#nav .dropdown.active + .dropdown-content {
+    display: block;
+}
+
+#nav .dropdown.active img {
+    transform: rotate(180deg);
+}
+
+#nav ul li a.active:after,
+#nav ul li a:hover:after,
+#nav ul li span.active:after,
+#nav ul li span:hover:after {
+    background-color: var(--purple-600);
+    bottom: 1px;
+    content: "";
+    height: 3px;
+    left: 17px;
+    position: absolute;
+    width: calc(100% - 34px);
+}
+
+#nav a.logo {
+    align-items: center;
+    display: flex;
+    height: 80px;
+    max-height: 80px;
+}
+
+.button-call {
+    align-items: center;
+    color: var(--purple-800);
+    display: flex;
+    text-decoration: none;
+}
+
+.button-call,
+.button-call.active {
+    font-size: 20px;
+    margin-bottom: auto;
+    margin-top: auto;
+    max-height: 50px;
+    padding: 10px 20px;
+    transition-duration: 0.5s;
+}
+
+.button-call.active {
+    background-color: var(--purple-600);
+    border-radius: var(--border-normal);
+    box-shadow: 0 3px 4px rgba(33, 43, 54, 0.2);
+    color: var(--base-100);
+}
+
+#nav a .icon,
+.button-call .icon,
+.button-call-mobile .icon {
+    height: 20px;
+    width: 20px;
+}
+
+.button-call .icon.white {
+    display: none;
+}
+
+.button-call .icon.purple {
+    display: block;
+}
+
+.button-call.active .icon.purple {
+    display: none;
+}
+
+.button-call.active .icon.white {
+    display: block;
+}
+
+#nav ul li.download-app,
+.button-call-mobile,
+.menu-button {
+    display: none;
+}
+
+.dropdown .chevron {
+    display: block;
+    height: 25px;
+    width: 25px;
+}
+
+#nav .home,
+#nav .modal-nav-trigger,
+.dropdown .chevron.white {
+    display: none;
+}
+
+.covid label {
+    background: var(--red-200);
+    border-radius: 4px;
+    color: var(--red-600);
+    cursor: pointer;
+    display: inline;
+    padding: 5px;
+}
+
+.aarp-page #nav ul li.Rehabrion -nav,
+.nav-centering {
+    display: none;
+}
+
+@media (max-width: 1235px) {
+    #main-header.active #nav .nav-centering {
+        display: block;
+        max-height: 60px;
+        width: 50px;
+    }
+
+    .menu-button {
+        display: block;
+        max-height: 80px;
+        padding: 25px 30px;
+        text-decoration: none;
+    }
+
+    .menu-button.hide_mobile {
+        display: none;
+    }
+
+    .menu-button .text {
+        display: block;
+    }
+
+    .menu-button .line {
+        background-color: var(--purple-600);
+        display: block;
+        height: 3px;
+        margin: 0 0 3px;
+        position: relative;
+        top: 5px;
+        transition-duration: 0.5s;
+        width: 30px;
+    }
+
+    .aarp-page .menu-button .line {
+        background-color: var(--base-900);
+    }
+
+    #nav ul,
+    .button-call {
+        display: none;
+    }
+
+    .button-call-mobile {
+        color: var(--base-900);
+        display: block;
+        padding: 25px 30px;
+        width: 60px;
+    }
+
+    #main-header,
+    #main-header.active {
+        transition-duration: 0.5s;
+    }
+
+    #main-header.active {
+        background-color: var(--purple-900);
+    }
+
+    .aarp-page #main-header.active {
+        background-color: var(--base-100);
+    }
+
+    #main-header.active #nav .button-call-mobile {
+        display: none;
+        transition-duration: 0.5s;
+    }
+
+    #nav ul li a,
+    #nav ul li span {
+        color: var(--base-100);
+        font-size: 22px;
+    }
+
+    #nav ul li a:not(.button),
+    #nav ul li > span {
+        color: var(--base-100);
+        cursor: pointer;
+        display: block;
+        font-weight: 400;
+        padding: 20px 0;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .aarp-page #nav ul li a:not(.button),
+    .aarp-page #nav ul li > span {
+        color: var(--base-900);
+    }
+
+    #nav ul li a.button {
+        font-size: 1rem;
+    }
+
+    #nav.active {
+        flex-wrap: wrap;
+    }
+
+    #nav.active > ul {
+        background-color: var(--purple-900);
+        display: block;
+        height: calc(100% - 75px);
+        left: 0;
+        overflow: auto;
+        padding-left: 46px;
+        padding-right: 46px;
+        position: fixed;
+        top: 75px;
+        width: 100%;
+    }
+
+    .aarp-page #nav.active > ul {
+        background-color: var(--base-100);
+    }
+
+    #nav.active ul li {
+        border-bottom: 0.5px solid var(--purple-600);
+        display: block;
+        width: 100%;
+    }
+
+    .aarp-page #nav.active ul li {
+        border-bottom: 0.5px solid var(--base-500);
+    }
+
+    #nav .dropdown-content ul li {
+        padding: 8px 30px;
+    }
+
+    #nav ul li a.active:after,
+    #nav ul li a:hover:after,
+    #nav ul li span.active:after,
+    #nav ul li span:hover:after {
+        display: none;
+    }
+
+    #nav .dropdown {
+        border-bottom: 0.5px solid var(--purple-600);
+    }
+
+    #nav .dropdown-content li {
+        padding: 8px 30px;
+    }
+
+    #nav .dropdown-content {
+        background: transparent;
+        position: relative;
+        top: 0;
+    }
+
+    #nav.active ul li.dropdown-button {
+        border: none;
+    }
+
+    #main-header.active .menu-button .line.middle,
+    #main-header.active .menu-button .text {
+        opacity: 0;
+        transition-duration: 0.5s;
+    }
+
+    #main-header.active .menu-button .line {
+        background-color: var(--base-100);
+        transition-duration: 0.5s;
+    }
+
+    .aarp-page #main-header.active .menu-button .line {
+        background-color: var(--base-900);
+    }
+
+    #main-header.active .menu-button .line.top {
+        top: 13px;
+        transform: rotate(45deg);
+        transition-duration: 0.5s;
+    }
+
+    #main-header.active .menu-button .line.bottom {
+        top: 1px;
+        transform: rotate(-45deg);
+        transition-duration: 0.5s;
+    }
+
+    .dropdown .chevron.white {
+        display: block;
+    }
+
+    .dropdown .chevron.black {
+        display: none;
+    }
+
+    #nav ul li.download-app {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    #nav .home,
+    #nav .modal-nav-trigger {
+        display: block;
+    }
+
+    #nav.active ul li.modal-nav-trigger {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 767px) {
+    header.active + header,
+    header.active + header + main {
+        margin-top: 60px;
+    }
+
+    header.d-none + header,
+    header.d-none + header + main {
+        margin-top: 0;
+    }
+
+    header#main-nav {
+        height: 60px;
+    }
+
+    .menu-button {
+        padding: 18px 30px;
+    }
+
+    #nav a.logo,
+    .menu-button {
+        max-height: 60px;
+    }
+
+    .button-call-mobile {
+        max-height: 60px;
+        padding: 18px 30px;
+    }
+
+    #nav.active > ul {
+        height: calc(100% - 60px);
+        top: 60px;
+    }
+
+    main {
+        min-height: calc(100% - 60px);
+        padding-top: 60px;
+    }
+
+    .aarp-page #nav ul li.Rehabrion -nav {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 575px) {
+    .button-call-mobile,
+    .menu-button {
+        padding: 18px 10px;
+    }
+
+    #nav.active > ul {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

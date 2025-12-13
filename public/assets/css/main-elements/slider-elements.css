@@ -1,0 +1,160 @@
+#health-logos .arrow,
+#partner-logos .arrow {
+    background-color: var(--purple-600);
+    border: 0;
+    border-radius: 50%;
+    color: transparent;
+    font-size: 0;
+    height: 30px;
+    width: 30px;
+    z-index: 2;
+}
+
+#health-logos .arrow.prev,
+#partner-logos .arrow.prev {
+    transform: rotate(180deg);
+}
+
+#people-slide .arrow {
+    background-color: var(--teal-500);
+    border: 0;
+    border-radius: 50%;
+    color: transparent;
+    font-size: 0;
+    height: 40px;
+    width: 40px;
+    z-index: 2;
+}
+
+#people-slide .arrow.prev {
+    transform: rotate(180deg);
+}
+
+#author-posts .arrow,
+#author-webinars .arrow,
+#blogs-slider .arrow,
+#conditions-slider .arrow,
+#jobs-slider .arrow,
+#technology-testimonials .arrow,
+#testimonials-Rehabrion -therapists .arrow,
+#use-your-insurance .arrow,
+#why-on-demand .arrow,
+.arrow.default {
+    background-color: var(--teal-500);
+    border: 0;
+    border-radius: 50%;
+    color: transparent;
+    font-size: 0;
+    height: 40px;
+    width: 40px;
+    z-index: 2;
+}
+
+#expert-vetter .arrow {
+    background-color: var(--base-100);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 3px 4px rgba(33, 43, 54, 0.2);
+    color: transparent;
+    font-size: 0;
+    height: 40px;
+    width: 40px;
+    z-index: 2;
+}
+
+#expert-vetter .arrow.prev {
+    box-shadow: 0 -3px 4px rgba(33, 43, 54, 0.2);
+    transform: rotate(180deg);
+}
+
+#author-posts .arrow.prev,
+#author-webinars .arrow.prev,
+#blogs-slider .arrow.prev,
+#conditions-slider .arrow.prev,
+#jobs-slider .arrow.prev,
+#technology-testimonials .arrow.prev,
+#testimonials-Rehabrion -therapists .arrow.prev,
+#use-your-insurance .arrow.prev,
+#why-on-demand .arrow.prev,
+.arrow.prev.default {
+    transform: rotate(180deg);
+}
+
+#technology-testimonials .arrow,
+#testimonials-Rehabrion -therapists .arrow {
+    background-color: var(--teal-500);
+}
+
+#testimonials .testimonials-corousel article img,
+#testimonials-card article img {
+    width: auto !important;
+}
+
+#testimonials .arrow,
+#testimonials-card .arrow {
+    background-color: var(--purple-600);
+    border: 0;
+    border-radius: 50%;
+    color: transparent;
+    font-size: 0;
+    height: 40px;
+    width: 40px;
+    z-index: 2;
+}
+
+#testimonials .arrow.prev,
+#testimonials-card .arrow.prev {
+    transform: rotate(180deg);
+}
+
+.owl-carousel .owl-item .owl-lazy:not([src]),
+.owl-carousel .owl-item .owl-lazy[src^=""] {
+    max-height: none !important;
+}
+
+.owl-dots button.owl-dot {
+    height: 25px;
+    transition: all 0.4s ease-in-out;
+    width: 25px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--purple-700);
+}
+
+.owl-dots button {
+    box-shadow: none;
+}
+
+.owl-dots .owl-dot.dot-current {
+    transform: scale(1.3);
+}
+
+.owl-dots .owl-dot.dot-near {
+    transform: scale(1);
+}
+
+.owl-dots .owl-dot.dot-far {
+    transform: scale(0.7);
+}
+
+.owl-dots .owl-dot.dot-hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform: scale(0.2);
+}
+
+@media (max-width: 575px) {
+    #testimonials .arrow {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.center-slider {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+}

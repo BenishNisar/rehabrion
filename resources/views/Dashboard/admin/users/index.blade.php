@@ -329,7 +329,7 @@
                     </div>
                 </form>
 
-                <a href="{{ url('users/add') }}" class="btn btn-primary">
+                <a href="{{ url('dashboard/users/add') }}" class="btn btn-primary">
                     <i class="fas fa-plus"></i>
                     <span>Add New</span>
                 </a>

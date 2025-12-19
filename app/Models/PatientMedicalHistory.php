@@ -53,4 +53,22 @@ class PatientMedicalHistory extends Model
     'pregnant_status',
     'medication_status',
     ];
+
+
+
+    protected $casts = [
+    'pain_details_location' => 'array',
+    'pain_type' => 'array',
+    'pain_worse_during' => 'array',
+    'pain_reduction' => 'array',
+    'past_medical_history' => 'array',
+    'injury_history' => 'array',
+    'allergies' => 'array',
+    'post_surgical_medical_clearance' => 'array',
+    'lifestyle_activity_level' => 'array',
+    'exercise_routine' => 'array',
+    'functional_limitations' => 'array',
+    'goals_from_therapy' => 'array',
+    'home_virtual_session_safety' => 'array',
+  ];
 }

@@ -9,6 +9,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 :root {
   scroll-behavior: smooth;
 }
@@ -714,7 +715,7 @@ h6 {
 
 .sidebar-nav .nav-link:hover {
   color:white;
-  background:#bae0db;
+  /* background:#bae0db; */
 }
 
 .sidebar-nav .nav-link:hover i {

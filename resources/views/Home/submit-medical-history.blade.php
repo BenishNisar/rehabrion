@@ -440,6 +440,10 @@
 
     .success-message { text-align: center; padding: 40px 20px; }
     .success-icon { font-size: 5rem; color: var(--success-color); margin-bottom: 20px; }
+.form-check-input.error{
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
 
     @media (max-width: 992px) {
       .main-container { flex-direction: column; }
@@ -460,6 +464,63 @@
     ::-webkit-scrollbar-track { background: #f1f1f1; }
     ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #5a32a3; }
+
+
+    /* Sidebar tab buttons same width */
+.sidebar .nav-tabs .nav-item{
+  width: 100%;
+}
+
+.sidebar .nav-tabs .nav-link{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+/* Optional: icon same space take kare */
+.sidebar .nav-tabs .nav-link i{
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+/* Just fix spacing and small alignment, keep bootstrap look */
+.tabs-container{
+  margin-bottom: 14px;
+}
+
+#formTab.nav-tabs{
+  gap: 10px;          /* spacing between tabs */
+  flex-wrap: wrap;    /* mobile pe break */
+}
+
+#formTab.nav-tabs .nav-item{
+  margin-bottom: 0;
+}
+
+#formTab.nav-tabs .nav-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;           /* icon and text */
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+/* Mobile pe tabs clean full width */
+@media (max-width: 576px){
+  #formTab.nav-tabs .nav-item{
+    flex: 1 1 auto;
+  }
+  #formTab.nav-tabs .nav-link{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
   </style>
 </head>
 
@@ -477,12 +538,12 @@
       <ul class="nav nav-tabs" id="formTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="medical-tab" data-bs-toggle="tab" data-bs-target="#medical-form" type="button" role="tab">
-            <i class="fas fa-file-medical-alt"></i> Medical History
+          Medical History
           </button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="consent-tab" data-bs-toggle="tab" data-bs-target="#consent-form" type="button" role="tab">
-            <i class="fas fa-file-signature"></i> Consent Form
+ Consent Form
           </button>
         </li>
       </ul>
@@ -1317,7 +1378,7 @@
                             </div>
             <!-- ✅ Aapka existing step4, step5, step6 HTML yahan SAME rahega -->
             <!-- (Main ne yahan JS fix kiya hai, HTML ko change nahi kiya.) -->
-     
+
             <!-- ====== YOUR EXISTING Step 4, 5, 6 CONTENT (AS YOU POSTED) ====== -->
 
             <!-- NOTE: Paste your existing Step 4, Step 5, Step 6 exactly here (same as you already have) -->
@@ -1341,7 +1402,7 @@
       </div>
 
       <!-- Consent Form Tab (your simplified version kept) -->
-      <div class="tab-pane fade" id="consent-form" role="tabpanel">
+      {{-- <div class="tab-pane fade" id="consent-form" role="tabpanel">
         <div class="form-container">
 
           <div class="content-header">
@@ -1463,7 +1524,359 @@
           </form>
 
         </div>
+      </div> --}}
+<!-- Consent Form Tab (your simplified version kept) -->
+<div class="tab-pane fade" id="consent-form" role="tabpanel">
+  <div class="form-container">
+
+    <div class="content-header">
+      <h1>REHABRION – PATIENT CONSENT FORM</h1>
+      <p>
+        Welcome to Rehabrion.
+        Before beginning any physiotherapy, rehabilitation, or wellness session with us
+        (in person, at home, or virtually), please read the following terms carefully.
+        By proceeding with our services, you confirm your understanding and agreement with the consent below.
+      </p>
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Important:</strong>
+      By proceeding with our services, you confirm your understanding and agreement with the consent below.
+    </div>
+
+    <!-- Full Consent Content (display only) -->
+    <div class="consent-content mb-4">
+
+      <hr>
+
+      <h4 class="mt-3">1. Consent to Assessment & Treatment</h4>
+      <p>
+        I voluntarily consent to participate in physiotherapy, rehabilitation, pain management, mobility training,
+        and related wellness services provided by Rehabrion.
+        I understand that my program may include but is not limited to:
+      </p>
+      <ul class="mb-3">
+        <li>Physical therapy & rehabilitation exercises</li>
+        <li>Manual therapy techniques</li>
+        <li>Pain management routines</li>
+        <li>Post-surgical rehabilitation</li>
+        <li>Post-injury recovery programs</li>
+        <li>Virtual / online rehabilitation sessions</li>
+        <li>Wellness & preventive rehab programs</li>
+      </ul>
+      <p class="mb-0">
+        I agree to actively cooperate in my treatment and follow instructions provided by my assigned therapist.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">2. Understanding of Benefits & Risks</h4>
+      <p>
+        I understand that physiotherapy and rehabilitation involve physical activity and manual techniques,
+        which may carry some inherent risks including but not limited to:
+      </p>
+      <ul class="mb-3">
+        <li>Muscle soreness or fatigue</li>
+        <li>Temporary discomfort</li>
+        <li>Joint stiffness</li>
+        <li>Minor strain or inflammation</li>
+      </ul>
+      <p class="mb-0">
+        I acknowledge that while Rehabrion strives for safe and effective care, no guarantee of results has been made,
+        and outcomes vary for each individual.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">3. Medical History Disclosure</h4>
+      <p class="mb-2">I confirm that I have:</p>
+      <ul class="mb-3">
+        <li>Fully disclosed my medical history</li>
+        <li>Shared all known health conditions, injuries, surgeries, allergies, medications, and physical limitations</li>
+      </ul>
+      <p class="mb-0">
+        I understand that withholding or providing inaccurate health information may increase the risk of injury
+        or complication during therapy.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">4. Home-Based & Virtual Session Responsibilities</h4>
+      <p class="mb-2">For at home or virtual rehabilitation sessions, I confirm that:</p>
+      <ul class="mb-3">
+        <li>I have a safe, clean, and suitable space for therapy</li>
+        <li>I will ensure proper lighting, visibility, and equipment availability</li>
+        <li>I will immediately stop exercises if I feel pain, dizziness, or discomfort</li>
+        <li>I accept responsibility for my personal environment during home sessions</li>
+      </ul>
+      <p class="mb-0">
+        Rehabrion shall not be responsible for accidents caused due to unsafe home conditions beyond the therapist’s control.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">5. Tele-Rehabilitation & Online Sessions Consent</h4>
+      <p class="mb-2">For virtual sessions, I understand that:</p>
+      <ul class="mb-3">
+        <li>Sessions may be conducted via video call</li>
+        <li>Privacy compliant platforms will be used</li>
+        <li>Internet failure or technical errors may occur</li>
+        <li>Full physical support may not be possible remotely</li>
+      </ul>
+      <p class="mb-0">I consent voluntarily to receive tele-rehabilitation services.</p>
+
+      <hr>
+
+      <h4 class="mt-3">6. Data Privacy & Confidentiality</h4>
+      <p class="mb-0">
+        I understand and agree that my medical records will be kept confidential, my personal and health data
+        will only be used for treatment purposes, and information will not be shared without my consent unless required by law.
+        Rehabrion follows strict privacy and ethical standards.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">7. Payment Policy Acknowledgment</h4>
+      <p class="mb-0">
+        I understand that all sessions must be paid for according to the agreed package,
+        missed appointments may be subject to cancellation charges,
+        and refunds if applicable are subject to Rehabrion’s Refund Policy.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">8. Voluntary Participation & Right to Withdraw</h4>
+      <p class="mb-0">
+        I understand that my participation in rehab sessions is voluntary,
+        I may discontinue treatment at any time,
+        and I have the right to ask questions about my treatment at any stage.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">9. Liability Waiver</h4>
+      <p class="mb-0">
+        I hereby release, waive, and discharge Rehabrion, its therapists, staff, partners, and affiliates
+        from any liability for injury, loss, or damages arising from participation in rehabilitation services
+        except in cases of proven negligence.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">10. Guardian Consent (For Minors)</h4>
+      <p class="mb-0">
+        For patients under 18 years of age, this consent must be signed by a parent or legal guardian confirming approval for therapy.
+      </p>
+
+      <hr>
+
+      <h4 class="mt-3">Final Agreement Statement</h4>
+      <p class="mb-0">
+        By booking a session with Rehabrion, I confirm that I have read and understood this consent form,
+        I voluntarily agree to participate in Rehabrion services, and I accept all terms and conditions mentioned above.
+      </p>
+
+      <hr>
+
+      <div class="mt-3">
+        <strong>Optional checkbox text for your booking form</strong>
+        <p class="mb-0">
+          I have read, understood, and agree to the Rehabrion Consent Form and Privacy Policy.
+        </p>
       </div>
+
+      <hr>
+
+    </div>
+    <!-- End Full Consent Content -->
+
+  <form id="consentForm" method="POST" action="{{ route('Home.patient-consent.store') }}">
+      @csrf
+
+      <div id="consentFormGlobalError" class="alert alert-danger" style="display:none;"></div>
+
+      <!-- 1 -->
+      <div class="consent-section">
+        <h4>1. Consent to Assessment & Treatment</h4>
+        <div class="form-check">
+          <input id="consent_to_assessment" type="checkbox" class="form-check-input" name="consent_to_assessment" value="1">
+          <label class="form-check-label" for="consent_to_assessment">I consent to assessment & treatment</label>
+        </div>
+        <div id="consent_to_assessment-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 2 -->
+      <div class="consent-section">
+        <h4>2. Understanding of Benefits & Risks</h4>
+        <div class="form-check">
+          <input id="understanding_of_benefits_and_risks" type="checkbox" class="form-check-input" name="understanding_of_benefits_and_risks" value="1">
+          <label class="form-check-label" for="understanding_of_benefits_and_risks">I understand benefits & risks</label>
+        </div>
+        <div id="understanding_of_benefits_and_risks-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 3 -->
+      <div class="consent-section">
+        <h4>3. Medical History Disclosure</h4>
+        <div class="form-check">
+          <input id="medical_history_disclosure" type="checkbox" class="form-check-input" name="medical_history_disclosure" value="1">
+          <label class="form-check-label" for="medical_history_disclosure">I have fully disclosed my medical history</label>
+        </div>
+        <div id="medical_history_disclosure-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 4 -->
+      <div class="consent-section">
+        <h4>4. Home Based & Virtual Session Responsibilities</h4>
+        <div class="form-check">
+          <input id="home_virtual_session_responsibility" type="checkbox" class="form-check-input" name="home_virtual_session_responsibility" value="1">
+          <label class="form-check-label" for="home_virtual_session_responsibility">I accept responsibility for my home virtual session environment</label>
+        </div>
+        <div id="home_virtual_session_responsibility-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 5 -->
+      <div class="consent-section">
+        <h4>5. Tele Rehabilitation & Online Sessions</h4>
+        <div class="form-check">
+          <input id="tele_rehabilitation_consent" type="checkbox" class="form-check-input" name="tele_rehabilitation_consent" value="1">
+          <label class="form-check-label" for="tele_rehabilitation_consent">I consent to tele rehabilitation sessions</label>
+        </div>
+        <div id="tele_rehabilitation_consent-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 6 -->
+      <div class="consent-section">
+        <h4>6. Data Privacy & Confidentiality</h4>
+        <div class="form-check">
+          <input id="data_privacy" type="checkbox" class="form-check-input" name="data_privacy" value="1">
+          <label class="form-check-label" for="data_privacy">I agree to data privacy & confidentiality</label>
+        </div>
+        <div id="data_privacy-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 7 -->
+      <div class="consent-section">
+        <h4>7. Payment Policy</h4>
+        <div class="form-check">
+          <input id="payment_policy_acknowledgment" type="checkbox" class="form-check-input" name="payment_policy_acknowledgment" value="1">
+          <label class="form-check-label" for="payment_policy_acknowledgment">I acknowledge the payment policy</label>
+        </div>
+        <div id="payment_policy_acknowledgment-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 8 -->
+      <div class="consent-section">
+        <h4>8. Voluntary Participation</h4>
+        <div class="form-check">
+          <input id="voluntary_participation" type="checkbox" class="form-check-input" name="voluntary_participation" value="1">
+          <label class="form-check-label" for="voluntary_participation">I understand participation is voluntary</label>
+        </div>
+        <div id="voluntary_participation-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 9 -->
+      <div class="consent-section">
+        <h4>9. Liability Waiver</h4>
+        <div class="form-check">
+          <input id="liability_waiver" type="checkbox" class="form-check-input" name="liability_waiver" value="1">
+          <label class="form-check-label" for="liability_waiver">I agree to the liability waiver</label>
+        </div>
+        <div id="liability_waiver-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- 10 optional -->
+      <div class="consent-section">
+        <h4>10. Guardian Consent (Minors)</h4>
+        <div class="form-check">
+          <input id="guardian_consent" type="checkbox" class="form-check-input" name="guardian_consent" value="1">
+          <label class="form-check-label" for="guardian_consent">Guardian consent (if applicable)</label>
+        </div>
+        <div id="guardian_consent-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <!-- Final -->
+      <div class="consent-section">
+        <h4>Final Agreement</h4>
+        <div class="form-check">
+          <input id="final_agreement_statement" type="checkbox" class="form-check-input" name="final_agreement_statement" value="1">
+          <label class="form-check-label" for="final_agreement_statement">I have read, understood, and agree to all terms above</label>
+        </div>
+        <div id="final_agreement_statement-error" class="error-message text-danger mt-1" style="display:none;"></div>
+      </div>
+
+      <hr>
+      <h5>Patient Information</h5>
+
+      <input
+        id="consent_patient_full_name"
+        type="text"
+        name="patient_full_name"
+        class="form-control mb-2"
+        placeholder="Patient Full Name"
+      >
+      <div id="consent_patient_full_name-error" class="error-message text-danger mb-2" style="display:none;"></div>
+
+      <input
+        id="consent_dob"
+        type="date"
+        name="date_of_birth"
+        class="form-control mb-2"
+      >
+      <div id="consent_dob-error" class="error-message text-danger mb-2" style="display:none;"></div>
+
+      <input
+        id="consent_contact"
+        type="tel"
+        name="contact_number"
+        class="form-control mb-2"
+        placeholder="Contact Number"
+      >
+      <div id="consent_contact-error" class="error-message text-danger mb-2" style="display:none;"></div>
+
+      <input
+        id="consent_email"
+        type="email"
+        name="email_address"
+        class="form-control mb-2"
+        placeholder="Email Address"
+      >
+      <div id="email_address-error" class="error-message text-danger mb-2" style="display:none;"></div>
+
+      <input
+        id="consent_emergency_contact"
+        type="text"
+        name="emergency_contact"
+        class="form-control mb-2"
+        placeholder="Emergency Contact"
+      >
+      <div id="emergency_contact-error" class="error-message text-danger mb-2" style="display:none;"></div>
+
+      <input
+        id="consent_signature"
+        type="text"
+        name="patient_signature"
+        class="form-control mb-2"
+        placeholder="Signature (Full Name)"
+      >
+      <div id="consent_signature-error" class="error-message text-danger mb-2" style="display:none;"></div>
+
+      <input
+        id="consent_signature_date"
+        type="date"
+        name="signature_date"
+        class="form-control mb-3"
+      >
+      <div id="consent_signature_date-error" class="error-message text-danger mb-2" style="display:none;"></div>
+
+      <div class="nav-buttons mt-4">
+        <button type="button" class="btn btn-secondary" id="back-to-medical">Back to Medical Form</button>
+        <button type="submit" class="btn btn-success">Submit Consent Form</button>
+      </div>
+    </form>
+
+  </div>
+</div>
 
     </div>
   </div>
@@ -1613,7 +2026,7 @@ function validateStep1(scrollOnError = false){
   if(dob.value && age.value && !Number.isNaN(ageVal)){
     const computed = calcAgeFromDob(dob.value);
     if(computed !== ageVal){
-      showError(age,'age-error',`Age DOB ke mutabiq match nahi kar rahi. Correct age: ${computed}`,scrollOnError);
+      showError(age,'age-error',`Age does not match the date of birth. Correct age: ${computed}`,scrollOnError);
       ok = false;
     }
   }
@@ -1987,8 +2400,88 @@ document.addEventListener('DOMContentLoaded', function(){
 
 });
 </script>
-
+{{--
 <script>
+
+    function showConsentError(input, errorId, msg, scroll){
+  if(input) input.classList.add('error');
+  const el = document.getElementById(errorId);
+  if(el){
+    el.textContent = msg || 'This field is required';
+    el.style.display = 'block';
+  }
+  if(scroll && input){
+    input.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+}
+
+function clearConsentError(input, errorId){
+  if(input) input.classList.remove('error');
+  const el = document.getElementById(errorId);
+  if(el) el.style.display = 'none';
+}
+
+function validateConsentForm(scrollOnError = true){
+  let ok = true;
+
+  // clear all old consent errors
+  $('#consentForm .error-message').hide();
+  $('#consentForm .error').removeClass('error');
+
+  const requiredCheckboxes = [
+    'consent_to_assessment',
+    'understanding_of_benefits_and_risks',
+    'medical_history_disclosure',
+    'home_virtual_session_responsibility',
+    'tele_rehabilitation_consent',
+    'data_privacy',
+    'payment_policy_acknowledgment',
+    'voluntary_participation',
+    'liability_waiver',
+    'final_agreement_statement'
+  ];
+
+  // checkboxes
+  requiredCheckboxes.forEach(function(name){
+    const input = document.querySelector('#consentForm input[name="'+name+'"]');
+    const checked = input && input.checked;
+    if(!checked){
+      showConsentError(input, name+'-error', 'Please check this box to continue', scrollOnError && ok);
+      ok = false;
+    }
+  });
+
+  // required inputs
+  const fullName = document.getElementById('consent_patient_full_name');
+  const dob = document.getElementById('consent_dob');
+  const contact = document.getElementById('consent_contact');
+  const signature = document.getElementById('consent_signature');
+  const signatureDate = document.getElementById('consent_signature_date');
+
+  if(fullName && !fullName.value.trim()){
+    showConsentError(fullName,'consent_patient_full_name-error','Patient full name is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(dob && !dob.value){
+    showConsentError(dob,'consent_dob-error','Date of birth is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(contact && !contact.value.trim()){
+    showConsentError(contact,'consent_contact-error','Contact number is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(signature && !signature.value.trim()){
+    showConsentError(signature,'consent_signature-error','Signature is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(signatureDate && !signatureDate.value){
+    showConsentError(signatureDate,'consent_signature_date-error','Signature date is required', scrollOnError && ok);
+    ok = false;
+  }
+
+  return ok;
+}
+
 /* Consent form AJAX */
 $(document).ready(function () {
 
@@ -2056,7 +2549,163 @@ $(document).ready(function () {
   });
 
 });
-</script>
+</script> --}}
+<script>
+function showConsentError(input, errorId, msg, scroll){
+  if(input) input.classList.add('error');
+  const el = document.getElementById(errorId);
+  if(el){
+    el.textContent = msg || 'This field is required';
+    el.style.display = 'block';
+  }
+  if(scroll && input){
+    input.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+}
 
+function validateConsentForm(scrollOnError = true){
+  let ok = true;
+
+  $('#consentForm .error-message').hide().text('');
+  $('#consentForm .error').removeClass('error');
+  $('#consentFormGlobalError').hide().text('');
+
+  const requiredCheckboxes = [
+    'consent_to_assessment',
+    'understanding_of_benefits_and_risks',
+    'medical_history_disclosure',
+    'home_virtual_session_responsibility',
+    'tele_rehabilitation_consent',
+    'data_privacy',
+    'payment_policy_acknowledgment',
+    'voluntary_participation',
+    'liability_waiver',
+    'final_agreement_statement'
+  ];
+
+  requiredCheckboxes.forEach(function(name){
+    const input = document.querySelector('#consentForm input[name="'+name+'"]');
+    const checked = input && input.checked;
+    if(!checked){
+      showConsentError(input, name+'-error', 'Please check this box to continue', scrollOnError && ok);
+      ok = false;
+    }
+  });
+
+  const fullName = document.getElementById('consent_patient_full_name');
+  const dob = document.getElementById('consent_dob');
+  const contact = document.getElementById('consent_contact');
+  const signature = document.getElementById('consent_signature');
+  const signatureDate = document.getElementById('consent_signature_date');
+  const emergency = document.getElementById('consent_emergency_contact');
+
+  if(fullName && !fullName.value.trim()){
+    showConsentError(fullName,'consent_patient_full_name-error','Patient full name is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(dob && !dob.value){
+    showConsentError(dob,'consent_dob-error','Date of birth is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(contact && !contact.value.trim()){
+    showConsentError(contact,'consent_contact-error','Contact number is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(emergency && !emergency.value.trim()){
+    showConsentError(emergency,'emergency_contact-error','Emergency contact is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(signature && !signature.value.trim()){
+    showConsentError(signature,'consent_signature-error','Signature is required', scrollOnError && ok);
+    ok = false;
+  }
+  if(signatureDate && !signatureDate.value){
+    showConsentError(signatureDate,'consent_signature_date-error','Signature date is required', scrollOnError && ok);
+    ok = false;
+  }
+
+  return ok;
+}
+
+$(document).ready(function () {
+
+  $('#back-to-medical').on('click', function(){
+    new bootstrap.Tab(document.getElementById('medical-tab')).show();
+  });
+
+  $('#consentForm').on('submit', function (e) {
+    e.preventDefault();
+
+    if(!validateConsentForm(true)) return;
+
+    const form = this;
+    const formData = new FormData(form);
+
+    const $btn = $(form).find('button[type="submit"]');
+    const btnText = $btn.text();
+    $btn.prop('disabled', true).text('Submitting...');
+
+    $.ajax({
+      url: form.action,
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      headers: {
+        "Accept": "application/json",
+        "X-CSRF-TOKEN": $('input[name="_token"]').val()
+      },
+
+      success: function () {
+        $('#consentForm').hide();
+        const modal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+        modal.show();
+      },
+
+      error: function (xhr) {
+        if(xhr.status === 422 && xhr.responseJSON && xhr.responseJSON.errors){
+          const errors = xhr.responseJSON.errors;
+
+          $('#consentForm .error-message').hide().text('');
+          $('#consentForm .error').removeClass('error');
+
+          Object.keys(errors).forEach(function(field){
+            const msg = errors[field][0] || 'This field is required';
+
+            const map = {
+              patient_full_name: 'consent_patient_full_name-error',
+              date_of_birth: 'consent_dob-error',
+              contact_number: 'consent_contact-error',
+              patient_signature: 'consent_signature-error',
+              signature_date: 'consent_signature_date-error',
+              emergency_contact: 'emergency_contact-error'
+            };
+
+            const errorId = map[field] || (field + '-error');
+            const el = document.getElementById(errorId);
+            if(el){
+              el.textContent = msg;
+              el.style.display = 'block';
+            }
+          });
+
+          const firstErr = document.querySelector('#consentForm .error-message[style*="block"]');
+          if(firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'});
+
+          return;
+        }
+
+        $('#consentFormGlobalError').text('There was an error submitting the consent form. Please try again.').show();
+        console.log(xhr.responseText);
+      },
+
+      complete: function () {
+        $btn.prop('disabled', false).text(btnText);
+      }
+    });
+  });
+
+});
+</script>
 </body>
 </html>

@@ -27,6 +27,7 @@ class CategoryController extends Controller
         $contact = Category::create([
             'name' => $request->name,
 
+
         ]);
         return redirect()->route('Dashboard.admin.category.index')->with('success', 'Blog updated successfully.');
 

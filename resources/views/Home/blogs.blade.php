@@ -1008,7 +1008,7 @@
                         <h3 class="color-purple-800 my-20 card-title">Personalized treatments &amp;  at-home care</h3>
                         <p class="card-text">Get in-home physical therapy delivered to you, on your schedule. Covered by Medicare and most major insurances.</p>
                         <a class="button button-white d-flex-inline flex-center flex-middle mw-250-px mt-20"
-                            href="/appointment">Check Availability</a>
+                            href="/appointment">Book Consultation</a>
                     </div>
                             </div>
 

@@ -3,5086 +3,1167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- ====== OG BASIC ====== -->
-    <meta property="og:url" content="https://your-domain.com">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="{{ asset('assets/images/social/facebook.png') }}">
-    <meta name="msvalidate.01" content="FA52B9CB87821EF62B49E1C031073728">
-
-    <!-- ====== CACHE HEADERS ====== -->
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Last-Modified" content="0">
-    <meta http-equiv="Cache-Control" content="max-age=31536000">
-    <meta http-equiv="Pragma" content="no-cache">
-
-    <meta name="theme-color" content="#7a958f">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- ====== TITLE ====== -->
-    <title>1:1 In-Home Physical Therapy | Your Brand</title>
-
-    <!-- ====== FAVICONS ====== -->
-    <link rel="icon" href="{{ asset('assets/images/favicon_16.png') }}" sizes="16x16">
-    <link rel="icon" href="{{ asset('assets/images/favicon_32.png') }}" sizes="32x32">
-    <link rel="icon" href="{{ asset('assets/images/favicon_128.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon_128.png') }}">
-
-    <!-- ====== MAIN CSS ====== -->
-    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
-
-    <!-- Base & env styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/libs/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/envs/colors.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/envs/border.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/envs/font-weight.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/main-elements/nav.css') }}">
-
-    <!-- Responsive breakpoints -->
-    <link rel="stylesheet" href="{{ asset('assets/css/breakpoints/all.css') }}">
-
-
-    {{-- <link rel="stylesheet" href="{{ asset('assets/js/libs/owl-carousel/dist/assets/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/js/libs/owl-carousel/dist/assets/owl.theme.default.min.css') }}"> --}}
-
-    <!-- Slider specific styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main-elements/slider-elements.css') }}">
-<!-- Owl Carousel CSS (BOHOT zaroori) -->
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-    <!-- ✅ HERO IMAGES -->
-    <link fetchpriority="high" rel="preload" href="{{ asset('assets/images/intro.webp') }}" as="image">
-    <link fetchpriority="high" rel="preload" href="{{ asset('assets/images/hero-intro-mobile.webp') }}" as="image">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>Rehabrion - Physical Therapy Delivered to You</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="{{ asset("assets/css/styles.css") }}">
 </head>
 <body>
+  <!-- Free Delivery Banner -->
+ <section id="free-delivery" class="py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <b><i class="fas fa-truck-fast me-2"></i> Rehab & Physical Care, delivered to you</b>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <header id="main-nav" class="">
-            <div class="wrapper-full mw-1300-px" id="main-header">
-                <nav id="nav">
 
-                                        <a class="menu-button no-decoration " role="button" aria-labelledby="menu">
-                        <span class="line top"></span>
-                        <span class="line middle"></span>
-                        <span class="line bottom"></span>
+<!-- Header & Navigation -->
+<header id="main-nav">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid px-lg-5 px-md-4 px-3">
 
-                    </a>
-                    <a href="/" class="w-150-px w-xs-150-px logo text-center flex-center d-xs-flex flex-xs-center" aria-label="Home" id="home-link">
-                                                    <img alt="Rehabrion " class="w-100-px d-block" src="{{ asset("assets/images/logo/logo.png") }}" >
-                                            </a>
 
-                                            <a class="button-call-mobile cta-modal-mobile" href="tel:866-525-3175" role="button">
-                            <img alt="Rehabrion " class="d-block mx-auto" height="22px" width="22px" src="{{ asset("assets/images/logo/logo.png") }}">
+            <!-- Logo -->
+           <a class="navbar-brand me-auto  mx-lg-0" href="/">
+  <img src="{{asset('assets/images/logo/logo.png')}}" class="img-fluid d-none d-lg-inline-block logo-desktop">
+    <!-- Mobile logo -->
+  <img
+    src="{{asset('assets/images/logo/logo.png')}}"
+    alt="Rehabrion"
+    class="img-fluid d-inline-block d-lg-none logo-mobile"
+  >
+</a>
+
+         <!-- Mobile Menu Button (Left Side) -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+
+            <!-- Desktop Navigation -->
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ asset('/how-it-works') }}">
+                            <i class="fas fa-play-circle me-1"></i> How It Works
                         </a>
+                    </li>
+   <li class="nav-item">
+                        <a class="nav-link" href="{{ asset('/what-we-treat') }}">
+                            <i class="fas fa-play-circle me-1"></i> what we treat
+                        </a>
+                    </li>
+                    <!-- What We Treat Dropdown -->
+                    {{-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="whatWeTreatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-stethoscope me-1"></i> What We Treat
+                        </a>
+                        <ul class="dropdown-menu multi-level" aria-labelledby="whatWeTreatDropdown">
+                            <!-- Musculoskeletal with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-bone me-2" style="color: #7a958f;"></i>
+                                    Musculoskeletal (MSK)
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/neck-pain">Neck Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/upper-back-pain">Upper Back Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/lower-back-pain">Lower Back Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/shoulder-pain">Shoulder Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/elbow-pain">Elbow Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/hand-wrist-pain">Hand & Wrist Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/hip-pain">Hip Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/knee-pain">Knee Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/foot-ankle-pain">Foot & Ankle Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/muscle-strains">Muscle Strains & Ligament Injuries</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/joint-stiffness">Joint Stiffness & Arthritis</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/postural-pain">Postural & Work-Related Pain</a></li>
+                                </ul>
+                            </li>
 
-                    <span class="nav-centering"></span>
+                            <!-- Neurological with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-brain me-2" style="color: #7a958f;"></i>
+                                    Neurological Conditions
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/stroke-rehab">Stroke Rehabilitation</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/paralysis">Paralysis & Weakness</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/nerve-injuries">Nerve Injuries</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/parkinsons">Parkinson's Disease</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/multiple-sclerosis">Multiple Sclerosis (MS)</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/balance-issues">Balance & Coordination Issues</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/gait-disorders">Gait Disorders</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/neurological-mobility">Neurological Mobility Limitations</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Cranial & TMJ with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-head-side-brain me-2" style="color: #7a958f;"></i>
+                                    Cranial, Facial & TMJ
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/tmj">Jaw Pain (TMJ Disorders)</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/facial-pain">Facial Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/headaches">Headaches</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/cervicogenic-headaches">Cervicogenic Headaches</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/tension-headaches">Tension-Type Headaches</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/migraines">Migraines</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/neck-cranial-pain">Neck-Related Cranial Pain</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Vestibular & Balance with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-balance-scale me-2" style="color: #7a958f;"></i>
+                                    Vestibular & Balance
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/vertigo">Vertigo</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/dizziness">Dizziness</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/balance-disorders">Balance Disorders</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/frequent-falls">Frequent Falls</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/motion-sensitivity">Motion Sensitivity</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/postural-instability">Postural Instability</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Post-Surgical with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-procedures me-2" style="color: #7a958f;"></i>
+                                    Post-Surgical Rehabilitation
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/joint-replacement">Joint Replacement Recovery</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/spine-surgery">Spine Surgery Rehabilitation</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/fracture-recovery">Fracture Recovery</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/orthopedic-surgery">Orthopedic Surgery Rehab</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/neuro-surgery-rehab">Neurological Surgery Rehab</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Sports & Injury with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-running me-2" style="color: #7a958f;"></i>
+                                    Sports & Injury Conditions
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/sports-injuries">Sports Injuries</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/muscle-tears">Muscle Tears</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/ligament-sprains">Ligament Sprains</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/tendon-injuries">Tendon Injuries</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/overuse-injuries">Overuse Injuries</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/return-to-activity">Return-to-Activity Rehab</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Chronic Pain with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-user-injured me-2" style="color: #7a958f;"></i>
+                                    Chronic Pain Conditions
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/chronic-back-pain">Chronic Back Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/chronic-neck-pain">Chronic Neck Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/chronic-joint-pain">Long-Term Joint Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/widespread-pain">Widespread Musculoskeletal Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/movement-related-pain">Movement-Related Pain</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Geriatric with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-user-friends me-2" style="color: #7a958f;"></i>
+                                    Geriatric Conditions
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/age-related-pain">Age-Related Joint Pain</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/reduced-mobility">Reduced Mobility</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/senior-balance">Balance Issues in Older Adults</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/fall-prevention">Fall Prevention Needs</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/post-fracture-rehab">Post-Fracture Rehab</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Pelvic & Functional with Submenu -->
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">
+                                    <i class="fas fa-user me-2" style="color: #7a958f;"></i>
+                                    Pelvic & Functional
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/conditions/pelvic-floor">Pelvic Floor Dysfunction</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/core-weakness">Core Weakness</a></li>
+                                    <li><a class="dropdown-item" href="/conditions/functional-limitations">Functional Movement Limitations</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li> --}}
+                    <li class="nav-item dropdown" data-bs-auto-close="outside">
+    <a class="nav-link dropdown-toggle" href="#" id="whatWeTreatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-stethoscope me-1"></i> Treat Me Now
+    </a>
+
+    <ul class="dropdown-menu multi-level" aria-labelledby="whatWeTreatDropdown">
+
+        @foreach($treatCategories as $cat)
+            <li class="dropdown-submenu dropend">
+                <a class="dropdown-item dropdown-toggle" href="#">
+                    <i class="fas fa-folder me-2" style="color: #7a958f;"></i>
+                    {{ $cat->name }}
+                </a>
+
+                <ul class="dropdown-menu">
+                    @forelse($cat->subcategories as $sub)
+                        <li>
+                            {{-- <a class="dropdown-item" href="{{ url('/conditions-we-treat/'.$sub->slug) }}">
+                                {{ $sub->name }}
+                            </a> --}}
+                            <a class="dropdown-item" href="{{ route('Home.conditions.we.treat', $sub->slug) }}">
+  {{ $sub->name }}
+</a>
+
+                        </li>
+                    @empty
+                        <li>
+                            <span class="dropdown-item text-muted">No items</span>
+                        </li>
+                    @endforelse
+                </ul>
+            </li>
+        @endforeach
+
+    </ul>
+</li>
+
+                    <!-- End What We Treat Dropdown -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ asset('/about') }}">
+                            <i class="fas fa-info-circle me-1"></i> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ asset('/faqs') }}">
+                            <i class="fas fa-question-circle me-1"></i> FAQS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ asset('/recovery-bundles') }}">
+                            <i class="fas fa-box-open me-1"></i> Recovery Bundles
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Desktop Call Button -->
+            <!-- Desktop WhatsApp Button -->
+<div class="d-none d-lg-flex align-items-center">
+    <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-call">
+        <i class="fab fa-whatsapp me-2"></i>
+        +971 50 565 3483
+    </a>
+</div>
+
+            </div>
+
+            <!-- Mobile Call Button -->
+            {{-- <a href="tel:+971 50 565 3483" class="btn btn-call d-lg-none ms-3">
+                <i class="fas fa-phone me-2"></i> Call
+            </a> --}}
+        </div>
+    </nav>
+<div class="container-fluid px-lg-5 px-md-4 px-3">
+
+    <!-- Mobile Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom" style="background-color: #f8fbfa;">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+            {{-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                <img class="d-inline-block d-lg-none logo-mobile" src="{{asset('assets/images/logo/logo.png')}}" alt="Rehabrion" >
+            </h5> --}}
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="accordion" id="mobileMenuAccordion">
+                <!-- Main Menu Items -->
+                <div class="list-group list-group-flush">
+                    <a href="{{ asset('/how-it-works') }}" class="list-group-item list-group-item-action border-0 py-3">
+                        <i class="fas fa-play-circle me-2" style="color: #7a958f;"></i> How It Works
+                    </a>
 
 
-                    <ul class="">
+{{-- <div class="accordion-item border-0">
+  <h2 class="accordion-header" id="headingWhatWeTreat">
+    <button class="accordion-button collapsed py-3" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseWhatWeTreat"
+      aria-expanded="false"
+      aria-controls="collapseWhatWeTreat">
+      <i class="fas fa-stethoscope me-2" style="color:#7a958f;"></i> What We Treat
+    </button>
+  </h2>
 
-                        <li><a href="{{ asset("/how-it-works") }}">How It Works</a></li>
-                        {{-- <li><a href="/rates-and-insurance">Rates & Insurance</a></li> --}}
-                        <li><a href="/conditions-we-treat" class="conditions-we-treat">What We Treat</a></li>
-                        <li><a href="{{ asset('/about') }}">About Us</a></li>
+  <div id="collapseWhatWeTreat" class="accordion-collapse collapse" data-bs-parent="#mobileMenuAccordion">
+    <div class="accordion-body p-0">
 
-                        {{-- <li><a href="{{ asset("/blogs") }}">Blog</a></li> --}}
-                        <li><a href="{{ asset('/faqs') }}">FAQS</a></li>
-                        <li><a href="{{ asset('/recovery-bundles') }}">Recovery Bundles</a></li>
+      <div class="accordion" id="mobileTreatAccordion">
 
-                        <li class="dropdown-button">
-                            <span class="dropdown flex-between flex-middle">
-                                <span class="p-0">Treat Me Now</span>
-                                <img alt="Chevron" class="chevron black" src="https://public-assets.getRehabrion .com/images/chevron-down-black.svg">
-                                <img alt="Chevron" class="chevron white" src="https://public-assets.getRehabrion .com/images/chevron-down-white.svg">
-                            </span>
-                            <ul class="dropdown-content">
-                                <li><a href="/own-your-career">Therapists</a></li>
-                                <li><a href="/physicians">Physicians</a></li>
-                                <li><a href="/health-plans">Health Plans</a></li>
-                                <li><a href="/health-systems">Health Systems</a></li>
-                                <li><a href="/employers">Employers</a></li>
-                                <li><a href="/pt-clinics">PT Clinics</a></li>
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingMSK">
+            <button class="accordion-button collapsed py-2" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseMSK"
+              aria-expanded="false"
+              aria-controls="collapseMSK">
+              <i class="fas fa-bone me-2" style="color:#7a958f;font-size:.9rem;"></i>
+              Musculoskeletal (MSK)
+            </button>
+          </h2>
+          <div id="collapseMSK" class="accordion-collapse collapse" data-bs-parent="#mobileTreatAccordion">
+            <div class="accordion-body p-0">
+              <div class="list-group list-group-flush">
+                <a href="/conditions/neck-pain" class="list-group-item list-group-item-action py-2 ps-4">Neck Pain</a>
+                <a href="/conditions/upper-back-pain" class="list-group-item list-group-item-action py-2 ps-4">Upper Back Pain</a>
+                <a href="/conditions/lower-back-pain" class="list-group-item list-group-item-action py-2 ps-4">Lower Back Pain</a>
+                <a href="/conditions/shoulder-pain" class="list-group-item list-group-item-action py-2 ps-4">Shoulder Pain</a>
+                <a href="/conditions/elbow-pain" class="list-group-item list-group-item-action py-2 ps-4">Elbow Pain</a>
+                <a href="/conditions/hand-wrist-pain" class="list-group-item list-group-item-action py-2 ps-4">Hand and Wrist Pain</a>
+                <a href="/conditions/hip-pain" class="list-group-item list-group-item-action py-2 ps-4">Hip Pain</a>
+                <a href="/conditions/knee-pain" class="list-group-item list-group-item-action py-2 ps-4">Knee Pain</a>
+                <a href="/conditions/foot-ankle-pain" class="list-group-item list-group-item-action py-2 ps-4">Foot and Ankle Pain</a>
+                <a href="/conditions/muscle-strains" class="list-group-item list-group-item-action py-2 ps-4">Muscle Strains</a>
+                <a href="/conditions/joint-stiffness" class="list-group-item list-group-item-action py-2 ps-4">Joint Stiffness and Arthritis</a>
+                <a href="/conditions/postural-pain" class="list-group-item list-group-item-action py-2 ps-4">Postural and Work Related Pain</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingNeuro">
+            <button class="accordion-button collapsed py-2" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNeuro"
+              aria-expanded="false"
+              aria-controls="collapseNeuro">
+              <i class="fas fa-brain me-2" style="color:#7a958f;font-size:.9rem;"></i>
+              Neurological Conditions
+            </button>
+          </h2>
+          <div id="collapseNeuro" class="accordion-collapse collapse" data-bs-parent="#mobileTreatAccordion">
+            <div class="accordion-body p-0">
+              <div class="list-group list-group-flush">
+                <a href="/conditions/stroke-rehab" class="list-group-item list-group-item-action py-2 ps-4">Stroke Rehabilitation</a>
+                <a href="/conditions/paralysis" class="list-group-item list-group-item-action py-2 ps-4">Paralysis and Weakness</a>
+                <a href="/conditions/nerve-injuries" class="list-group-item list-group-item-action py-2 ps-4">Nerve Injuries</a>
+                <a href="/conditions/parkinsons" class="list-group-item list-group-item-action py-2 ps-4">Parkinsons Disease</a>
+                <a href="/conditions/multiple-sclerosis" class="list-group-item list-group-item-action py-2 ps-4">Multiple Sclerosis</a>
+                <a href="/conditions/balance-issues" class="list-group-item list-group-item-action py-2 ps-4">Balance and Coordination</a>
+                <a href="/conditions/gait-disorders" class="list-group-item list-group-item-action py-2 ps-4">Gait Disorders</a>
+                <a href="/conditions/neurological-mobility" class="list-group-item list-group-item-action py-2 ps-4">Neurological Mobility</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-0">
+          <h2 class="accordion-header" id="headingCranial">
+            <button class="accordion-button collapsed py-2" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseCranial"
+              aria-expanded="false"
+              aria-controls="collapseCranial">
+              <i class="fas fa-head-side-brain me-2" style="color:#7a958f;font-size:.9rem;"></i>
+              Cranial and TMJ
+            </button>
+          </h2>
+          <div id="collapseCranial" class="accordion-collapse collapse" data-bs-parent="#mobileTreatAccordion">
+            <div class="accordion-body p-0">
+              <div class="list-group list-group-flush">
+                <a href="/conditions/tmj" class="list-group-item list-group-item-action py-2 ps-4">Jaw Pain TMJ</a>
+                <a href="/conditions/facial-pain" class="list-group-item list-group-item-action py-2 ps-4">Facial Pain</a>
+                <a href="/conditions/headaches" class="list-group-item list-group-item-action py-2 ps-4">Headaches</a>
+                <a href="/conditions/cervicogenic-headaches" class="list-group-item list-group-item-action py-2 ps-4">Cervicogenic Headaches</a>
+                <a href="/conditions/tension-headaches" class="list-group-item list-group-item-action py-2 ps-4">Tension Type Headaches</a>
+                <a href="/conditions/migraines" class="list-group-item list-group-item-action py-2 ps-4">Migraines</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat same pattern for Vestibular, Post Surgical, Sports, Chronic, Geriatric, Pelvic -->
+
+      </div>
+
+    </div>
+  </div>
+</div> --}}
+<div class="accordion-item border-0">
+  <h2 class="accordion-header" id="headingTreatMeNow">
+    <button class="accordion-button collapsed py-3" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseTreatMeNow"
+      aria-expanded="false"
+      aria-controls="collapseTreatMeNow">
+      <i class="fas fa-stethoscope me-2" style="color:#7a958f;"></i> Treat Me Now
+    </button>
+  </h2>
+
+  <div id="collapseTreatMeNow" class="accordion-collapse collapse" data-bs-parent="#mobileMenuAccordion">
+    <div class="accordion-body p-0">
+
+      <div class="accordion" id="mobileTreatDynamicAccordion">
+
+        @foreach($treatCategories as $cat)
+          @php
+            $catId = 'cat_'.$cat->id;
+          @endphp
+
+          <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="heading{{ $catId }}">
+              <button class="accordion-button collapsed py-2" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ $catId }}"
+                aria-expanded="false"
+                aria-controls="collapse{{ $catId }}">
+                <i class="fas fa-folder me-2" style="color:#7a958f;font-size:.9rem;"></i>
+                {{ $cat->name }}
+              </button>
+            </h2>
+
+            <div id="collapse{{ $catId }}" class="accordion-collapse collapse" data-bs-parent="#mobileTreatDynamicAccordion">
+              <div class="accordion-body p-0">
+                <div class="list-group list-group-flush">
+
+                  @forelse($cat->subcategories as $sub)
+                    <a href="{{ route('Home.conditions.we.treat', $sub->slug) }}"
+                       class="list-group-item list-group-item-action py-2 ps-4">
+                      {{ $sub->name }}
+                    </a>
+                  @empty
+                    <span class="list-group-item text-muted py-2 ps-4">No items</span>
+                  @endforelse
+
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+                    <a href="{{ asset('/about') }}" class="list-group-item list-group-item-action border-0 py-3">
+                        <i class="fas fa-info-circle me-2" style="color: #7a958f;"></i> About Us
+                    </a>
+                    <a href="{{ asset('/faqs') }}" class="list-group-item list-group-item-action border-0 py-3">
+                        <i class="fas fa-question-circle me-2" style="color: #7a958f;"></i> FAQS
+                    </a>
+                    <a href="{{ asset('/recovery-bundles') }}" class="list-group-item list-group-item-action border-0 py-3">
+                        <i class="fas fa-box-open me-2" style="color: #7a958f;"></i> Recovery Bundles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Call CTA -->
+            <div class="p-3 border-top" style="background-color: #f8fbfa;">
+                <a href="{{ asset('/submit-medical-history') }}" class="btn btn-sm w-100 mb-2" style="background-color: #7a958f; color: white;">
+                    <i class="fas fa-calendar-check me-2"></i> Book Appointment
+                </a>
+                <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information" target="_blank" rel="noopener" class="btn btn-sm w-100" style="background-color: #bae0db; color: #4a5a55;">
+                   <i class="fas fa-phone-volume me-2"></i>
+ Call +971 50 565 3483
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</header>
+
+
+<!-- JavaScript for Nested Dropdowns -->
+
+    <!-- Header & Navigation -->
+    {{-- <header id="main-nav">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="{{asset("assets/images/logo/logo.png")}}" alt="Rehabrion" class="img-fluid">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a href="tel:+971 50 565 3483" class="btn btn-call d-lg-none ms-auto me-3">
+                    <i class="fas fa-phone me-2"></i> +971 50 565 3483
+                </a>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ asset('/how-it-works') }}"><i class="fas fa-play-circle me-1"></i> How It Works</a>
+                        </li>
+
+                               <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-md me-1"></i> What we Treat
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/own-your-career"><i class="fas fa-user-nurse me-2"></i> Musculoskeletal (MSK) Conditions
+
+</a></li>
+                                <li><a class="dropdown-item" href="/physicians"><i class="fas fa-user-md me-2"></i> Neurological Conditions
+
+</a></li>
+                                <li><a class="dropdown-item" href="/health-plans"><i class="fas fa-file-medical me-2"></i> Health Plans</a></li>
+                                <li><a class="dropdown-item" href="/health-systems"><i class="fas fa-hospital me-2"></i> Health Systems</a></li>
+                                <li><a class="dropdown-item" href="/employers"><i class="fas fa-briefcase me-2"></i> Employers</a></li>
+                                <li><a class="dropdown-item" href="/pt-clinics"><i class="fas fa-clinic-medical me-2"></i> PT Clinics</a></li>
                             </ul>
                         </li>
-
-                        <li class="download-app">
-                            <a role="button">
-                                                                Download App
-                            </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ asset('/about') }}"><i class="fas fa-info-circle me-1"></i> About Us</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ asset('/faqs') }}"><i class="fas fa-question-circle me-1"></i> FAQS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ asset('/recovery-bundles') }}"><i class="fas fa-box-open me-1"></i> Recovery Bundles</a>
+                        </li>
+
                     </ul>
-                                            <a class="button-call cta-phone-desktop" href="tel:866-525-3175">
-                            <img alt="phone" class="icon purple mr-10" src="https://public-assets.getRehabrion .com/images/call.svg">
-                            <img alt="phone" class="icon white mr-10" src="https://public-assets.getRehabrion .com/images/call_white.svg">
-                            866-525-3175
+
+                    <div class="d-none d-lg-flex align-items-center">
+                        <a href="tel:+971 50 565 3483" class="btn btn-call">
+                           <i class="fas fa-phone-volume me-2"></i>
+ +971 50 565 3483
                         </a>
-
-                </nav>
+                    </div>
+                </div>
             </div>
-        </header>
+        </nav>
+    </header> --}}
 
 
 
-<!-- Floating Contact: END -->
 
-
+<!-- Vertical Contact Button -->
+<a href="{{ asset('/submit-medical-history') }}" class="vertical-contact-btn" aria-label="Book Consultation">
+  <span class="vc-icon">
+    <i class="fa-solid fa-calendar-check"></i>
+  </span>
+  <span class="vc-text">Book Consultation</span>
+</a>
 
 
 
 @yield("Content")
 
-{{-- Floating Contact Trigger + Panel --}}
-<button
-    id="rehabContactTab"
-    type="button"
-    class="rehab-contact-tab"
-    aria-expanded="false"
-    aria-controls="rehabContactPanel"
->
-    <span class="rehab-contact-icon">✉</span>
-    <span class="rehab-contact-text">Contact Us</span>
-</button>
-
-<div id="rehabContactOverlay" class="rehab-contact-overlay" hidden></div>
-
-<aside
-    id="rehabContactPanel"
-    class="rehab-contact-panel"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="rehabContactTitle"
-    aria-hidden="true"
->
-    <header class="rehab-contact-header">
-    <p class="rehab-contact-mini">
-        PATIENT INTAKE FORM
-    </p>
-    <h3 id="rehabContactTitle">Patient Personal Information</h3>
-
-    <button
-        id="rehabContactClose"
-        type="button"
-        class="rehab-contact-close"
-        aria-label="Close contact form"
-    >
-        ×
-    </button>
-</header>
-
-<form method="POST" action="{{ route('Home.welcome.store') }}" class="rehab-contact-form">
-    @csrf
-
-    {{-- Full Name --}}
-    <div class="rehab-field">
-        <label for="full_name">Full Name*</label>
-        <input id="full_name" name="full_name" type="text" required>
-    </div>
-
-    {{-- Date of Birth + Age (2 columns) --}}
-    <div class="rehab-row">
-        <div class="rehab-field">
-            <label for="dob">Date of Birth*</label>
-            <input id="dob" name="dob" type="date" required>
-        </div>
-        <div class="rehab-field">
-            <label for="age">Age*</label>
-            <input id="age" name="age" type="number" min="0" max="120" required>
-        </div>
-    </div>
-
-    {{-- Gender --}}
-    <div class="rehab-field">
-        <label>Gender*</label>
-        <div class="rehab-gender-group">
-            <label class="rehab-radio">
-                <input type="radio" name="gender" value="Male" required>
-                <span>Male</span>
-            </label>
-            <label class="rehab-radio">
-                <input type="radio" name="gender" value="Female">
-                <span>Female</span>
-            </label>
-            <label class="rehab-radio">
-                <input type="radio" name="gender" value="Other">
-                <span>Other</span>
-            </label>
-        </div>
-    </div>
-
-    {{-- Contact Number --}}
-    <div class="rehab-field">
-        <label for="contact_number">Contact Number*</label>
-        <input id="contact_number" name="contact_number" type="tel" required>
-    </div>
-
-    {{-- Email Address --}}
-    <div class="rehab-field">
-        <label for="email_address">Email Address*</label>
-        <input id="email_address" name="email_address" type="email" required>
-    </div>
-
-    {{-- Home Address --}}
-    <div class="rehab-field">
-        <label for="home_address">Home Address*</label>
-        <textarea id="home_address" name="home_address" rows="2" required></textarea>
-    </div>
-
-    {{-- Emergency Contact (2 columns) --}}
-    <div class="rehab-row">
-        <div class="rehab-field">
-            <label for="emergency_name">Emergency Contact Name*</label>
-            <input id="emergency_name" name="emergency_name" type="text" required>
-        </div>
-        <div class="rehab-field">
-            <label for="emergency_phone">Emergency Contact Number*</label>
-            <input id="emergency_phone" name="emergency_phone" type="tel" required>
-        </div>
-    </div>
-
-    <button type="submit" class="rehab-submit-btn">
-        Submit
-    </button>
-</form>
-
-</aside>
-
-
-
-    <footer class="main-footer d-block">
-    <section id="general-info" class="pt-50 pt-md-20 pt-sm-20 pt-xs-20 pb-10 pb-xs-0 bg-purple-600">
-        <div class="wrapper d-md-none d-sm-none d-xs-none">
+ <!-- Footer -->
+    <footer>
+        <div class="container">
             <div class="row">
-                <div class=" col-3 ">
-                                            <a href="/" class="logo" aria-label="Home">
-                            <img alt="Rehabrion " class="w-150-px w-md-100-px lazy"
-                                data-src="{{ asset("assets/images/logo/logo.png") }}" >
-                        </a>
-                        <span class="d-block font-12 color-base-100 mb-30 mb-md-20 text-md-nowrap">
-                            Physical therapy, delivered.<sup>®</sup>
-                        </span>
-                                                                <span class="d-block body-small color-base-100">
-                                                            Call: 866-525-3175
-                                                    </span>
-
-                                                                                        <span class="d-block body-small color-base-100 mt-5">
-                            Fax Rx: 628-246-8418
-                        </span>
-                                                                <div class="d-flex flex-start flex-sm-start mt-10">
-                            <a class="w-100-px p-10 mr-10 mt-0 d-flex flex-center flex-middle relative"
-                                href="https://apps.apple.com/us/app/Rehabrion -physical-therapy/id1434554640" target="_blank"
-                                rel="noreferrer noopener" aria-label="App Store">
-                                <div class="absolute w-100 h-100 left-0 top-0 bg-purple-200 opacity-4 rounded"></div>
-                                <img class="lazy w-100 z-index-2 h-auto"
-                                    data-src="https://public-assets.getRehabrion .com/images/apple-footer.svg" alt="App store"
-                                    width="120px" height="33px">
-                            </a>
-                            <a class="w-100-px p-10 mt-0 d-flex flex-center flex-middle relative"
-                                href="https://play.google.com/store/apps/details?id=com.getRehabrion .patient" target="_blank"
-                                aria-label="Google Play Store" rel="noreferrer noopener">
-                                <div class="absolute w-100 h-100 left-0 top-0 bg-purple-200 opacity-4 rounded"></div>
-                                <img class="lazy w-100 z-index-2 h-auto"
-                                    data-src="https://public-assets.getRehabrion .com/images/play-store-footer-alt.webp"
-                                    alt="Play store" width="120px" height="28px">
-                            </a>
-                        </div>
-                                    </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col-3">
-                            <h5 class="header color-base-100 uppercase mb-15 mt-0 text-nowrap">Services</h5>
-                            <a href="{{ asset('/conditions-we-treat') }}"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Conditions
-                                We Treat</a>
-                            <a href="/locations"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Where We
-                                Serve</a>
-                            <a href="/faq"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Patient
-                                FAQ</a>
-                            <a href="/insurance-faq"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Insurance
-                                FAQ</a>
-                            <a href="/in-home-physical-therapy"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">In-Home
-                                PT</a>
-                            <a href="/physical-therapy-near-me" class="body-small color-base-100 d-block text-nowrap">PT
-                                Near Me</a>
-                        </div>
-                        <div class="col-3">
-                            <h5 class="header color-base-100 uppercase mb-15 mt-0 text-nowrap">Company</h5>
-                            <a href="{{ asset('/about') }}"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">About Us /
-                                Careers</a>
-                            <a href="/empowerment-pledge"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Empowerment
-                                Pledge</a>
-                            <a href="/newsroom"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Newsroom</a>
-                            <a href="{{ asset("/blogs") }}"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate"
-                                rel="noreferrer noopener">Blog</a>
-                            <a href="/resources"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Resources</a>
-                            <a href="{{ asset('/contact') }}"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Contact
-                                Us</a>
-
-
-                        </div>
-                        <div class="col-3">
-                            <h5 class="header color-base-100 uppercase mb-15 mt-0 text-nowrap">Partners</h5>
-                            <a href="/own-your-career"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">For
-                                Therapists</a>
-                            <a href="/physicians"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">For
-                                Physicians</a>
-                            <a href="/health-plans"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">For
-                                Health Plans</a>
-                            <a href="/health-systems"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">For
-                                Health Systems</a>
-                            <a href="/employers"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">For
-                                Employers</a>
-                            <a href="/pt-clinics" class="body-small color-base-100 d-block text-nowrap">For PT
-                                Clinics</a>
-                        </div>
-                        <div class="col-3">
-                            <h5 class="header color-base-100 uppercase mb-15 mt-0 text-nowrap">Legal & Practices</h5>
-                            <a class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate c-pointer"
-                                role="button" data-acsb-custom-trigger="true">Accessibility Options</a>
-                            <a href="/terms-of-use"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Terms of
-                                Use</a>
-                            <a href="{{ asset("/privacy-policy") }}"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Notice
-                                of Privacy Practices</a>
-                            <a href="{{ asset("/privacy-policy") }}"
-                                class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate">Privacy
-                                Policy</a>
-
-
-
-                        </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <img src="{{asset('assets/images/logo/logo.png')}}" alt="Rehabrion" class="img-fluid mb-3" style="max-width: 150px;">
+                    <p class="mb-3">Rehab & Physical Care, delivered to you. Expert therapy at your doorstep.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="wrapper d-none d-md-block d-sm-block d-xs-block">
-            <div class="mb-20 pb-20 border-bottom border-purple-400">
-                <div class="row">
-                                            <div class="col-6 col-xs-5">
-                            <a href="/" class="logo" aria-label="Home">
-                                <img alt="Rehabrion " class="w-100-px lazy"
-                                    data-src="https://public-assets.getRehabrion .com/images/logo_light.svg" width="150px"
-                                    height="43px">
-                            </a>
-                            <span class="d-block font-12 color-base-100 text-md-nowrap">
-                                Physical therapy, delivered.<sup>®</sup>
-                            </span>
-                        </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="{{ asset('/how-it-works') }}"><i class="fas fa-chevron-right"></i> How It Works</a>
+                        <a href="{{ asset('/conditions-we-treat') }}"><i class="fas fa-chevron-right"></i> What We Treat</a>
+                        <a href="{{ asset('/about') }}"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="{{ asset('/recovery-bundles') }}"><i class="fas fa-chevron-right"></i> Recovery Bundles</a>
+                    </div>
+                </div>
 
-                    <div class=" col-6 col-xs-7 text-right ">
-                        <span class="d-block body-x-small color-base-100 mt-10">
-                                                                                                Call: 866-525-3175
-                                                                                                                        <br>
-                                Fax Rx: 628-246-8418
-                                                    </span>
-                                            </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="mb-3">For Professionals</h5>
+                    <div class="footer-links">
+                         <a href="{{ asset("/privacy-policy") }}" class="text-white me-3"><i class="fas fa-chevron-right"></i> Privacy Policy</a>
+                    <a href="/terms" class="text-white me-3"><i class="fas fa-chevron-right"></i> Terms of Service</a>
+                      <a href="{{ asset('/faqs') }}"><i class="fas fa-chevron-right"></i> FAQS</a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="mb-3">Contact Us</h5>
+<p>
+  <i class="fab fa-whatsapp me-2"></i>
+  <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information" target="_blank" rel="noopener" class="text-white">
+    +971 50 565 3483
+  </a>
+</p>
+                    <p class="mb-3"><i class="fas fa-envelope me-2"></i> <a href="mailto:info@rehabrion.com" class="text-white">info@rehabrion.com</a></p>
+                    {{-- <div class="mt-3">
+                        <a href="#" class="btn btn-outline-light me-2 mb-2">
+                            <i class="fab fa-apple me-2"></i> App Store
+                        </a>
+                        <a href="#" class="btn btn-outline-light mb-2">
+                            <i class="fab fa-google-play me-2"></i> Google Play
+                        </a>
+                    </div> --}}
                 </div>
             </div>
 
-            <div class="accordion">
-                <article class="accordion-item mb-20 border-bottom border-purple-400 active">
-                    <a class="accordion-toogle no-decoration relative c-pointer" role="button">
-                        <span class="accordion-icon-mini mr-10"></span>
-                        <h5 class="header pl-25 color-base-100 uppercase mb-0 mt-0 text-nowrap">Services</h3>
-                    </a>
-                    <div class="accordion-content pl-25 mt-15">
-                        <a href="/conditions-we-treat"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Conditions
-                            We
-                            Treat</a>
-                        <a href="/locations"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Where
-                            We
-                            Serve</a>
-                        <a href="/faq"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Patient
-                            FAQ</a>
-                        <a href="/insurance-faq"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Insurance
-                            FAQ</a>
-                        <a href="/in-home-physical-therapy"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">In-Home
-                            PT</a>
-                        <a href="/physical-therapy-near-me"
-                            class="body-small color-base-100 mb-20 d-block text-nowrap lh-sm-2 lh-xs-2">PT Near Me</a>
-                    </div>
-                </article>
-
-                <article class="accordion-item mb-20 border-bottom border-purple-400">
-                    <a class="accordion-toogle no-decoration relative c-pointer" role="button">
-                        <span class="accordion-icon-mini mr-10"></span>
-                        <h5 class="header pl-25 color-base-100 uppercase mb-0 mt-0 text-nowrap">Company</h3>
-                    </a>
-                    <div class="accordion-content pl-25 mt-15">
-                        <a href="/career"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">About
-                            Us /
-                            Careers</a>
-                        <a href="/empowerment-pledge"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap lh-sm-2 lh-xs-2">Empowerment
-                            Pledge</a>
-                        <a href="/newsroom"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Newsroom</a>
-                        <a href="/blog" class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate"
-                            rel="noreferrer noopener">Blog</a>
-                        <a href="/resources"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Resources</a>
-                        <a href="/contact-us"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Contact
-                            Us</a>
-
-
-                    </div>
-                </article>
-
-                <article class="accordion-item mb-20 border-bottom border-purple-400">
-                    <a class="accordion-toogle no-decoration relative c-pointer" role="button">
-                        <span class="accordion-icon-mini mr-10"></span>
-                        <h5 class="header pl-25 color-base-100 uppercase mb-0 mt-0 text-nowrap">Partners</h3>
-                    </a>
-                    <div class="accordion-content pl-25 mt-15">
-                        <a href="/own-your-career"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">For
-                            Therapists</a>
-                        <a href="/physicians"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">For
-                            Physicians</a>
-                        <a href="/health-plans"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">For
-                            Health
-                            Plans</a>
-                        <a href="/health-systems"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">For
-                            Health
-                            Systems</a>
-                        <a href="/employers"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">For
-                            Employers</a>
-                        <a href="/pt-clinics"
-                            class="body-small color-base-100 mb-20 d-block text-nowrap lh-sm-2 lh-xs-2">For PT
-                            Clinics</a>
-                    </div>
-                </article>
-
-                <article class="accordion-item border-bottom border-purple-400 ">
-                    <a class="accordion-toogle no-decoration relative c-pointer" role="button">
-                        <span class="accordion-icon-mini mr-10"></span>
-                        <h5 class="header pl-25 color-base-100 uppercase mb-0 mt-0 text-nowrap">Legal & Practices</h3>
-                    </a>
-                    <div class="accordion-content pl-25 mt-15">
-                        <a class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate c-pointer lh-sm-2 lh-xs-2"
-                            role="button" data-acsb-custom-trigger="true">Accessibility Options</a>
-                        <a href="/terms-of-use"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Terms
-                            of
-                            Use</a>
-                        <a href="/privacy-policy"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Notice
-                            of Privacy
-                            Practices</a>
-                        <a href="/privacy-policy-web"
-                            class="body-small color-base-100 mb-5 d-block text-nowrap text-lg-truncate lh-sm-2 lh-xs-2">Privacy
-                            Policy</a>
-
-
-                    </div>
-                </article>
-            </div>
-
-        </div>
-        </div>
-    </section>
-
-    <section id="locations-info" class="pb-30 py-md-20 py-sm-20 py-xs-20 bg-purple-600">
-
-                    <div class="wrapper d-none d-xs-block d-sm-block d-md-block">
-                <div class="d-flex flex-evenly flex-sm-start">
-                    <a class="w-150-px p-10 px-sm-15 ml-sm-0 mb-20 mx-10 mt-0 d-flex flex-center flex-middle relative"
-                        href="https://apps.apple.com/us/app/Rehabrion -physical-therapy/id1434554640" target="_blank"
-                        rel="noreferrer noopener" aria-label="App Store">
-                        <div class="absolute w-100 h-100 left-0 top-0 bg-purple-200 opacity-4 rounded"></div>
-                        <img class="lazy w-100 z-index-2 h-auto"
-                            data-src="https://public-assets.getRehabrion .com/images/apple-footer.svg" alt="App store"
-                            width="120px" height="33px">
-                    </a>
-                    <a class="w-150-px p-10 px-sm-15 mb-20 mx-10 mt-0 d-flex flex-center flex-middle relative"
-                        href="https://play.google.com/store/apps/details?id=com.getRehabrion .patient" target="_blank"
-                        aria-label="Google Play Store" rel="noreferrer noopener">
-                        <div class="absolute w-100 h-100 left-0 top-0 bg-purple-200 opacity-4 rounded"></div>
-                        <img class="lazy w-100 z-index-2 h-auto"
-                            data-src="https://public-assets.getRehabrion .com/images/play-store-footer-alt.webp" alt="Play store"
-                            width="120px" height="28px">
-                    </a>
+            <div class="row mt-4 pt-4 border-top">
+                <div class="col-md-12">
+                    <p class="mb-0 text-center">© 2023 Rehabrion. All rights reserved.</p>
                 </div>
-            </div>
-
-        <div class="wrapper">
-                    </div>
-    </section>
-
-    <section id="sitemap-info" class="bg-purple-800 py-10">
-        <div class="wrapper">
-            <div class="row flex-md-column-reverse flex-sm-column-reverse flex-xs-column-reverse">
-                <div class="col-8 col-md-12 col-sm-12 col-xs-12 d-flex flex-middle d-xs-block">
-                    <span
-                        class="color-purple-400 font-weight-300 body-small mr-15 d-inline-block d-xs-block mb-xs-5 ">©
-                        2025 Rehabrion <sup class="body-x-small">®</sup></span>
-                    <span class="color-base-100 font-weight-300 body-small mr-10 d-inline-block d-xs-block mb-xs-5"><a
-                            href="/sitemap" class="color-purple-400">Site Map</a></span>
-
-                    <span class="color-base-100 font-weight-300 body-small mr-10 d-inline-block d-xs-block mb-xs-5"><a
-                            class="color-purple-400 c-pointer" role="button" onclick='revisitCkyConsent()'>Cookie
-                            Settings</a></span>
-
-                    <span class="color-base-100 font-weight-300 body-small d-inline-block d-xs-block mb-xs-5">
-                        <a role="button" data-toggle="toogle" data-target="#directories-info"
-                            class="color-purple-400 c-pointer d-flex flex-middle toogle-trigger">Directories <img
-                                class="lazy chevron"
-                                data-src="https://public-assets.getRehabrion .com/images/chevron-purple-400.svg" width="25px"
-                                height="25px"></a>
-                    </span>
-                </div>
-
-                <div
-                    class="col-4 col-md-12 col-sm-12 col-xs-12 d-flex flex-middle flex-md-wrap flex-xs-wrap flex-md-start flex-xs-start flex-sm-start flex-end mb-md-10 mb-sm-10 mb-xs-10">
-                    <span class="mb-0 color-base-100 body-small d-inline-block mr-10">Follow us on:</span>
-                    <a href="http://facebook.com/getRehabrion care" aria-label="Facebook"
-                        class="mr-10 d-flex flex-middle flex-center" target="_blank" rel="noreferrer noopener">
-                        <img class="icon mw-20-px mh-20-px lazy" alt="Facebook"
-                            data-src="https://public-assets.getRehabrion .com/images/facebook.svg" width="20px" height="20px">
-                    </a>
-                    <a href="https://www.linkedin.com/company/getRehabrion /" aria-label="Linkedin"
-                        class="mr-10 d-flex flex-middle flex-center" target="_blank" rel="noreferrer noopener">
-                        <img class="icon mw-20-px mh-20-px lazy" alt="Linkedin"
-                            data-src="https://public-assets.getRehabrion .com/images/social_linkedin.svg" width="20px"
-                            height="20px">
-                    </a>
-                    <a href="https://instagram.com/getRehabrion care/" aria-label="Instagram"
-                        class="mr-10 d-flex flex-middle flex-center" target="_blank" rel="noreferrer noopener">
-                        <img class="icon mw-20-px mh-20-px lazy" alt="Instagram"
-                            data-src="https://public-assets.getRehabrion .com/images/instagram.svg" width="20px" height="20px">
-                    </a>
-                    <a href="http://twitter.com/getRehabrion care" aria-label="Twitter"
-                        class="mr-10 d-flex flex-middle flex-center" target="_blank" rel="noreferrer noopener">
-                        <img class="icon mw-20-px mh-20-px lazy" alt="Twitter"
-                            data-src="https://public-assets.getRehabrion .com/images/twitter.svg" width="20px" height="20px">
-                    </a>
-                    <a href="https://www.glassdoor.com/Overview/Working-at-Rehabrion -Care-EI_IE2140990.11,20.htm"
-                        aria-label="Glassdoor" class="d-flex flex-middle flex-center" target="_blank"
-                        rel="noreferrer noopener">
-                        <img class="icon mw-20-px mh-20-px lazy" alt="Glassdoor"
-                            data-src="https://public-assets.getRehabrion .com/images/social-glassdoor.svg" width="20px"
-                            height="20px">
-                    </a>
-                </div>
+                {{-- <div class="col-md-6 text-md-end">
+                    <a href="{{ asset("/privacy-policy") }}" class="text-white me-3">Privacy Policy</a>
+                    <a href="/terms" class="text-white me-3">Terms of Service</a>
+                </div> --}}
             </div>
         </div>
-    </section>
-{{--
-    <section id="directories-info" class="bg-purple-900 toogle-section">
-        <div class="wrapper py-30">
+    </footer>
 
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Physician Directory Profiles</h4>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=1">
-                            1
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=2">
-                            2
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=3">
-                            3
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=4">
-                            4
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=5">
-                            5
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=6">
-                            6
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=7">
-                            7
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=8">
-                            8
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=9">
-                            9
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=10">
-                            10
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=11">
-                            11
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=12">
-                            12
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=13">
-                            13
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=14">
-                            14
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=15">
-                            15
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=16">
-                            16
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=17">
-                            17
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=18">
-                            18
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=19">
-                            19
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=20">
-                            20
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=21">
-                            21
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=22">
-                            22
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=23">
-                            23
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=24">
-                            24
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=25">
-                            25
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=26">
-                            26
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=27">
-                            27
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=28">
-                            28
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=29">
-                            29
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=30">
-                            30
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=31">
-                            31
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=32">
-                            32
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=33">
-                            33
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=34">
-                            34
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=35">
-                            35
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=36">
-                            36
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=37">
-                            37
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=38">
-                            38
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=39">
-                            39
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=40">
-                            40
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=41">
-                            41
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=42">
-                            42
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=43">
-                            43
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=44">
-                            44
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=45">
-                            45
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=46">
-                            46
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=47">
-                            47
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=48">
-                            48
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=49">
-                            49
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=50">
-                            50
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=51">
-                            51
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=52">
-                            52
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=53">
-                            53
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=54">
-                            54
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=55">
-                            55
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=56">
-                            56
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=57">
-                            57
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=58">
-                            58
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=59">
-                            59
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=60">
-                            60
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=61">
-                            61
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=62">
-                            62
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=63">
-                            63
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=64">
-                            64
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=65">
-                            65
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=66">
-                            66
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=67">
-                            67
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=68">
-                            68
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=69">
-                            69
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=70">
-                            70
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=71">
-                            71
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=72">
-                            72
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=73">
-                            73
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=74">
-                            74
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=75">
-                            75
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=76">
-                            76
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=77">
-                            77
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=78">
-                            78
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=79">
-                            79
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=80">
-                            80
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=81">
-                            81
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=82">
-                            82
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=83">
-                            83
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=84">
-                            84
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=85">
-                            85
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=86">
-                            86
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=87">
-                            87
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=88">
-                            88
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=89">
-                            89
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=90">
-                            90
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=91">
-                            91
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=92">
-                            92
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=93">
-                            93
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=94">
-                            94
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=95">
-                            95
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=96">
-                            96
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=97">
-                            97
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=98">
-                            98
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=99">
-                            99
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=100">
-                            100
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=101">
-                            101
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=102">
-                            102
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=103">
-                            103
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=104">
-                            104
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=105">
-                            105
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=106">
-                            106
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=107">
-                            107
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=108">
-                            108
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=109">
-                            109
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=110">
-                            110
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=111">
-                            111
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=112">
-                            112
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=113">
-                            113
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=114">
-                            114
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=115">
-                            115
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=116">
-                            116
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=117">
-                            117
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=118">
-                            118
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=119">
-                            119
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=120">
-                            120
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=121">
-                            121
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=122">
-                            122
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=123">
-                            123
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=124">
-                            124
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=125">
-                            125
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=126">
-                            126
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=127">
-                            127
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=128">
-                            128
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=129">
-                            129
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=130">
-                            130
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=131">
-                            131
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=132">
-                            132
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=133">
-                            133
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=134">
-                            134
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=135">
-                            135
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=136">
-                            136
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=137">
-                            137
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=138">
-                            138
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=139">
-                            139
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=140">
-                            140
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=141">
-                            141
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=142">
-                            142
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=143">
-                            143
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=144">
-                            144
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=145">
-                            145
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=146">
-                            146
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=147">
-                            147
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=148">
-                            148
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=149">
-                            149
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=150">
-                            150
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=151">
-                            151
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=152">
-                            152
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=153">
-                            153
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=154">
-                            154
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=155">
-                            155
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=156">
-                            156
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=157">
-                            157
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=158">
-                            158
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=159">
-                            159
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=160">
-                            160
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=161">
-                            161
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=162">
-                            162
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=163">
-                            163
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=164">
-                            164
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=165">
-                            165
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=166">
-                            166
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=167">
-                            167
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=168">
-                            168
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=169">
-                            169
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=170">
-                            170
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=171">
-                            171
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=172">
-                            172
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=173">
-                            173
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=174">
-                            174
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=175">
-                            175
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=176">
-                            176
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=177">
-                            177
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=178">
-                            178
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=179">
-                            179
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=180">
-                            180
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=181">
-                            181
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=182">
-                            182
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=183">
-                            183
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=184">
-                            184
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=185">
-                            185
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=186">
-                            186
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=187">
-                            187
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=188">
-                            188
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=189">
-                            189
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=190">
-                            190
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=191">
-                            191
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=192">
-                            192
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=193">
-                            193
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=194">
-                            194
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=195">
-                            195
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=196">
-                            196
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=197">
-                            197
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=198">
-                            198
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=199">
-                            199
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=200">
-                            200
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=201">
-                            201
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=202">
-                            202
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=203">
-                            203
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=204">
-                            204
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=205">
-                            205
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=206">
-                            206
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=207">
-                            207
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=208">
-                            208
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=209">
-                            209
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=210">
-                            210
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=211">
-                            211
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=212">
-                            212
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=213">
-                            213
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=214">
-                            214
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=215">
-                            215
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=216">
-                            216
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=217">
-                            217
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=218">
-                            218
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=219">
-                            219
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=220">
-                            220
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=221">
-                            221
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=222">
-                            222
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=223">
-                            223
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=224">
-                            224
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=225">
-                            225
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=226">
-                            226
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=227">
-                            227
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=228">
-                            228
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=229">
-                            229
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=230">
-                            230
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=231">
-                            231
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=232">
-                            232
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=233">
-                            233
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=234">
-                            234
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=235">
-                            235
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=236">
-                            236
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=237">
-                            237
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=238">
-                            238
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=239">
-                            239
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=240">
-                            240
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=241">
-                            241
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=242">
-                            242
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=243">
-                            243
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=244">
-                            244
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=245">
-                            245
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=246">
-                            246
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=247">
-                            247
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=248">
-                            248
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=249">
-                            249
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=250">
-                            250
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=251">
-                            251
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=252">
-                            252
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=253">
-                            253
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=254">
-                            254
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=255">
-                            255
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=256">
-                            256
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=257">
-                            257
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=258">
-                            258
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/physicians-directory/profiles?page=259">
-                            259
-                        </a>
-                    </div>
-                            </div>
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Clinic Directory Profiles</h4>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=1">
-                            1
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=2">
-                            2
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=3">
-                            3
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=4">
-                            4
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=5">
-                            5
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=6">
-                            6
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=7">
-                            7
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=8">
-                            8
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=9">
-                            9
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=10">
-                            10
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=11">
-                            11
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/clinics-directory/profiles?page=12">
-                            12
-                        </a>
-                    </div>
-                            </div>
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Conditions by Region Index</h4>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/annapolis-potomac-conditions-treated-by-location">
-                            1
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/arlington-alexandria-conditions-treated-by-location">
-                            2
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/atlanta-conditions-treated-by-location">
-                            3
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/austin-conditions-treated-by-location">
-                            4
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/bakersfield-conditions-treated-by-location">
-                            5
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/baltimore-conditions-treated-by-location">
-                            6
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/bay-area-conditions-treated-by-location">
-                            7
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/boston-conditions-treated-by-location">
-                            8
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/charlotte-conditions-treated-by-location">
-                            9
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/chicago-conditions-treated-by-location">
-                            10
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/cincinnati-conditions-treated-by-location">
-                            11
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/cleveland-conditions-treated-by-location">
-                            12
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/colorado-springs-conditions-treated-by-location">
-                            13
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/columbus-conditions-treated-by-location">
-                            14
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/dallas-fort-worth-conditions-treated-by-location">
-                            15
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/denver-conditions-treated-by-location">
-                            16
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/detroit-conditions-treated-by-location">
-                            17
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/fort-myers-conditions-treated-by-location">
-                            18
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/fresno-conditions-treated-by-location">
-                            19
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/grand-rapids-conditions-treated-by-location">
-                            20
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/greensboro-conditions-treated-by-location">
-                            21
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/hampton-roads-conditions-treated-by-location">
-                            22
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/hartford-conditions-treated-by-location">
-                            23
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/houston-conditions-treated-by-location">
-                            24
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/indianapolis-conditions-treated-by-location">
-                            25
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/jacksonville-conditions-treated-by-location">
-                            26
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/las-vegas-conditions-treated-by-location">
-                            27
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/los-angeles-inland-empire-conditions-treated-by-location">
-                            28
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/milwaukee-conditions-treated-by-location">
-                            29
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/minneapolis-conditions-treated-by-location">
-                            30
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/nashville-conditions-treated-by-location">
-                            31
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/new-york-city-conditions-treated-by-location">
-                            32
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/oklahoma-city-conditions-treated-by-location">
-                            33
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/orange-county-conditions-treated-by-location">
-                            34
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/orlando-conditions-treated-by-location">
-                            35
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/philadelphia-conditions-treated-by-location">
-                            36
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/phoenix-conditions-treated-by-location">
-                            37
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/pittsburgh-conditions-treated-by-location">
-                            38
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/portland-conditions-treated-by-location">
-                            39
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/raleigh-durham-conditions-treated-by-location">
-                            40
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/reno-conditions-treated-by-location">
-                            41
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/richmond-conditions-treated-by-location">
-                            42
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/sacramento-conditions-treated-by-location">
-                            43
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/salt-lake-city-conditions-treated-by-location">
-                            44
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/san-antonio-conditions-treated-by-location">
-                            45
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/san-diego-conditions-treated-by-location">
-                            46
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/seattle-tacoma-conditions-treated-by-location">
-                            47
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/south-florida-conditions-treated-by-location">
-                            48
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/spokane-conditions-treated-by-location">
-                            49
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/st-louis-conditions-treated-by-location">
-                            50
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/delaware-conditions-treated-by-location">
-                            51
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/tampa-conditions-treated-by-location">
-                            52
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/tucson-conditions-treated-by-location">
-                            53
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/tulsa-conditions-treated-by-location">
-                            54
-                        </a>
-                    </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/washington-dc-conditions-treated-by-location">
-                            55
-                        </a>
-                    </div>
-                            </div>
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Conditions Index</h4>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-acl-injury">
-                            ACL reconstruction
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-acute-whiplash">
-                            acute whiplash
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-adhesive-capsulitis">
-                            adhesive capsulitis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-als">
-                            amyotrophic lateral sclerosis (ALS)
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-ankle-injuries">
-                            ankle injuries
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-ankylosing-spondylitis">
-                            ankylosing spondylitis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-arthritis">
-                            arthritis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-arthroscopic-procedures">
-                            arthroscopic procedures
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-balance-disorders">
-                            balance disorders
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-bone-fractures">
-                            bone fractures
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-bulging-disc">
-                            bulging discs
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-bursitis">
-                            bursitis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-carpal-tunnel">
-                            carpal tunnel syndrome
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-cerebral-palsy">
-                            Cerebral palsy
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-core-stabilization">
-                            core stabilization
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-core-strengthening">
-                            core strengthening
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-crps">
-                            CRPS
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-degenerative-disc-disease">
-                            degenerative disc disease
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-degenerative-joint-disease">
-                            degenerative joint disease
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-de-quervains">
-                            de Quervain’s
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-diastasis-recti">
-                            diastasis recti
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-difficulty-with-gait">
-                            difficulty with gait
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-herniated-disc">
-                            disc herniation
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-dislocated-shoulder">
-                            dislocated shoulder
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-fall-prevention">
-                            fall prevention
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-femoroacetabular-impingement">
-                            femoroacetabular impingement
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-fibromyalgia">
-                            fibromyalgia
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-foot-injuries">
-                            foot injuries
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-gait-analysis">
-                            gait analysis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-general-deconditioning">
-                            general deconditioning
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-golf-elbow">
-                            golfer’s elbow
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-headaches">
-                            headaches
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-heel-pain">
-                            heel pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-heel-spurs">
-                            heel spurs
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-hip-pain">
-                            hip pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-hip-replacement">
-                            hip replacement
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-itb-syndrome">
-                            ITB syndrome
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-joint-replacement">
-                            joint replacement
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-knee-pain">
-                            knee pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-labral-repairs">
-                            labral repairs
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-labral-tears">
-                            labral tears
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-ligament-injuries">
-                            ligament injuries
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-lower-back-pain">
-                            lower back pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-meniscal-repairs">
-                            meniscal repairs
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-meniscus-injuries">
-                            meniscus injuries
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-mid-back-pain">
-                            mid back pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-movement-analysis">
-                            movement analysis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-multiple-sclerosis">
-                            multiple sclerosis (MS)
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-muscle-weakness">
-                            muscle weakness
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-neck-injuries">
-                            neck injuries
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-neck-pain">
-                            neck pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-neurological-conditions">
-                            Neurologic therapy
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-osteoarthritis">
-                            osteoarthritis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-osteoporosis">
-                            osteoporosis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-patellofemoral-syndrome">
-                            patellofemoral pain syndrome
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-pelvic-floor-dysfunction">
-                            pelvic floor therapy
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-piriformis-syndrome">
-                            piriformis syndrome
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-plantar-fasciitis">
-                            plantar fasciitis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-posture-training">
-                            posture training
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-pregnancy-and-postpartum-recovery">
-                            pregnancy &amp; postpartum care
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-and-prehab-for-joint-replacement">
-                            prehab before joint replacement
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-rehab-post-fracture-fixation">
-                            rehab post fracture fixation
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-returning-to-golf">
-                            return to golf
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-returning-to-the-gym">
-                            return to gym
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-returning-to-running">
-                            return to running
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-returning-to-throwing">
-                            return to throwing
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-reverse-total-shoulder-arthroplasty">
-                            Reverse total shoulder arthroplasty
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-rotator-cuff-impingement">
-                            rotator cuff impingement
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-rotator-cuff-tears">
-                            rotator cuff repairs
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-sciatica">
-                            sciatica
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-shin-splints">
-                            shin splints
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-spinal-fusion">
-                            spinal fusion
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-spinal-procedures">
-                            spinal procedures
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-spinal-stenosis">
-                            spinal stenosis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-spondylosis">
-                            spondylosis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-strengthening">
-                            strengthening program
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-stroke">
-                            stroke
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-tendonitis">
-                            tendonitis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-tennis-elbow">
-                            tennis elbow
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-thoracic-outlet-syndrome">
-                            thoracic outlet syndrome
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-total-knee-replacement">
-                            total knee replacement
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-upper-back-pain">
-                            upper back pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-urinary-incontinence">
-                            urinary incontinence
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-vestibular-rehab">
-                            vestibular rehab
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block capitalize"
-                            href="/conditions/physical-therapy-for-womens-health-therapy">
-                            Women’s health therapy
-                        </a>
-                                            </div>
-                            </div>
-
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Locations Index</h4>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/annapolis-potomac-physical-therapy">
-                            Annapolis/Potomac
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/arlington-alexandria-physical-therapy">
-                            Arlington/Alexandria
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/atlanta-physical-therapy">
-                            Atlanta
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/austin-physical-therapy">
-                            Austin
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/bakersfield-physical-therapy">
-                            Bakersfield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/baltimore-physical-therapy">
-                            Baltimore
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/bay-area-physical-therapy">
-                            Bay Area
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/boston-physical-therapy">
-                            Boston
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/charlotte-physical-therapy">
-                            Charlotte
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/chicago-physical-therapy">
-                            Chicago
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/cincinnati-physical-therapy">
-                            Cincinnati
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/cleveland-physical-therapy">
-                            Cleveland
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/colorado-springs-physical-therapy">
-                            Colorado Springs
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/columbus-physical-therapy">
-                            Columbus
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/dallas-fort-worth-physical-therapy">
-                            Dallas/Fort Worth
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/denver-physical-therapy">
-                            Denver
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/detroit-physical-therapy">
-                            Detroit
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/fort-myers-physical-therapy">
-                            Fort Myers
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/fresno-physical-therapy">
-                            Fresno
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/grand-rapids-physical-therapy">
-                            Grand Rapids
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/greensboro-physical-therapy">
-                            Greensboro
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/hampton-roads-physical-therapy">
-                            Hampton Roads
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/hartford-physical-therapy">
-                            Hartford
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/houston-physical-therapy">
-                            Houston
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/indianapolis-physical-therapy">
-                            Indianapolis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/jacksonville-physical-therapy">
-                            Jacksonville
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/las-vegas-physical-therapy">
-                            Las Vegas
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/los-angeles-inland-empire-physical-therapy">
-                            Los Angeles/Inland Empire
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/milwaukee-physical-therapy">
-                            Milwaukee
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/minneapolis-physical-therapy">
-                            Minneapolis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/nashville-physical-therapy">
-                            Nashville
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/new-york-city-physical-therapy">
-                            New York City
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/oklahoma-city-physical-therapy">
-                            Oklahoma City
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/orange-county-physical-therapy">
-                            Orange County
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/orlando-physical-therapy">
-                            Orlando
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/philadelphia-physical-therapy">
-                            Philadelphia
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/phoenix-physical-therapy">
-                            Phoenix
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/pittsburgh-physical-therapy">
-                            Pittsburgh
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/portland-physical-therapy">
-                            Portland
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/raleigh-durham-physical-therapy">
-                            Raleigh/Durham
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/reno-physical-therapy">
-                            Reno
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/richmond-physical-therapy">
-                            Richmond
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/sacramento-physical-therapy">
-                            Sacramento
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/salt-lake-city-physical-therapy">
-                            Salt Lake City
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/san-antonio-physical-therapy">
-                            San Antonio
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/san-diego-physical-therapy">
-                            San Diego
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/seattle-tacoma-physical-therapy">
-                            Seattle/Tacoma
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/south-florida-physical-therapy">
-                            South Florida
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/spokane-physical-therapy">
-                            Spokane
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/st-louis-physical-therapy">
-                            St. Louis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/delaware-physical-therapy">
-                            Sussex County
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/tampa-physical-therapy">
-                            Tampa
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/tucson-physical-therapy">
-                            Tucson
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/tulsa-physical-therapy">
-                            Tulsa
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/washington-dc-physical-therapy">
-                            Washington D.C.
-                        </a>
-                                            </div>
-                            </div>
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Insurances Index</h4>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-aetna-patients">
-                            Aetna
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-ambetter-patients">
-                            Ambetter
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-anthem-blue-cross-patients">
-                            Anthem Blue Cross
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-anthem-blue-cross-blue-shield-patients">
-                            Anthem Blue Cross Blue Shield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-banner-health-patients">
-                            Banner Health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-arizona-patients">
-                            Blue Cross Blue Shield of Arizona
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-florida-patients">
-                            Blue Cross Blue Shield of Florida
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-georgia-patients">
-                            Blue Cross Blue Shield of Georgia
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-illinois-patients">
-                            Blue Cross Blue Shield of Illinois
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-indiana-patients">
-                            Blue Cross Blue Shield of Indiana
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-kansas-patients">
-                            Blue Cross Blue Shield of Kansas
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-massachusetts-patients">
-                            Blue Cross Blue Shield of Massachusetts
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-michigan-patients">
-                            Blue Cross Blue Shield of Michigan
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-minnesota-patients">
-                            Blue Cross Blue Shield of Minnesota
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-north-carolina-patients">
-                            Blue Cross Blue Shield of North Carolina
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-oklahoma-patients">
-                            Blue Cross Blue Shield of Oklahoma
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-bluecross-blueshield-of-tennessee-patients">
-                            BlueCross BlueShield of Tennessee
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-cross-blue-shield-of-texas-patients">
-                            Blue Cross Blue Shield of Texas
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-kc-patients">
-                            Blue KC
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-blue-shield-of-california-patients">
-                            Blue Shield of California
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-boston-medical-center-health-plan-patients">
-                            Boston Medical Center Health Plan
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-bridgespan-health-patients">
-                            BridgeSpan Health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-capital-bluecross-patients">
-                            Capital BlueCross
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-carefirst-bluecross-blueshield-patients">
-                            CareFirst BlueCross BlueShield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-caresource-patients">
-                            CareSource
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-champva-patients">
-                            CHAMPVA
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-cigna-patients">
-                            Cigna
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-clear-spring-health-patients">
-                            Clear Spring Health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-communitycare-patients">
-                            CommunityCare
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-connecticare-emblemhealth-patients">
-                            ConnectiCare/EmblemHealth
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-coordinated-care-patients">
-                            Coordinated Care
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-coventry-healthcare-patients">
-                            Coventry Healthcare
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-denver-health-medical-plan-patients">
-                            Denver Health Medical Plan
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-emblemhealth-patients">
-                            EmblemHealth
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-empire-bluecross-blueshield-patients">
-                            Empire BlueCross BlueShield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-excellus-bluecross-blueshield-patients">
-                            Excellus BlueCross BlueShield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-first-health-patients">
-                            First Health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-geha-patients">
-                            GEHA
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-geisinger-patients">
-                            Geisinger
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-harvard-pilgrim-health-care-patients">
-                            Harvard Pilgrim Health Care
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-health-net-patients">
-                            Health Net
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-healthpartners-patients">
-                            HealthPartners
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-healthsmart-patients">
-                            HealthSmart
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-highmark-blue-cross-blue-shield-patients">
-                            Highmark Blue Cross Blue Shield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-highmark-blue-cross-blue-shield-delaware-patients">
-                            Highmark Blue Cross Blue Shield Delaware
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-highmark-blue-cross-blue-shield-of-western-new-york-patients">
-                            Highmark Blue Cross Blue Shield of Western New York
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-humana-patients">
-                            Humana
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-ihc-patients">
-                            IHC
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-independence-blue-cross-patients">
-                            Independence Blue Cross
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-iu-health-plans-patients">
-                            IU Health Plans
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-kaiser-patients">
-                            Kaiser Permanente
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-la-care-patients">
-                            LA Care
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-medica-patients">
-                            Medica
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-medicaid-patients">
-                            Medicaid
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-medical-mutual-of-ohio-patients">
-                            Medical Mutual of Ohio
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-medicare-patients">
-                            Medicare
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-medicare-advantage-patients">
-                            Medicare Advantage
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-molina-healthcare-patients">
-                            Molina Healthcare
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-multiplan-patients">
-                            MultiPlan
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-optum-patients">
-                            Optum Healthcare Partners Medical Group
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-oxford-health-plans-patients">
-                            Oxford Health Plans
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-premera-blue-cross-patients">
-                            Premera Blue Cross
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-providence-health-plan-patients">
-                            Providence Health Plan
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-regence-blue-cross-blue-shield-patients">
-                            Regence Blue Cross Blue Shield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-regence-blue-shield-patients">
-                            Regence BlueShield
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-renown-health-plan-patients">
-                            Renown Health Plan
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-rocky-mountain-health-plans-patients">
-                            Rocky Mountain Health Plans
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-scripps-health-patients">
-                            Scripps Health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-selecthealth-patients">
-                            SelectHealth
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-tricare-patients">
-                            Tricare
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-tufts-health-plan-patients">
-                            Tufts Health Plan
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-united-healthcare-patients">
-                            United Healthcare
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/insurances/physical-therapy-for-workers-comp-patients">
-                            Workers’ Comp
-                        </a>
-                                            </div>
-                            </div>
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Blog - Recent Posts</h4>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=1">
-                            1
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=2">
-                            2
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=3">
-                            3
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=4">
-                            4
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=5">
-                            5
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=6">
-                            6
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=7">
-                            7
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=8">
-                            8
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=9">
-                            9
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=10">
-                            10
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=11">
-                            11
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=12">
-                            12
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=13">
-                            13
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=14">
-                            14
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=15">
-                            15
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=16">
-                            16
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=17">
-                            17
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=18">
-                            18
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=19">
-                            19
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=20">
-                            20
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=21">
-                            21
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=22">
-                            22
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=23">
-                            23
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=24">
-                            24
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=25">
-                            25
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=26">
-                            26
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=27">
-                            27
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=28">
-                            28
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=29">
-                            29
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=30">
-                            30
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=31">
-                            31
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=32">
-                            32
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=33">
-                            33
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=34">
-                            34
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=35">
-                            35
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=36">
-                            36
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=37">
-                            37
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=38">
-                            38
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=39">
-                            39
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=40">
-                            40
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=41">
-                            41
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=42">
-                            42
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=43">
-                            43
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=44">
-                            44
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=45">
-                            45
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=46">
-                            46
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=47">
-                            47
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=48">
-                            48
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=49">
-                            49
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=50">
-                            50
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=51">
-                            51
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=52">
-                            52
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=53">
-                            53
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=54">
-                            54
-                        </a>
-                    </div>
-                                    <div class="d-inline-block">
-                        <a class="body-small font-weight-100 color-base-100 mr-10"
-                            href="/blog/recent-posts?page=55">
-                            55
-                        </a>
-                    </div>
-                            </div>
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Blog - Tags</h4>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/autonomy">
-                            Autonomy
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/back-pain">
-                            Back Pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/balance-&amp;-mobility">
-                            Balance &amp; Mobility
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/career-development">
-                            Career Development
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/earning-potential">
-                            Earning Potential
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/employees">
-                            Employees
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/flexibility">
-                            Flexibility
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/foot">
-                            Foot
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/health-plans">
-                            Health Plans
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/health-systems">
-                            Health Systems
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/health-trends">
-                            Health Trends
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/hip-health">
-                            Hip health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/independence">
-                            Independence
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/in-home-physical-therapy">
-                            In-Home Physical Therapy
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/injury">
-                            Injury
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/injury-prevention">
-                            Injury prevention
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/injury-recovery">
-                            Injury Recovery
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/insider">
-                            Insider
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/internal-promotion">
-                            Internal Promotion
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/joint-replacements">
-                            Joint Replacements
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/knee-health">
-                            Knee health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/knee-pain">
-                            Knee Pain
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/Rehabrion -culture">
-                            Rehabrion  Culture
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/Rehabrion -pts">
-                            Rehabrion  PTs
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/Rehabrion -therapists">
-                            Rehabrion  Therapists
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/muscle-weakness">
-                            Muscle Weakness
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/news">
-                            News
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/osteoarthritis">
-                            Osteoarthritis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/partners">
-                            Partners
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/patients">
-                            Patients
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/pelvic-health">
-                            Pelvic health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/people-ops">
-                            People Ops
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/physical-therapy">
-                            Physical Therapy
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/physical-therapy-careers">
-                            Physical Therapy Careers
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/physicians">
-                            Physicians
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/posture">
-                            Posture
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/product">
-                            Product
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/senior-health">
-                            Senior Health
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/sports">
-                            Sports
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/startup-growth">
-                            Startup Growth
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/therapist">
-                            Therapist
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/therapists">
-                            Therapists
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/tips">
-                            Tips
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/tag/treatments">
-                            Treatments
-                        </a>
-                                            </div>
-                            </div>
-
-            <div class="d-block">
-                <h4 class="color-base-100 font-weight-normal my-15">Blog - Authors</h4>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/alexander-sah">
-                            Alexander Sah
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/alex-bendersky">
-                            Alex Bendersky
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/alysha-dennis">
-                            Alysha Dennis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/amber-mauro">
-                            Amber Mauro
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/amy-huang">
-                            Amy Huang
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/ashley-aliberti">
-                            Ashley Aliberti
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/ben-wobker">
-                            Ben Wobker
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/christina-rama">
-                            Christina Rama
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/cliff-wolosiansky">
-                            Cliff Wolosiansky
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/dana-strauss">
-                            Dana Strauss
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/eli-lamberson">
-                            Eli Lamberson
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/emilie-kundert">
-                            Emilie Kundert
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/emma-shapiro">
-                            Emma Shapiro
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/jennifer-cloer">
-                            Jennifer Cloer
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/joe-valdez">
-                            Joe Valdez
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/john-seguin">
-                            John Seguin
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/ken-charleston">
-                            Ken Charleston
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/khanh-pham">
-                            Khanh Pham
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/lily-beltran">
-                            Lily Beltran
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/Rehabrion ">
-                            Rehabrion
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/matt-cadile">
-                            Matt Cadile
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/matt-gervais">
-                            Matt Gervais
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/melissa-erlandson">
-                            Melissa Erlandson
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/michelle-marmol">
-                            Michelle Marmol
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/missy-lunn">
-                            Missy Lunn
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/mohamed-khalil">
-                            Mohamed Khalil
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/palak-shah">
-                            Palak Shah
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/rachelle-nguyen">
-                            Rachelle Nguyen
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/ricky-yu">
-                            Ricky Yu
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/ryan-lewis">
-                            Ryan Lewis
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/samuel-koo">
-                            Samuel Koo
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/shay-costa">
-                            Shay Costa
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/sheri-smith">
-                            Sheri Smith
-                        </a>
-                                                    <span class="bullet-separator m-auto mr-5 ml-10 bg-teal-600 d-inline-block"></span>
-                                            </div>
-                                    <div class="d-flex-inline flex-middle">
-                        <a class="body-small font-weight-100 color-base-100 mr-5 d-inline-block"
-                            href="/blog/authors/terry-hanisko">
-                            Terry Hanisko
-                        </a>
-                                            </div>
-                            </div>
-        </div>
-    </section> --}}
-
-		<!-- Modal -->
-{{-- <section class="modal-container p-15 mw-700-px" id="modalCallText" >
-    <div class="modal-body ">
-        <a role="button" class="modal-close close c-pointer z-index-1 overflow-hidden">
-            <img alt="close" class="lazyload w-100" data-src="https://public-assets.getRehabrion .com/images/close-button.svg" width="20px" height="18px"/>
-        </a>
-        <h3 class="d-flex flex-middle flex-center color-purple-800 mb-30 mt-10 font-weight-normal"><span class="icon mr-5"><img alt="phone" class="lazyload mw-20-px mh-20-px" data-src="https://public-assets.getRehabrion .com/images/contact_phone.svg" height="20px" width="20px"></span> Call/Text Us</h3>
-            <a class="button cta-phone-mobile d-flex flex-middle flex-center button-purple mb-10" href="tel:866-525-3175">Call Us 866-525-3175</a>
-                            <a class="button cta-message-mobile d-flex flex-middle flex-center button-purple mb-30" href="sms:916-963-9219;?&body=Hello!%20I’d%20like%20to%20book%20an%20in%20home%20physical%20therapy%20appointment.">Text Us 916-963-9219</a>
-    </div>
-</section>
-<a class="overlay-modal" id="overlay-modalCallText" role="button" aria-label="overlay"></a>
-
-		<a class="
-					button
-					button-appointment
-					flex-middle
-					flex-center
-					z-index-3
-					px-25
-					py-15
-					active
-					fixed
-					rounded-0
-					w-100
-					left-0
-					bottom-0
-					d-none
-					d-xs-flex
-					d-sm-flex
-					active
-					hide
-					bg-teal-600
-					color-base-100
-					mnh-55-px
-					border-0
-					"
-	href="tel:866-525-3175"
-	data-toggle="scrollspy"
-	role="button"
-	data-hide="#why-on-demand"
-	data-top-hide="true"
-	>
-	Call 866-525-3175
-</a> --}}
-
-</footer>
-
-
-</body>
-
-
-    {{-- scripts yaha rakhna --}}
+    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-{{-- ✅ Lazy Load --}}
-<script src="{{ asset('assets/js/libs/jquery.lazy/jquery.lazy.min.js') }}" defer></script>
+{{-- contact --}}
+<script>
+$(function () {
 
-{{-- ✅ jQuery Validation --}}
-<script src="{{ asset('assets/js/libs/jquery.validate.min.js') }}" defer></script>
+  function clearErrors(){
+    $('[data-error]').text('');
+    $('#contactForm .form-control').removeClass('is-invalid');
+  }
 
-{{-- ✅ Input Mask --}}
-<script src="{{ asset('assets/js/libs/jquery.mask.min.js') }}" defer></script>
+ function showCenterPopup(title, msg, isError){
+  $('#thankYouTitle').text(title || (isError ? 'Error' : 'Thank you'));
+  $('#thankYouMsg').text(msg || '');
 
-{{-- ✅ COMPONENTS --}}
-<script src="{{ asset('assets/js/components/tabs.js') }}" defer></script>
-<script src="{{ asset('assets/js/components/faq.section.js') }}" defer></script>
-<script src="{{ asset('assets/js/components/modal.js') }}" defer></script>
-<script src="{{ asset('assets/js/components/scrollspy.js') }}" defer></script>
-<script src="{{ asset('assets/js/components/phoneMask.js') }}" defer></script>
-<script src="{{ asset('assets/js/components/toogle.js') }}" defer></script>
- <script src="{{ asset('assets/js/components/slides.components.js') }}" defer></script>
-<script src="{{ asset('assets/js/components/principal.brands.slide.js') }}" defer></script>
-<script src="{{ asset('assets/js/components/script.lazyload.js') }}" defer></script>
+  var iconBox = $('#thankYouModal .modal-body > div').first();
+  var icon = $('#thankYouModal i.fas');
 
-{{-- ✅ MAIN PAGE SCRIPTS --}}
-<script src="{{ asset('assets/js/main.js') }}" defer></script>
-<script src="{{ asset('assets/js/pages/home.js') }}" defer></script>
+  if(isError){
+    iconBox.css({ background:'rgba(220,53,69,0.12)', color:'#dc3545' });
+    icon.removeClass('fa-check').addClass('fa-triangle-exclamation');
+  } else {
+    iconBox.css({ background:'rgba(13,148,136,0.12)', color:'#0d9488' });
+    icon.removeClass('fa-triangle-exclamation').addClass('fa-check');
+  }
+
+  var modalEl = document.getElementById('thankYouModal');
+  var modal = bootstrap.Modal.getOrCreateInstance(modalEl, {
+    backdrop: 'static',
+    keyboard: true
+  });
+
+  modal.show();
+
+  // ✅ AUTO CLOSE after 2.8 seconds
+  setTimeout(function(){
+    modal.hide();
+  }, 2800);
+}
+
+
+  $('#contactForm').on('submit', function(e){
+    e.preventDefault();
+    clearErrors();
+
+    var $form = $(this);
+    var url = $form.attr('action');
+    var btn = $('#contactSubmitBtn');
+    var btnHtml = btn.html();
+
+    btn.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2"></span> Sending...');
+
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: $form.serialize(),
+      headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+      success: function(res){
+        if(res && res.ok){
+          showCenterPopup('Thank you', res.message || 'Your message has been submitted successfully.', false);
+          $form[0].reset();
+          clearErrors();
+        } else {
+          showCenterPopup('Error', 'Something went wrong. Please try again.', true);
+        }
+      },
+      error: function(xhr){
+        if(xhr.status === 422 && xhr.responseJSON && xhr.responseJSON.errors){
+          var errors = xhr.responseJSON.errors;
+
+          Object.keys(errors).forEach(function(key){
+            $('[data-error="'+key+'"]').text(errors[key][0]);
+            $('#'+key).addClass('is-invalid');
+          });
+
+          showCenterPopup('Fix required', 'Please correct the highlighted fields.', true);
+        } else {
+          showCenterPopup('Server error', 'Server error. Please try again.', true);
+        }
+      },
+      complete: function(){
+        btn.prop('disabled', false).html(btnHtml);
+      }
+    });
+  });
+
+});
+</script>
+
+
+    <script>
+        $(document).ready(function(){
+            // Initialize therapists carousel with better settings
+            $("#therapists-carousel").owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 15
+                    },
+                    576: {
+                        items: 1,
+                        margin: 20
+                    },
+                    768: {
+                        items: 2,
+                        margin: 20
+                    },
+                    992: {
+                        items: 3,
+                        margin: 25
+                    },
+                    1200: {
+                        items: 3,
+                        margin: 30
+                    }
+                }
+            });
+
+            // Initialize Luna style testimonials carousels
+            $("#testimonials-carousel-1").owlCarousel({
+                loop: true,
+                margin: 25,
+                nav: false,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 15
+                    },
+                    576: {
+                        items: 1,
+                        margin: 15
+                    },
+                    768: {
+                        items: 2,
+                        margin: 15
+                    },
+                    992: {
+                        items: 3,
+                        margin: 20
+                    },
+                    1200: {
+                        items: 4,
+                        margin: 25
+                    }
+                }
+            });
+
+            $("#testimonials-carousel-2").owlCarousel({
+                loop: true,
+                margin: 25,
+                nav: false,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 15
+                    },
+                    576: {
+                        items: 1,
+                        margin: 15
+                    },
+                    768: {
+                        items: 2,
+                        margin: 15
+                    },
+                    992: {
+                        items: 3,
+                        margin: 20
+                    },
+                    1200: {
+                        items: 4,
+                        margin: 25
+                    }
+                },
+                startPosition: 1 // Start at second item for staggered effect
+            });
+
+            // Custom carousel navigation for all carousels
+            $(".luna-carousel-nav.next").click(function(){
+                $(this).parent().find(".owl-carousel").each(function() {
+                    $(this).trigger('next.owl.carousel');
+                });
+            });
+
+            $(".luna-carousel-nav.prev").click(function(){
+                $(this).parent().find(".owl-carousel").each(function() {
+                    $(this).trigger('prev.owl.carousel');
+                });
+            });
+
+            // Make all cards in a row equal height
+            function equalizeCardHeights() {
+                $('.row-equal-height').each(function() {
+                    var maxHeight = 0;
+                    $(this).find('.step-card, .why-grid-card').each(function() {
+                        $(this).css('min-height', '');
+                        var height = $(this).outerHeight();
+                        if (height > maxHeight) {
+                            maxHeight = height;
+                        }
+                    });
+                    $(this).find('.step-card, .why-grid-card').css('min-height', maxHeight + 'px');
+                });
+            }
+
+            // Equalize Luna testimonial card heights
+            function equalizeLunaTestimonialCards() {
+                var maxHeight = 0;
+                $('.luna-testimonial-card').each(function() {
+                    $(this).css('min-height', '');
+                    var height = $(this).outerHeight();
+                    if (height > maxHeight) {
+                        maxHeight = height;
+                    }
+                });
+                $('.luna-testimonial-card').css('min-height', maxHeight + 'px');
+            }
+
+            // Call on load and resize
+            $(window).on('load resize', function() {
+                equalizeCardHeights();
+                equalizeLunaTestimonialCards();
+            });
+
+            // Equalize therapist card heights in carousel
+            function equalizeTherapistCards() {
+                var maxHeight = 0;
+                $('#therapists-carousel .therapist-card, #therapists-carousel .know-card').each(function() {
+                    $(this).css('min-height', '');
+                    var height = $(this).outerHeight();
+                    if (height > maxHeight) {
+                        maxHeight = height;
+                    }
+                });
+                $('#therapists-carousel .therapist-card, #therapists-carousel .know-card').css('min-height', maxHeight + 'px');
+            }
+
+            // Initialize equal heights after carousel is loaded
+            setTimeout(function() {
+                equalizeTherapistCards();
+                equalizeLunaTestimonialCards();
+            }, 500);
+
+            // Re-equalize on carousel change
+            $('#therapists-carousel').on('changed.owl.carousel', function(event) {
+                setTimeout(equalizeTherapistCards, 100);
+            });
+
+            // Mobile menu close on click
+            $('.navbar-nav>li>a').on('click', function(){
+                $('.navbar-collapse').collapse('hide');
+            });
+
+            // Add smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle nested dropdowns on hover (desktop)
+        const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+
+        dropdownSubmenus.forEach(submenu => {
+            const dropdownToggle = submenu.querySelector('.dropdown-toggle');
+
+            // Desktop hover behavior
+            if (window.innerWidth > 768) {
+                submenu.addEventListener('mouseenter', function() {
+                    const dropdownMenu = this.querySelector('.dropdown-menu');
+                    dropdownMenu.classList.add('show');
+                });
+
+                submenu.addEventListener('mouseleave', function() {
+                    const dropdownMenu = this.querySelector('.dropdown-menu');
+                    dropdownMenu.classList.remove('show');
+                });
+            }
+
+            // Mobile click behavior
+            if (window.innerWidth <= 768) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const parent = this.parentElement;
+                    const dropdownMenu = this.nextElementSibling;
+
+                    // Close other open submenus
+                    document.querySelectorAll('.dropdown-submenu .dropdown-menu.show').forEach(menu => {
+                        if (menu !== dropdownMenu) {
+                            menu.classList.remove('show');
+                        }
+                    });
+
+                    // Toggle current submenu
+                    dropdownMenu.classList.toggle('show');
+                });
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown-submenu')) {
+                document.querySelectorAll('.dropdown-submenu .dropdown-menu.show').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        });
+
+        // Mobile accordion auto-close
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const collapseElement = this.getAttribute('data-bs-target');
+
+                if (collapseElement) {
+                    // Close other accordions at same level
+                    const parentAccordion = this.closest('.accordion');
+                    if (parentAccordion) {
+                        const openItems = parentAccordion.querySelectorAll('.accordion-collapse.show');
+                        openItems.forEach(item => {
+                            if (item.id !== collapseElement.substring(1)) {
+                                const bsCollapse = bootstrap.Collapse.getInstance(item);
+                                if (bsCollapse) {
+                                    bsCollapse.hide();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+
+        if (window.innerWidth <= 768) {
+            // Mobile: remove hover behavior
+            dropdownSubmenus.forEach(submenu => {
+                submenu.onmouseenter = null;
+                submenu.onmouseleave = null;
+            });
+        } else {
+            // Desktop: add hover behavior
+            dropdownSubmenus.forEach(submenu => {
+                submenu.onmouseenter = function() {
+                    const dropdownMenu = this.querySelector('.dropdown-menu');
+                    dropdownMenu.classList.add('show');
+                };
+
+                submenu.onmouseleave = function() {
+                    const dropdownMenu = this.querySelector('.dropdown-menu');
+                    dropdownMenu.classList.remove('show');
+                };
+            });
+        }
+    });
+</script>
 
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const tab     = document.getElementById('rehabContactTab');
-    const panel   = document.getElementById('rehabContactPanel');
-    const overlay = document.getElementById('rehabContactOverlay');
-    const closeBtn = document.getElementById('rehabContactClose');
+  if (window.matchMedia('(min-width: 992px)').matches) {
 
-    function openPanel() {
-        panel.classList.add('is-open');
-        overlay.hidden = false;
-        overlay.classList.add('show');
-        tab.setAttribute('aria-expanded', 'true');
-        panel.setAttribute('aria-hidden', 'false');
+    const submenus = document.querySelectorAll('.dropdown-submenu');
+    const hideTimers = new Map();
+
+    function openSubmenu(li) {
+      const menu = li.querySelector(':scope > .dropdown-menu');
+      if (!menu) return;
+
+      li.classList.add('show');
+      menu.classList.add('show');
+
+      const parentDropdown = li.closest('.dropdown');
+      if (parentDropdown) {
+        parentDropdown.classList.add('show');
+        const parentMenu = parentDropdown.querySelector(':scope > .dropdown-menu');
+        if (parentMenu) parentMenu.classList.add('show');
+      }
     }
 
-    function closePanel() {
-        panel.classList.remove('is-open');
-        overlay.classList.remove('show');
-        setTimeout(() => { overlay.hidden = true; }, 200);
-        tab.setAttribute('aria-expanded', 'false');
-        panel.setAttribute('aria-hidden', 'true');
+    function closeSubmenu(li) {
+      const menu = li.querySelector(':scope > .dropdown-menu');
+      if (!menu) return;
+
+      li.classList.remove('show');
+      menu.classList.remove('show');
     }
 
-    tab.addEventListener('click', function () {
-        if (panel.classList.contains('is-open')) {
-            closePanel();
-        } else {
-            openPanel();
-        }
+    function scheduleClose(li) {
+      clearTimeout(hideTimers.get(li));
+      hideTimers.set(li, setTimeout(function () {
+        closeSubmenu(li);
+      }, 180));
+    }
+
+    function cancelClose(li) {
+      clearTimeout(hideTimers.get(li));
+    }
+
+    submenus.forEach(function (li) {
+      const menu = li.querySelector(':scope > .dropdown-menu');
+
+      li.addEventListener('mouseenter', function () {
+        cancelClose(li);
+        openSubmenu(li);
+      });
+
+      li.addEventListener('mouseleave', function () {
+        scheduleClose(li);
+      });
+
+      if (menu) {
+        menu.addEventListener('mouseenter', function () {
+          cancelClose(li);
+          openSubmenu(li);
+        });
+
+        menu.addEventListener('mouseleave', function () {
+          scheduleClose(li);
+        });
+      }
     });
 
-    closeBtn.addEventListener('click', closePanel);
-    overlay.addEventListener('click', closePanel);
-
-    window.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            closePanel();
-        }
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dropdown')) {
+        submenus.forEach(function (li) { closeSubmenu(li); });
+      }
     });
+  }
 });
 </script>
 
-</html>
+{{-- what we treat --}}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabButtons = document.querySelectorAll('#conditionsTabs .btn');
+  const cols = document.querySelectorAll('.condition-col');
 
+  function applyFilter(filterValue){
+    cols.forEach(col => {
+      const category = col.getAttribute('data-category');
+      const show = (filterValue === 'all') || (category === filterValue);
+
+      if(show){
+        col.classList.remove('d-none');
+        col.classList.remove('fade-in');
+        void col.offsetWidth;
+        col.classList.add('fade-in');
+      } else {
+        col.classList.add('d-none');
+      }
+    });
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', function(){
+      tabButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      applyFilter(this.getAttribute('data-filter'));
+    });
+  });
+
+  applyFilter('all');
+});
+</script>
+
+
+<script>
+document.addEventListener('click', function(e){
+  const link = e.target.closest('.vertical-contact-btn[href^="#"]');
+  if(!link) return;
+
+  const target = document.querySelector(link.getAttribute('href'));
+  if(!target) return;
+
+  e.preventDefault();
+
+  const header = document.getElementById('header');
+  const offset = header ? header.offsetHeight : 0;
+
+  const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

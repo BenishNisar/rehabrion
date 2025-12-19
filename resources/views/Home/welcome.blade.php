@@ -1,966 +1,873 @@
 @extends("Layout.layout")
 @section("Content")
 
-	<main class="front-page index relative">
 
-  <section id="free-delivery" class="color-purple-600 fw-ligther bg-purple-100 text-center py-10">
-  <div class="wrapper">
-    <b>
-   Rehab & Physical Care, delivered to you</b>
-  </div>
-</section>
-		<!-- Intro  -->
-			<section id="hero" class="relative overflow-hidden overlay-50 mnh-xs-400-px">
-				<span class="trigger-header-phone"></span>
-				<div class="wrapper py-90 py-md-60 py-sm-60 py-xs-50">
-					<div class="row flex-sm-center flex-xs-center">
-						<div
-							class="col-5 offset-xxl-1 col-xl-6 col-lg-6 col-md-7 col-sm-12 col-xs-12  text-sm-center text-xs-center">
-							<h1 class="mt-0 mb-35 font-weight-normal">Physical therapy,<br><span>delivered to you</span></h1>
-							<h3 class="color-base-100 my-0 px-20 d-sm-none d-xs-none font-weight-400">
-								Call <a class="color-base-100"
-									href="tel:866-525-3175">866-525-3175</a>
-							</h3>
-							<label
-								class="line-label font-20 d-block relative mw-300-px mb-10 m-sm-0-auto m-xs-0-auto d-sm-none d-xs-none">
-								or
-							</label>
+    <!-- Hero Section - UPDATED -->
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <div class="hero-badge floating-icon">
+                            <i class="fas fa-badge-check"></i> Trusted by 50,000+ Patients
+                        </div>
 
-							<form method="get" id="check_zip" action="/appointment" class="bg-purple-600 py-30 px-20 py-sm-25 py-xs-25 px-sm-15 px-xs-15 rounded">
-								<input type="hidden" name="_token" value="JEmFJr1hCHgmJeVWZYQNtL7TFb5eUtBc922MQk1z" autocomplete="off">								<div class="input-group form-item">
-									<div class="input-group-item">
-										<input type="number" pattern="[0-9]*" class="input-element w-100 number-input" id="zipCode" name="zipCode"
-											required placeholder="Enter Zip Code" maxlength="5"
-											oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        <h1 class="display-4 fw-bold mb-3">Rehab & Physical Care,
+<br><span class="text-dark">Delivered to You</span></h1>
 
-										<input type="hidden" id="utm_campaign" name="utm_campaign" value="" />
-										<input type="hidden" id="utm_source" name="utm_source" value=""/>
-										<input type="hidden" id="utm_medium" name="utm_medium" value=""/>
-										<input type="hidden" id="utm_term" name="utm_term" value=""/>
-										<input type="hidden" id="utm_content" name="utm_content" value=""/>
-									</div>
-									<div class="input-group-append mt-xs-10">
-							<a href="{{ asset("/submit-medical-history") }}">
-    <button class="button button-teal cta-check-availability" type="button">
-        Check Availability
-    </button>
-</a>
+                        <p class="lead mb-4">Personalized rehabilitation and musculoskeletal care — wherever you are, whenever you need it.
+</p>
 
-                                </div>
-								</div>
-								<div class="form-item mt-15 lh-1 d-flex flex-middle">
-<a href="/verify-email" class="underline color-base-100 lh-1">
-    Continue as a returning patient
-</a>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="bg-hero d-sm-none d-xs-none" style="background-image: url(https://public-assets.getluna.com/images/intro.webp)"></div>
-				<div class="bg-hero d-none d-sm-block d-xs-block bg-pos-sm-x-25 bg-pos-xs-x-50" style="background-image: url(https://public-assets.getluna.com/images/hero-intro-mobile.webp)"></div>
-			</section>
-		<!-- End Intro  -->
+                        <div class="hero-cta-buttons">
+                            <a href="{{ asset('/submit-medical-history') }}" class="btn btn-hero-primary">
+                                <i class="fas fa-calendar-check"></i> Book Consultation
+                            </a>
 
+                            <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information"
+       target="_blank"
+       rel="noopener" class="btn btn-hero-secondary">
+                               <i class="fas fa-phone-volume "></i>
++971 50 565 3483
+                            </a>
+                        </div>
 
-						<!-- Expert Vetted -->
-<section id="expert-vetter" class="py-40 py-xs-25 py-sm-25">
-    <div class="wrapper-full">
-                    <span class="d-block text-center mb-10 " >
-                <img class="lazy" data-src="https://public-assets.getluna.com/images/line_title.svg" alt="Separator" width="45px" height="6px">
-            </span>
-            <h2 class=" color-purple-800 mt-0 text-center font-weight-normal ">Expert physical therapists</h2>
-
-                    <p class="mt-0 text-center mb-40">Over 3,000 licensed outpatient therapists are ready to come to you.</p>
-
-        <!-- Posts -->
-            <div class="mw-1150-px m-auto mb-40 relative">
-                <div class="experts-slide owl-carousel owl-theme">
-
-
-                        <article class="mw-350-px w-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 mb-10">
-                            <div class="overflow-hidden h-200-px h-xs-150-px w-100">
-                                <div class="aspect-ratio">
-                                    <img alt="photo" class="w-100 owl-lazy" data-src="https://public-assets.getluna.com/images/therapists/20230314_100332_amanda_van_frank.webp" alt="Amanda Van Frank" width="350px" height="250px">
-                                </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">3,000+</div>
+                                <div class="stat-label">Licensed Therapists</div>
                             </div>
-                            <div class="py-15 px-20 py-xs-10">
-                                                                <h4 class="color-purple-800 mb-0 mt-0 font-weight-normal">Amanda F.</h4>
-                                                                    <h5 class="mt-0 font-weight-normal mb-10">Doctor of Physical Therapy</h5>
-
-
-
-                                <p class="lh-11 lh-xxl-13 lh-xl-13 lh-lg-13">
-                                    <strong class="d-block">Specializes in:</strong>
-                                                                            Geriatric, Orthopedics and Sport Medicine
-                                                                    </p>
-
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">States Covered</div>
                             </div>
-                        </article>
-
-
-
-
-                        <article class="mw-350-px w-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 mb-10">
-                            <div class="overflow-hidden h-200-px h-xs-150-px w-100">
-                                <div class="aspect-ratio">
-                                    <img alt="photo" class="w-100 owl-lazy" data-src="https://public-assets.getluna.com/images/therapists/20230314_100348_joshua_arellano.webp" alt="Joshua Arellano" width="350px" height="250px">
-                                </div>
+                            <div class="stat-item">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Patient Satisfaction</div>
                             </div>
-                            <div class="py-15 px-20 py-xs-10">
-                                                                <h4 class="color-purple-800 mb-0 mt-0 font-weight-normal">Joshua A.</h4>
-                                                                    <h5 class="mt-0 font-weight-normal mb-10">Physical Therapist</h5>
-
-
-
-                                <p class="lh-11 lh-xxl-13 lh-xl-13 lh-lg-13">
-                                    <strong class="d-block">Specializes in:</strong>
-                                                                            Geriatrics, Orthopedics and Sports Medicine, Sports Injuries, ACL Rehab, Spinal Rehab
-                                                                    </p>
-
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Support Available</div>
                             </div>
-                        </article>
-
-
-
-
-                        <article class="mw-350-px w-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 mb-10">
-                            <div class="overflow-hidden h-200-px h-xs-150-px w-100">
-                                <div class="aspect-ratio">
-                                    <img alt="photo" class="w-100 owl-lazy" data-src="https://public-assets.getluna.com/images/therapists/20230314_100356_karen_khuu.webp" alt="Karen Khuu" width="350px" height="250px">
-                                </div>
-                            </div>
-                            <div class="py-15 px-20 py-xs-10">
-                                                                <h4 class="color-purple-800 mb-0 mt-0 font-weight-normal">Karen K.</h4>
-                                                                    <h5 class="mt-0 font-weight-normal mb-10">Doctor of Physical Therapy</h5>
-
-
-
-                                <p class="lh-11 lh-xxl-13 lh-xl-13 lh-lg-13">
-                                    <strong class="d-block">Specializes in:</strong>
-                                                                            Orthopedics and Sports Medicine, Pelvic Floor
-                                                                    </p>
-
-                            </div>
-                        </article>
-
-
-
-                                    <!--Get Care with Luna-->
-                                        <article class="mw-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 bg-teal-600 mb-10">
-                                            <div class="h-100 w-100 py-60 px-40 py-xs-45 px-xs-25 flex-center d-flex flex-middle flex-wrap flex-evenly">
-                                                <h3 class="color-base-100 font-weight-normal text-center m-0">Did you know?</h3>
-                                                <p class="color-base-100 text-center m-0">100% of Rehabriontherapists are licensed board-certified physical therapists and on average have more than 10 years of experience.</p>
-                                                <a class="button button-base d-flex flex-middle flex-center" href="/appointment"><span class="color-teal-600"> Check Availability </span></a>
-                                            </div>
-                                        </article>
-                                    <!-- .Get Care with Rehabrion-->
-
-
-
-                        <article class="mw-350-px w-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 mb-10">
-                            <div class="overflow-hidden h-200-px h-xs-150-px w-100">
-                                <div class="aspect-ratio">
-                                    <img alt="photo" class="w-100 owl-lazy" data-src="https://public-assets.getluna.com/images/therapists/20230314_100303_mika_toribara.webp" alt="Mika Toribara" width="350px" height="250px">
-                                </div>
-                            </div>
-                            <div class="py-15 px-20 py-xs-10">
-                                                                <h4 class="color-purple-800 mb-0 mt-0 font-weight-normal">Mika T.</h4>
-                                                                    <h5 class="mt-0 font-weight-normal mb-10">Doctor of Physical Therapy</h5>
-
-
-
-                                <p class="lh-11 lh-xxl-13 lh-xl-13 lh-lg-13">
-                                    <strong class="d-block">Specializes in:</strong>
-                                                                            Sports Rehab, Movement Based Approach, Spinal Rehab, Health Coaching
-                                                                    </p>
-
-                            </div>
-                        </article>
-
-
-
-
-                        <article class="mw-350-px w-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 mb-10">
-                            <div class="overflow-hidden h-200-px h-xs-150-px w-100">
-                                <div class="aspect-ratio">
-                                    <img alt="photo" class="w-100 owl-lazy" data-src="https://public-assets.getluna.com/images/therapists/20230314_100309_paul_nguyen.webp" alt="Paul Nguyen" width="350px" height="250px">
-                                </div>
-                            </div>
-                            <div class="py-15 px-20 py-xs-10">
-                                                                <h4 class="color-purple-800 mb-0 mt-0 font-weight-normal">Paul N.</h4>
-                                                                    <h5 class="mt-0 font-weight-normal mb-10">Physical Therapist</h5>
-
-
-
-                                <p class="lh-11 lh-xxl-13 lh-xl-13 lh-lg-13">
-                                    <strong class="d-block">Specializes in:</strong>
-                                                                            Manual Therapy, Spine Care, Post Operative Rehab
-                                                                    </p>
-
-                            </div>
-                        </article>
-
-
-
-
-                        <article class="mw-350-px w-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 mb-10">
-                            <div class="overflow-hidden h-200-px h-xs-150-px w-100">
-                                <div class="aspect-ratio">
-                                    <img alt="photo" class="w-100 owl-lazy" data-src="https://public-assets.getluna.com/images/therapists/20230314_100340_elaine_huddon.webp" alt="Elaine Huddon" width="350px" height="250px">
-                                </div>
-                            </div>
-                            <div class="py-15 px-20 py-xs-10">
-                                                                <h4 class="color-purple-800 mb-0 mt-0 font-weight-normal">Elaine H.</h4>
-                                                                    <h5 class="mt-0 font-weight-normal mb-10">Doctor of Physical Therapy</h5>
-
-
-
-                                <p class="lh-11 lh-xxl-13 lh-xl-13 lh-lg-13">
-                                    <strong class="d-block">Specializes in:</strong>
-                                                                            McKenzie Method of Spine Care, Post Operative Rehab
-                                                                    </p>
-
-                            </div>
-                        </article>
-
-
-                                                                                                                        <!--Get Care with Luna-->
-                                        <article class="mw-350-px mw-xs-300-px h-400-px mh-xs-350-px w-100-p d-inline-block shadow-center-3 mx-15 bg-teal-600 mb-10">
-                                            <div class="h-100 w-100 py-60 px-40 py-xs-45 px-xs-25 flex-center d-flex flex-middle flex-wrap flex-evenly">
-                                                <h3 class="color-base-100 font-weight-normal text-center m-0">Did you know?</h3>
-                                                <p class="color-base-100 text-center m-0">Rehabriontherapists are experienced. The average Rehabriontherapist has treated patients for more than 20,500 hours in their career.</p>
-                                                <a class="button button-base d-flex flex-middle flex-center" href="/appointment"><span class="color-teal-600"> Check Availability </span></a>
-                                            </div>
-                                        </article>
-                                    <!-- .Get Care with Rehabrion-->
-
-                                                                                        </div>
-
-                <a class="
-                                            arrow prev d-flex absolute left-0 top-0 bottom-0 m-auto flex-center flex-middle c-pointer d-xs-none
-                    "
-                    role="button">
-                    <img alt="arrow" class="w-50 lazy" data-src="https://public-assets.getluna.com/images/right_arrow.svg" width="20px" height="20px">
-                </a>
-                <a class="
-                                            arrow next d-flex absolute right-0 top-0 bottom-0 m-auto flex-center flex-middle c-pointer d-xs-none"
-                                        role="button">
-                    <img alt="arrow" class="w-50 lazy" data-src="https://public-assets.getluna.com/images/right_arrow.svg" width="20px" height="20px">
-                </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <!-- .Posts -->
+        </div>
+    </section>
 
-                    <div id="fold-buttons" class="mt-xs-10 mt-sm-10  text-center ">
-    <a
-                    class="d-none"
-                href="tel:866-525-3175">
-        Call 866-525-3175
-    </a>
+    <!-- Expert Vetted Therapists -->
+    <section id="expert-vetted" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="divider"></div>
+                    <h2 class="section-title">Expert Physiotherapy & Rehabilitation Team</h2>
+                    <p class="section-subtitle">
+At Rehabrion, your recovery is guided by trained, experienced, and compassionate professionals who specialize in musculoskeletal (MSK) care and modern rehabilitation techniques.
+                    </p>
+                </div>
+            </div>
 
-            <a
-                            class="button cta-modal-mobile d-xxl-none d-xl-none d-lg-none d-md-flex-inline d-sm-flex-inline d-xs-flex button-purple d-flex-inline flex-middle flex-center mb-xs-20 "
-                        href="tel:866-525-3175"
-            role="button">
-            Call 866-525-3175
-        </a>
-
-    <span
-                    class="d-none d-md-inline d-sm-inline mx-10 "
-                >
-        or
-    </span>
-    <a
-                    class="button cta-check-availability button button-purple outline d-xxl-flex-inline d-xl-flex-inline d-lg-flex-inline d-md-flex-inline d-sm-flex-inline d-xs-flex flex-middle flex-center "
-                href="/appointment">
-        Check Availability
-    </a>
-
-</div>
-
-
-    </div>
-</section>
-<!-- .Expert Vetted -->
-
-		<!-- How It Works -->
-			<section   id="how-it-works"   class="py-50  bg-base-200 ">
-    <div class="wrapper-full ">
-
-                    <span class="  d-block  text-center mb-10">
-                <img class="lazy" data-src="https://public-assets.getluna.com/images/line_title.svg" alt="Separator" width="45px" height="6px">
-            </span>
-            <h2 class="color-purple-800 mt-0 text-center font-weight-normal ">How it works</h2>
-
-
-        <div class="row mb-30 mb-xs-0 mb-sm-0  mt-40  mw-1100-px m-auto ">
-
-                <article class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 d-sm-none d-xs-none">
-                    <img alt="we-come-you" class="lazy mw-100-px m-auto d-block" data-src="https://public-assets.getluna.com/images/icons/we-come-you.svg" height="100px" width="100px">
-                    <h3 class="color-purple-800 mt-25 text-center font-weight-normal mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-300-px mw-xl-300-px mw-lg-300-px mw-xl-300-px mnh mx-auto d-block">Get matched with a therapist</h3>
-
-                </article>
-
-                <article class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 d-sm-none d-xs-none">
-                    <img alt="at-home" class="lazy mw-100-px m-auto d-block" data-src="https://public-assets.getluna.com/images/icons/at-home.svg" height="100px" width="100px">
-                    <h3 class="color-purple-800 mt-25 text-center font-weight-normal mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-300-px mw-xl-300-px mw-lg-300-px mw-xl-300-px mnh mx-auto d-block">Sessions On Your Schedule
-</h3>
-
-                </article>
-
-                <article class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 d-sm-none d-xs-none">
-                    <img alt="in-app" class="lazy mw-100-px m-auto d-block" data-src="https://public-assets.getluna.com/images/icons/in-app.svg" height="100px" width="100px">
-                    <h3 class="color-purple-800 mt-25 text-center font-weight-normal mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-300-px mw-xl-300-px mw-lg-300-px mw-xl-300-px mnh mx-auto d-block">Heal Faster With Expert Care
-</h3>
-
-                </article>
-
-
-                <article class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 d-sm-none d-xs-none">
-                                        <p class="text-center mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-100-p mw-xl-100-p mx-auto d-block">We assess your condition, goals, and lifestyle before pairing you with the right rehab expert.
-</p>
-                </article>
-
-
-                <article class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 d-sm-none d-xs-none">
-                                        <p class="text-center mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-100-p mw-xl-100-p mx-auto d-block">Get therapy at home or online – no clinic stress, no waiting lines.
-</p>
-                </article>
-
-
-                <article class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 d-sm-none d-xs-none">
-                                        <p class="text-center mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-100-p mw-xl-100-p mx-auto d-block">Track progress, improve mobility, and reduce pain with consistent guided sessions.
-</p>
-                </article>
-
-
-                                            <article class="col-sm-12 col-xs-12 mb-sm-20 mb-xs-20 d-none d-xs-block d-sm-block">
-                    <img alt="we-come-you" class="lazy mw-100-px m-auto d-block" data-src="https://public-assets.getluna.com/images/icons/we-come-you.svg" height="100px" width="100px">
-                    <h3 class="color-purple-800 mt-25 text-center font-weight-normal mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-300-px mw-xl-300-px mw-lg-300-px mw-xl-300-px mnh mx-auto d-block">Get matched with a therapist</h3>
-                                        <p class="text-center mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-100-p mw-xl-100-p mx-auto d-block mb-sm-0 mb-xs-0">Work with the same physical therapist who’s an expert in your condition for every appointment.</p>
-                </article>
-                                            <article class="col-sm-12 col-xs-12 mb-sm-20 mb-xs-20 d-none d-xs-block d-sm-block">
-                    <img alt="at-home" class="lazy mw-100-px m-auto d-block" data-src="https://public-assets.getluna.com/images/icons/at-home.svg" height="100px" width="100px">
-                    <h3 class="color-purple-800 mt-25 text-center font-weight-normal mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-300-px mw-xl-300-px mw-lg-300-px mw-xl-300-px mnh mx-auto d-block">Sessions On Your Schedule
-</h3>
-                                        <p class="text-center mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-100-p mw-xl-100-p mx-auto d-block mb-sm-0 mb-xs-0">Get therapy at home or online – no clinic stress, no waiting lines.
-</p>
-                </article>
-                                            <article class="col-sm-12 col-xs-12 mb-sm-20 mb-xs-20 d-none d-xs-block d-sm-block">
-                    <img alt="in-app" class="lazy mw-100-px m-auto d-block" data-src="https://public-assets.getluna.com/images/icons/in-app.svg" height="100px" width="100px">
-                    <h3 class="color-purple-800 mt-25 text-center font-weight-normal mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-300-px mw-xl-300-px mw-lg-300-px mw-xl-300-px mnh mx-auto d-block">Heal Faster With Expert Care
-</h3>
-                                        <p class="text-center mw-250-px mw-sm-300-px mw-xs-300-px mw-xxl-100-p mw-xl-100-p mx-auto d-block mb-sm-0 mb-xs-0">Track progress, improve mobility, and reduce pain with consistent guided sessions.
-</p>
-                </article>
+            <!-- Therapists Carousel -->
+            <div class="position-relative mt-4">
+                <div class="owl-carousel owl-theme" id="therapists-carousel">
+                    <!-- Therapist 1 -->
+                    <div class="item">
+                        <div class="therapist-card">
+                            <div class="therapist-img-container">
+                                <img src="https://prpphysio.com/wp-content/uploads/2022/10/PRP-Web-56-819x1024.webp" class="therapist-img" alt="Amanda F.">
+                                <div class="therapist-badge">
+                                    <i class="fas fa-award me-1"></i> Expert
+                                </div>
+                            </div>
+                            <div class="therapist-info">
+                                <h4 class="fw-bold">Amanda F.</h4>
+                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Doctor of Physical Therapy</h6>
+                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
+                                <p class="specialty-list">Geriatric, Orthopedics and Sport Medicine</p>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Therapist 2 -->
+                    <div class="item">
+                        <div class="therapist-card">
+                            <div class="therapist-img-container">
+                                <img src="https://public-assets.getluna.com/images/therapists/20230314_100348_joshua_arellano.webp" class="therapist-img" alt="Joshua A.">
+                                <div class="therapist-badge">
+                                    <i class="fas fa-award me-1"></i> Expert
+                                </div>
+                            </div>
+                            <div class="therapist-info">
+                                <h4 class="fw-bold">Joshua A.</h4>
+                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Physical Therapist</h6>
+                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
+                                <p class="specialty-list">Geriatrics, Orthopedics and Sports Medicine, Sports Injuries, ACL Rehab, Spinal Rehab</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div id="fold-buttons" class="mt-xs-10 mt-sm-10  text-center ">
-    <a
-                    class="d-none"
-                href="tel:866-525-3175">
-        Call 866-525-3175
-    </a>
+                    <!-- Therapist 3 -->
+                    <div class="item">
+                        <div class="therapist-card">
+                            <div class="therapist-img-container">
+                                <img src="https://public-assets.getluna.com/images/therapists/20230314_100356_karen_khuu.webp" class="therapist-img" alt="Karen K.">
+                                <div class="therapist-badge">
+                                    <i class="fas fa-award me-1"></i> Expert
+                                </div>
+                            </div>
+                            <div class="therapist-info">
+                                <h4 class="fw-bold">Karen K.</h4>
+                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Doctor of Physical Therapy</h6>
+                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
+                                <p class="specialty-list">Orthopedics and Sports Medicine, Pelvic Floor</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <a
-                            class="button cta-modal-mobile d-xxl-none d-xl-none d-lg-none d-md-flex-inline d-sm-flex-inline d-xs-flex button-purple d-flex-inline flex-middle flex-center mb-xs-20 "
-                        href="tel:866-525-3175"
-            role="button">
-            Call 866-525-3175
-        </a>
+                    <!-- Did You Know Card -->
+                    <div class="item">
+                        <div class="know-card">
+                            <h3 class="fw-bold mb-3"><i class="fas fa-lightbulb me-2"></i> Did you know?</h3>
+                            <p class="mb-4">100% of Rehabrion therapists are licensed board-certified physical therapists and on average have more than 10 years of experience.</p>
+                            <a href="/appointment" class="btn"><i class="fas fa-calendar-check me-2"></i> Book Consultation</a>
+                        </div>
+                    </div>
 
-    <span
-                    class="d-none d-md-inline d-sm-inline mx-10 "
-                >
-        or
-    </span>
-    <a
-                    class="button cta-check-availability button button-purple outline d-xxl-flex-inline d-xl-flex-inline d-lg-flex-inline d-md-flex-inline d-sm-flex-inline d-xs-flex flex-middle flex-center "
-                href="/appointment">
-        Check Availability
-    </a>
+                    <!-- Therapist 4 -->
+                    <div class="item">
+                        <div class="therapist-card">
+                            <div class="therapist-img-container">
+                                <img src="https://public-assets.getluna.com/images/therapists/20230314_100303_mika_toribara.webp" class="therapist-img" alt="Mika T.">
+                                <div class="therapist-badge">
+                                    <i class="fas fa-award me-1"></i> Expert
+                                </div>
+                            </div>
+                            <div class="therapist-info">
+                                <h4 class="fw-bold">Mika T.</h4>
+                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Doctor of Physical Therapy</h6>
+                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
+                                <p class="specialty-list">Sports Rehab, Movement Based Approach, Spinal Rehab, Health Coaching</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-</div>
+                <!-- Carousel Navigation -->
+                <div class="luna-carousel-nav prev d-none d-md-flex">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="luna-carousel-nav next d-none d-md-flex">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
             </div>
 
+            <!-- CTA Buttons -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 text-center">
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+                  <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information"
+       target="_blank"
+       rel="noopener" class="btn btn-purple">
+                           <i class="fas fa-phone-volume"></i>
++971 50 565 3483
+                        </a>
+                        <span class="d-none d-md-inline">or</span>
+                        <a href="{{ asset('/submit-medical-history') }}" class="btn btn-outline-purple">
+                            <i class="fas fa-calendar-check"></i> Book Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="divider"></div>
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="section-subtitle">Three simple steps to get expert physical therapy delivered to your doorstep</p>
+                </div>
+            </div>
+
+            <div class="row mt-5 row-equal-height">
+                <!-- Step 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-check floating-icon"></i>
+                        </div>
+                        <h4 class="step-title">Get Matched With a Therapist</h4>
+                        <p>We assess your condition, goals, and lifestyle before pairing you with the right rehab expert.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-home floating-icon"></i>
+                        </div>
+                        <h4 class="step-title">Sessions On Your Schedule</h4>
+                        <p>Get therapy at home or online – no clinic stress, no waiting lines, no travel required.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-heartbeat floating-icon"></i>
+                        </div>
+                        <h4 class="step-title">Heal Faster With Expert Care</h4>
+                        <p>Track progress, improve mobility, and reduce pain with consistent guided sessions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-8 text-center">
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+                        <a href="tel:+971 50 565 3483" class="btn btn-purple">
+                           <i class="fas fa-phone-volume me-2"></i>
+ Call +971 50 565 3483
+                        </a>
+                        <span class="d-none d-md-inline">or</span>
+                        <a href="/appointment" class="btn btn-outline-purple">
+                            <i class="fas fa-calendar-check"></i> Book Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials - LUNA STYLE -->
+<!-- Testimonials -->
+<!-- Testimonials -->
+<section id="testimonials" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="divider"></div>
+        <h2 class="section-title">
+          Thousands of patients <i class="fas fa-heart text-danger mx-2"></i> Rehabrion
+        </h2>
+      </div>
+    </div>
+
+    <div class="testimonials-luna-container position-relative mt-5">
+
+      <!-- Row 1 -->
+      <div class="luna-carousel-row-1">
+        <div class="owl-carousel owl-theme" id="testimonials-carousel-1">
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"I feel lucky I found a company called Rehabrion."</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Anton S.</p>
+                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"I was able to setup an appointment within a few days. Other places I called could not get me in for another 2-3 weeks."</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Anthony K.</p>
+                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"I can't imagine why I would ever go back to an actual PT office. Bottom line I love Rehabrion."</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> T.C.</p>
+                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"Fantastic! It was so convenient having my daughter treated at home. My daughter loved her therapist!"</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Linda F.</p>
+                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"We feel blessed to have such a wonderful physical therapist. Thank you Rehabrion."</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Darleen B.</p>
+                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="luna-carousel-row-2">
+        <div class="owl-carousel owl-theme" id="testimonials-carousel-2">
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"This was my first visit with the therapist and I must say it was great. He was very professional and knowledgeable."</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Evelina F.</p>
+                <span class="luna-source" title="Yelp Review"><i class="fab fa-yelp"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"Personally, it seems like a no brainer to have a physical therapist come to my office."</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Scott S.</p>
+                <span class="luna-source" title="Yelp Review"><i class="fab fa-yelp"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"Amazing experience! I definitely recommend Rehabrion!"</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Carol L.</p>
+                <span class="luna-source" title="Yelp Review"><i class="fab fa-yelp"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"I have been through PT twice and working with Rehabrion has been much better than dealing with an actual clinic."</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Tyler H.</p>
+                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="luna-testimonial-card">
+              <p class="luna-testimonial-text">"All of the treatment time is devoted to me as a patient without distraction, bravo!"</p>
+              <div class="luna-testimonial-footer">
+                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Robin M.</p>
+                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Your existing nav buttons can stay if you use them -->
+      <div class="luna-carousel-nav prev d-none d-md-flex"><i class="fas fa-chevron-left"></i></div>
+      <div class="luna-carousel-nav next d-none d-md-flex"><i class="fas fa-chevron-right"></i></div>
+
+    </div>
+  </div>
 </section>
-<!-- End How It Works -->
 
+<!-- Exclusive Provider -->
+<section id="exclusive-provider">
+  <div class="container ep-inner">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 col-md-12 ep-left">
+        <img src="{{ asset('assets/images/logo/logo.png') }}"
+             alt="Rehabrion Provider"
+             class="img-fluid mb-3 ep-logo">
 
+        <h3 class="ep-title text-white">Trusted Care. Professional Standards</h3>
 
-
-		<!-- Reviews -->
-	<section id="testimonials" class="py-40 py-xs-25 py-sm-25  bg-purple-000 ">
-    <div class="wrapper">
-        <span class="d-block text-center mb-10">
-            <img class="lazy" data-src="https://public-assets.getluna.com/images/line_title.svg" alt="Separator" width="45px" height="6px">
-        </span>
-        <h2 class="color-purple-800 mt-0 text-center font-weight-normal d-flex flex-middle flex-center flex-wrap d-xs-block">
-                            Thousands of patients <img alt="heart" class="lazy mw-30-px d-inline-block mx-5" data-src="https://public-assets.getluna.com/images/heart.svg" width="30px" height="30px"> Luna
-                    </h2>
-
-        <p
-                            class="d-none"
-            >Read what your neighbors are saying about Luna. <a class="color-teal-600 c-pointer" role="button" data-toggle="modal" data-target="#modal-video">And watch a video.</a>
+        <p class="ep-text">
+          Rehabrion follows strict ethical and professional rehabilitation standards. Our methods are built for safety,
+          comfort, and real recovery outcomes.
         </p>
-    </div>
 
-
-    <div class="testimonials-corousel relative">
-        <div class="d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-xs-none">
-            <article class="testimonial-carousel-1 owl-carousel owl-theme">
-                                                                                                                            <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I feel lucky I found a company called Luna.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Anton S.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I was able to setup an appointment within a few days. Other places I called could not get me in for another 2-3 weeks.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Anthony K.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I can’t imagine why I would ever go back to an actual PT office. Bottom line – I love Luna.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - T.C.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Fantastic! It was so convenient having my daughter treated AT HOME! My daughter loved her therapist!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Linda F.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>We feel blessed to have such a wonderful physical therapist. Thank you Luna.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Darleen B.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>This was my first visit with the therapist and I must say it was great. He was very professional and knowledgeable.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Evelina F.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Personally, it seems like a no-brainer to have a physical therapist come to my office.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Scott S.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Amazing experience! I definitely recommend Luna!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Carol L.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I have been through PT twice and working with Rehabrionhas been much better than dealing with an actual clinic.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Tyler H.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>All of the treatment time is devoted to me as a patient without distraction, bravo!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Robin M.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>My physical therapist from Rehabrionis great!  She comes to my home which is ideal and convenient for me.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Charlie B.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>The therapists are understanding and motivated to deliver the best care possible. Highly recommended!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Adam H.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>My therapist has been extremely timely and professional...if you’re seeking physical therapy, these folks are great.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Kent G.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>All of the therapy, until Luna, was not reaching the level of care that I needed. Rehabrionis dedicated to MY goal.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Chris W.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>This app is the greatest invention. Rehabrionis a great way to get treated. Absolutely using this service again.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Daryl W.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Luna’s service is great, and Matt is fantastic and extremely professional... coming to my house makes my life it so much easier.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Ron U.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>The app works great and the staff is quick to respond. It seamlessly billed my insurance.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Christiano C.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Can’t tell you how dedicated the Rehabrionphysical therapists are - incredibly knowledgeable and work with my schedule!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Dave Z.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>The physical therapist was knowledgeable and skilled. He was also supportive and answered all my questions.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Joyce C.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I love how convenient it is that they come to the house especially if you have kiddos.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Majida M.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I absolutely love the convenience. I will definitely recommend Rehabrionto friends and family!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Yulia K.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                        </article>
-
-            <article class="testimonial-carousel-2 owl-carousel owl-theme">
-
-                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Rehabrionmakes PT super easy with a simple to use app, direct billing to insurance, and care within your home.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Pooneet G.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>As an athlete - running, weights, yoga - I’ve had a lot of physical therapy. Rehabrionis a huge step forward!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Vineet B.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I work from home and I am always looking for ways to save time. Rehabrionwas perfect and my therapist is outstanding!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Sanjit M.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>The therapist that arrived was on time and provided some of the best physical therapy I have ever received.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Ann J.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I had an excellent therapy session with Daniel.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Vedantham S.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Everything about Rehabrionworks for me: in-house visits, setting goals, and an amazing physical therapist.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Helane Z.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>What a difference I am noticing in my shoulder! I thoroughly recommend Luna.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Chris T.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Rehabrionis great - the convenience of booking AT HOME visits all through an app makes getting better so much easier.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Andrea C.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Fantastic experience. I look forward to our sessions.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Michael O.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Punctual, thorough, and professional. Great appointment.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Natasha P.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>They’re really flexible in terms of finding an open appointment slot quickly. The treatment made a huge difference!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Remy B.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                        <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Rehabrionis super convenient and saves a lot of time since they come to your home. Will definitely use Rehabrionin the future!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Andrew K.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>OMG! Our PT knows her anatomy and left me with the feeling of confidence in curing my pain. She is AMAZING!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Audrey R.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I have already recommended Rehabrionto a handful of people because of my great experience from Mona and Luna!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Catalina B.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                                                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>I recommend this to anyone I know who wants/needs physical therapy. I see improvement every single week!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Paige M.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Best therapy I have ever received. It was great being in the privacy of my own home and receiving the help that I needed.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Sandra M.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Gavin was exceptional. When he was evaluating me, he asked questions and actually listened to my answers.</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Taelor Y.</p>
-                                <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                            </div>
-                                                                                                                                    <div class="shadow-center-3 w-500-px w-xs-300-px h-200-px p-25 m-15 relative bg-base-100">
-                                <p>Rehabrionhas been so helpful to helping me recover after a recent shoulder injury and the app is super easy to use!</p>
-                                <p class="absolute left-5 bottom-10 font-weight-500 mb-0"> - Thomas B.</p>
-                                <img alt="Google Local" class="owl-lazy absolute right-5 bottom-10 h-20-px w-auto" data-src="https://public-assets.getluna.com/images/google_local.svg" width="90px" height="20px">
-                            </div>
-
-            </article>
+        <div class="d-flex gap-2 justify-content-lg-start justify-content-center flex-wrap">
+          <a href="{{ asset('/submit-medical-history') }}" class="btn btn-hero-primary">
+            <i class="fas fa-calendar-check"></i> Book Consultation
+          </a>
         </div>
-        <div class="d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-xs-block">
+      </div>
 
-            <article class="testimonial-carousel-3 owl-carousel owl-theme">
+      <div class="col-lg-6 col-md-12">
+        <div class="ep-card">
+          <h4>
+            Why Choose Rehabrion
+          </h4>
 
-                                                            <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">Rehabrionmakes PT super easy with a simple to use app, direct billing to insurance, and care within your home.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Pooneet G.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">I feel lucky I found a company called Luna.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Anton S.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">As an athlete - running, weights, yoga - I’ve had a lot of physical therapy. Rehabrionis a huge step forward!</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Vineet B.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">I was able to setup an appointment within a few days. Other places I called could not get me in for another 2-3 weeks.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Anthony K.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">I work from home and I am always looking for ways to save time. Rehabrionwas perfect and my therapist is outstanding!</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Sanjit M.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">I can’t imagine why I would ever go back to an actual PT office. Bottom line – I love Luna.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - T.C.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">The therapist that arrived was on time and provided some of the best physical therapy I have ever received.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Ann J.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">Fantastic! It was so convenient having my daughter treated AT HOME! My daughter loved her therapist!</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Linda F.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">We feel blessed to have such a wonderful physical therapist. Thank you Luna.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Darleen B.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">This was my first visit with the therapist and I must say it was great. He was very professional and knowledgeable.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Evelina F.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">I had an excellent therapy session with Daniel.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Vedantham S.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">Personally, it seems like a no-brainer to have a physical therapist come to my office.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Scott S.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">Everything about Rehabrionworks for me: in-house visits, setting goals, and an amazing physical therapist.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Helane Z.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">Amazing experience! I definitely recommend Luna!</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Carol L.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">What a difference I am noticing in my shoulder! I thoroughly recommend Luna.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Chris T.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">I have been through PT twice and working with Rehabrionhas been much better than dealing with an actual clinic.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Tyler H.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">Rehabrionis great - the convenience of booking AT HOME visits all through an app makes getting better so much easier.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Andrea C.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">All of the treatment time is devoted to me as a patient without distraction, bravo!</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Robin M.</p>
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">Fantastic experience. I look forward to our sessions.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Michael O.</p>
-                            <img alt="Yelp" class="owl-lazy absolute right-5 bottom-10 h-30-px w-auto" data-src="https://public-assets.getluna.com/images/yelp_logo.svg" width="61px" height="30px">
-                        </div>
-                                                                                <div class="shadow-center-3 w-500-px w-xs-300-px h-250-px h-sm-200-px p-25 m-15 relative bg-base-100">
-                            <p class="body-small">My physical therapist from Rehabrionis great!  She comes to my home which is ideal and convenient for me.</p>
-                            <p class="absolute left-10 bottom-10 font-weight-500 mb-0"> - Charlie B.</p>
-                        </div>
-                                                </article>
+          <ul class="list-unstyled mb-0 ep-list">
+            <li>
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Evidence based:</strong> Our treatments follow clinically proven methods supported by modern medical research.
+              </div>
+            </li>
+
+            <li>
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Medically guided:</strong> Each therapy plan is supervised by qualified professionals and delivered safely at your home.
+              </div>
+            </li>
+
+            <li>
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Patient first focused:</strong> We prioritize comfort care and recovery with consistently high patient satisfaction.
+              </div>
+            </li>
+
+            <li class="mb-0">
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Outcome driven:</strong> Our approach is focused on measurable recovery results with support from major health coverage plans.
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <a class="arrow prev d-flex absolute left-5 top-0 bottom-0 m-auto shadow-center-1 flex-center flex-middle c-pointer d-xs-none"
-             role="button">
-            <img class="w-50 lazy" data-src="https://public-assets.getluna.com/images/arrow-right-testimonial.svg" alt="arrow" width="20px" height="20px">
-        </a>
-        <a class="arrow next d-flex absolute right-5 top-0 bottom-0 m-auto shadow-center-1 flex-center flex-middle c-pointer d-xs-none"
-            role="button">
-            <img class="w-50 lazy" data-src="https://public-assets.getluna.com/images/arrow-right-testimonial.svg" alt="arrow" width="20px" height="20px">
-        </a>
     </div>
+  </div>
 </section>
+    <!-- Exclusive Provider -->
 
-<!-- End Reviews -->
 
+    <!-- FAQ -->
+    {{-- <section id="faq" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="divider"></div>
+                    <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                    <p class="section-subtitle text-center">Get answers to common questions about our home physical therapy services</p>
 
-{{-- procing patientcomponents --}}
-		<section id="exclusive-provider" class="bg-section relative overflow-hidden color-base-100 py-60 py-xs-0 py-md-0 py-sm-0">
-			<div class="bg bg-pos-y-top bg-pos-x-100 lazy absolute left-0 top-0 right-0 m-auto d-xs-none d-md-none d-sm-none h-100" data-src="https://public-assets.getluna.com/images/aarp-home-bg.webp"></div>
-
-			<div class="wrapper py-90 py-md-20 py-sm-20 py-xs-20 mt-md-40 mt-sm-40 mt-xs-40">
-				<div class="row flex-sm-center flex-xs-center flex-md-center">
-					<div
-						class="col-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 text-md-center text-sm-center text-xs-center">
-						<img class="w-100 mw-500-px lazy mb-25 d-inline-block d-sm-none d-xs-none" alt="AARP Rehabrionprovider" data-src="https://public-assets.getluna.com/images/aarp-luna.svg">
-						<img class="w-100 mw-200-px lazy mb-25 d-none d-sm-inline-block d-xs-inline-block" data-src="https://public-assets.getluna.com/images/aarp-vertical.svg">
-						<p class="color-base-900 lh-14 mb-md-0 mb-xs-0 mb-sm-0">Rehabrionis the exclusive provider of physical therapy to AARP members. Renowned for our commitment to high-quality care, Rehabrionis the only PT provider to carry the AARP name.</p>
-					</div>
-				</div>
-			</div>
-
-			<img
-					alt="Background"
-					class="d-none d-sm-block d-xs-block d-md-block lazy w-100 relative h-auto"
-					data-src="https://public-assets.getluna.com/images/aarp-home-bg-mobile.webp"
-					width="991px"
-					height="660px">
-		</section>
-
-{{-- pricing --}}
-
-		<!-- FAQs -->
-			<section id="faq" class="py-40 py-xs-25 py-sm-25 py-md-0 py-sm-0 py-xs-0 pb-md-40 pb-xs-40 pb-sm-40 d-flex flex-end d-sm-block d-xs-block d-md-block relative overflow-hidden">
-
-            <div class="bg bg-pos-y-top bg-pos-x-25 lazy absolute left-0 top-0 right-0 m-auto d-xs-none d-md-none d-sm-none h-100 mnh-1100-px" data-src="https://public-assets.getluna.com/images/faq-bg.webp"></div>
-
-            <img
-            alt="Background"
-            class="d-none d-sm-block d-xs-block d-md-block lazy w-100 relative h-auto"
-            data-src="https://public-assets.getluna.com/images/faq-bg-mobile-2.webp"
-            width="991px"
-            height="660px">
-
-    <div class="z-index-2 mw-1400-px mx-auto w-100 d-flex flex-end d-sm-block d-xs-block d-md-block">
-        <div class="p-40 p-xs-0 p-sm-0 shadow-none-md shadow-none-sm shadow-none-xs mw-800-px mx-md-auto w-100-p shadow-center-3 bg-base-100">
-            <span class="d-none text-center mb-10 mt-md-30 mt-sm-25 mt-xs-25 d-xs-block d-sm-block d-md-block">
-                <img class="lazy" data-src="https://public-assets.getluna.com/images/line_title.svg" alt="Separator" width="45px" height="6px">
-            </span>
-            <h2 class="
-                 color-purple-800  font-weight-normal mt-0 px-xs-15 px-sm-15 text-xs-center text-sm-center text-md-center mb-sm-0 mb-xs-0 mb-md-0">Frequently asked questions</h2>
-
-            <div class="accordion wrapper">
-                                    <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-xs-bottom  border-bottom    active " >
-                        <a
-                            class="accordion-toogle relative c-pointer no-decoration" role="button"
-                                                    >
-                                                            <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                                <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">Where are Luna therapists seeing patients?</h3>
-
-                        </a>
-                        <div class="accordion-content  pl-30 ">
-                        <p>You can book directly with Rehabrion.
- <a class="color-blue c-pointer" data-toggle="modal"
-        data-target="#modal-map" role="button">See our service areas.</a></p>
+                    <div class="accordion mt-4" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    <i class="fas fa-map-marker-alt me-3"></i> Where are Rehabrion therapists seeing patients?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Rehabrion therapists provide care in homes across 50+ states. You can book directly with Rehabrion. <a href="#" class="text-primary fw-bold">See our service areas.</a>
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                                    <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-xs-bottom  border-bottom" >
-                        <a
-                            class="accordion-toogle relative c-pointer no-decoration" role="button"
-                                                    >
-                                                            <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                                <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">Do you offer home visits?
-</h3>
 
-                        </a>
-                        <div class="accordion-content  pl-30 ">
-                              <p> At-home physiotherapy is one of our core services.
-
-</p>
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <i class="fas fa-home me-3"></i> Do you offer home visits?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! At-home physiotherapy is one of our core services. Our licensed therapists come directly to your home, office, or wherever is most convenient for you.
+                                </div>
+                            </div>
                         </div>
-                    </article>
-             <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-xs-bottom  border-bottom   " >
-                        <a
-                            class="accordion-toogle relative c-pointer no-decoration" role="button"
-                                                    >
-                                                            <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                                <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">Do you provide online sessions?
-</h3>
 
-                        </a>
-                        <div class="accordion-content  pl-30 ">
-            <p>Virtual rehab sessions are available.
- <a class="color-blue c-pointer" data-toggle="modal" data-target="#modal-prescription" role="button">Read more about prescriptions.</a></p>
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    <i class="fas fa-laptop-medical me-3"></i> Do you provide online sessions?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! Virtual rehab sessions are available for those who prefer telehealth. <a href="#" class="text-primary fw-bold">Read more about prescriptions.</a>
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                                    <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-xs-bottom  border-bottom   " >
-                        <a
-                            class="accordion-toogle relative c-pointer no-decoration" role="button"
-                                                    >
-                                                            <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                                <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">How long will recovery take?
-</h3>
 
-                        </a>
-                        <div class="accordion-content  pl-30 ">
-<p>Every case is different. Your therapist will guide you clearly.
- <a href="/how-it-works#table-comparison" rel="noopener noreferrer" target="_blank" role="button">See our clinic comparison chart.</a></p>
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    <i class="fas fa-clock me-3"></i> How long will recovery take?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Every case is different. Your therapist will guide you clearly through a personalized recovery plan. <a href="/how-it-works" class="text-primary fw-bold">See our clinic comparison chart.</a>
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                                    <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-xs-bottom   " >
-                        <a
-                            class="accordion-toogle relative c-pointer no-decoration" role="button"
-                                                    >
-                                                            <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                                <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">Can I see the same physical therapist every session?</h3>
 
-                        </a>
-                        <div class="accordion-content  pl-30 ">
-                                                                                                                                                <p>We strive to have a single therapist work with each patient for their entire course of care. In very rare cases, your scheduling priorities may require adjustments, but you’ll always know who is seeing you for your appointment in advance.</p>
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                    <i class="fas fa-user-md me-3"></i> Can I see the same physical therapist every session?
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We strive to have a single therapist work with each patient for their entire course of care. In very rare cases, your scheduling priorities may require adjustments, but you'll always know who is seeing you for your appointment in advance.
+                                </div>
+                            </div>
                         </div>
-                    </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+<!-- FAQ -->
+{{-- <section id="faq" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
 
+                <div class="divider"></div>
+                <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                <p class="section-subtitle text-center">
+                    Get answers to common questions about our home physical therapy services
+                </p>
 
+                <div class="accordion mt-4" id="faqAccordion">
 
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="true">
+                                <i class="fas fa-map-marker-alt me-3"></i>
+                                Where are Rehabrion therapists seeing patients?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Rehabrion therapists provide care in homes across 50+ states.
+                                You can book directly with Rehabrion.
+                                <a href="#" class="text-primary fw-bold">See our service areas.</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                <i class="fas fa-home me-3"></i>
+                                Do you offer home visits?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! At home physiotherapy is one of our core services.
+                                Our licensed therapists come directly to your home, office,
+                                or wherever is most convenient for you.
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                <i class="fas fa-laptop-medical me-3"></i>
+                                Do you provide online sessions?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! Virtual rehab sessions are available for those
+                                who prefer telehealth.
+                                <a href="#" class="text-primary fw-bold">
+                                    Read more about prescriptions.
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                <i class="fas fa-clock me-3"></i>
+                                How long will recovery take?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Every case is different. Your therapist will guide you
+                                clearly through a personalized recovery plan.
+                                <a href="/how-it-works" class="text-primary fw-bold">
+                                    See our clinic comparison chart.
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq5">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                <i class="fas fa-user-md me-3"></i>
+                                Can I see the same physical therapist every session?
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We strive to have one therapist for your entire course of care.
+                                In rare cases, scheduling priorities may require changes,
+                                but you will always know in advance.
+                            </div>
+                        </div>
+                    </div>
 
-
-
-
-
-
-
-
+                </div>
 
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+<!-- FAQs -->
+<section class="rb-faq py-5" id="faq">
+  <div class="container">
 
-<!-- EndFAQs -->
+    <div class="text-center mb-4">
+      <span class="rb-pill mb-2 d-inline-flex align-items-center gap-2">
+        <i class="fa-solid fa-circle-question"></i> FAQs
+      </span>
 
-		<!-- How It Works -->
-<!-- WHY IN-HOME PHYSIOTHERAPY IS BETTER -->
-<section id="why-on-demand" class="py-50 bg-base-200">
-  <div class="wrapper-full">
+      <h2 class="fw-bold mb-2">Frequently Asked Questions</h2>
 
-    <h2 class="color-purple-800 mt-0 text-center font-weight-normal">
-      Why in-home physiotherapy is better
-    </h2>
-
-    <div class="mb-30 text-center">
-      Why Rehabrion’s care model works better for your recovery.
+      <p class="text-muted mb-0 mx-auto rb-faq-sub">
+        Get answers to common questions about our home physical therapy services
+      </p>
     </div>
 
-    <!-- ROW 1: TOP 3 POINTS -->
-    <div class="row mw-1100-px m-auto">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
 
-      <div class="col-lg-4 col-md-4 why-grid-card">
-        <div class="why-icon-wrapper">
-          <i class="fa-solid fa-user-check why-icon"></i>
+        <div class="rb-faq-card p-3 p-md-4">
+          <div class="accordion rb-acc" id="faqAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">
+                  <i class="fas fa-map-marker-alt me-3"></i>
+                  Do I need a referral to start therapy?
+                </button>
+              </h2>
+              <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  You can book directly with Rehabrion.
+                  <a href="{{ asset('/submit-medical-history') }}" class="fw-bold" style="color:var(--s)">Book Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">
+                  <i class="fas fa-home me-3"></i>
+                  Do you offer home visits?
+                </button>
+              </h2>
+              <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes, at home physiotherapy is one of our core services.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">
+                  <i class="fas fa-laptop-medical me-3"></i>
+                  Do you provide online sessions?
+                </button>
+              </h2>
+              <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                 Virtual rehab sessions are available.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">
+                  <i class="fas fa-clock me-3"></i>
+                  How long will recovery take?
+                </button>
+              </h2>
+              <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+Every case is different. Your therapist will guide you clearly.
+                </div>
+              </div>
+            </div>
+
+            {{-- <div class="accordion-item border-0">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">
+                  <i class="fas fa-user-md me-3"></i>
+                  Can I see the same therapist every session?
+                </button>
+              </h2>
+              <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We aim to assign one therapist for continuity of care whenever possible.
+                </div>
+              </div>
+            </div> --}}
+
+          </div>
+
+          <!-- CTA -->
+          {{-- <div class="rb-faq-cta mt-4 p-3 p-md-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+            <div class="text-center text-md-start">
+              <div class="fw-bold">Still have questions?</div>
+              <div class="text-muted small">Talk to our team and get quick guidance.</div>
+            </div>
+            <div class="d-flex gap-2 flex-wrap justify-content-center">
+              <a href="tel:+971505653483" class="btn rb-btn">Call Now</a>
+              <a href="/appointment" class="btn rb-btn-outline">Book Appointment</a>
+            </div>
+          </div> --}}
+
         </div>
-        <h4>Personalized One-on-One Care</h4>
-        <p>
-          Every session is dedicated entirely to you for focused treatment and faster,
-          more effective recovery.
-        </p>
+
       </div>
-
-      <div class="col-lg-4 col-md-4 why-grid-card">
-        <div class="why-icon-wrapper">
-          <i class="fa-solid fa-house-medical why-icon"></i>
-        </div>
-        <h4>No Travel Stress</h4>
-        <p>
-          No traffic, no parking, no waiting rooms. Your physiotherapist comes
-          directly to your home.
-        </p>
-      </div>
-
-      <div class="col-lg-4 col-md-4 why-grid-card">
-        <div class="why-icon-wrapper">
-          <i class="fa-solid fa-clock why-icon"></i>
-        </div>
-        <h4>Flexible Scheduling</h4>
-        <p>
-          Book sessions at times that easily fit your routine and daily lifestyle.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- ROW 2: BOTTOM 3 POINTS -->
-    <div class="row mw-1100-px m-auto">
-
-      <div class="col-lg-4 col-md-4 why-grid-card">
-        <div class="why-icon-wrapper">
-          <i class="fa-solid fa-heart-pulse why-icon"></i>
-        </div>
-        <h4>Faster Recovery at Home</h4>
-        <p>
-          Healing in a familiar environment increases comfort, confidence,
-          and speeds up progress.
-        </p>
-      </div>
-
-      <div class="col-lg-4 col-md-4 why-grid-card">
-        <div class="why-icon-wrapper">
-          <i class="fa-solid fa-user-doctor why-icon"></i>
-        </div>
-        <h4>Consistent Therapist Support</h4>
-        <p>
-          You work with the same therapist throughout your treatment for better
-          tracking and continuity of care.
-        </p>
-      </div>
-
-      <div class="col-lg-4 col-md-4 why-grid-card">
-        <div class="why-icon-wrapper">
-          <i class="fa-solid fa-clipboard-check why-icon"></i>
-        </div>
-        <h4>Better Adherence to Rehab Plans</h4>
-        <p>
-          Home-based care improves consistency and helps you complete your
-          rehab program successfully.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- CTA (optional) -->
-    <div class="text-center mt-30">
-      <a href="/appointment" class="button button-purple outline">
-        Check Availability
-      </a>
     </div>
 
   </div>
 </section>
-<!-- END WHY IN-HOME PHYSIOTHERAPY IS BETTER -->
-</main>
 
+<!-- End FAQs -->
 
+    <!-- Why In-Home Physiotherapy -->
+    <section id="why-in-home" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="divider"></div>
+                    <h2 class="section-title">Why In-Home Physiotherapy Is Better</h2>
+                    <p class="section-subtitle">Why Rehabrion's care model works better for your recovery and lifestyle</p>
+                </div>
+            </div>
+
+            <div class="row mt-4 row-equal-height">
+                <!-- Reason 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="why-grid-card">
+                        <div class="why-icon-wrapper">
+                            <i class="fas fa-user-check why-icon floating-icon"></i>
+                        </div>
+                        <h4 class="fw-bold mt-3">Personalized One-on-One Care</h4>
+                        <p>Every session is dedicated entirely to you for focused treatment and faster, more effective recovery.</p>
+                    </div>
+                </div>
+
+                <!-- Reason 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="why-grid-card">
+                        <div class="why-icon-wrapper">
+                            <i class="fas fa-home why-icon floating-icon"></i>
+                        </div>
+                        <h4 class="fw-bold mt-3">No Travel Stress</h4>
+                        <p>No traffic, no parking, no waiting rooms. Your physiotherapist comes directly to your home.</p>
+                    </div>
+                </div>
+
+                <!-- Reason 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="why-grid-card">
+                        <div class="why-icon-wrapper">
+                            <i class="fas fa-clock why-icon floating-icon"></i>
+                        </div>
+                        <h4 class="fw-bold mt-3">Flexible Scheduling</h4>
+                        <p>Book sessions at times that easily fit your routine and daily lifestyle.</p>
+                    </div>
+                </div>
+
+                <!-- Reason 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="why-grid-card">
+                        <div class="why-icon-wrapper">
+                            <i class="fas fa-heartbeat why-icon floating-icon"></i>
+                        </div>
+                        <h4 class="fw-bold mt-3">Faster recovery in familiar environment</h4>
+                        <p>Healing in a familiar environment increases comfort, confidence, and speeds up progress.</p>
+                    </div>
+                </div>
+
+                <!-- Reason 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="why-grid-card">
+                        <div class="why-icon-wrapper">
+                            <i class="fas fa-user-md why-icon floating-icon"></i>
+                        </div>
+                        <h4 class="fw-bold mt-3">Consistent Therapist Support</h4>
+                        <p>You work with the same therapist throughout your treatment for better tracking and continuity of care.</p>
+                    </div>
+                </div>
+
+                <!-- Reason 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="why-grid-card">
+                        <div class="why-icon-wrapper">
+                            <i class="fas fa-clipboard-check why-icon floating-icon"></i>
+                        </div>
+                        <h4 class="fw-bold mt-3">Better Adherence to Rehab Plans</h4>
+                        <p>Home-based care improves consistency and helps you complete your rehab program successfully.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 text-center">
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+                        <a href="{{ asset('/submit-medical-history') }}" class="btn btn-purple">
+                            <i class="fas fa-calendar-check me-2"></i> Book Consultation
+                        </a>
+                        <span class="d-none d-md-inline">or</span>
+                        <a href="tel:+971 50 565 3483" class="btn btn-outline-purple">
+                           <i class="fas fa-phone-volume me-2"></i>
+ Call +971 50 565 3483
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

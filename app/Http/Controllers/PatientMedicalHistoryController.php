@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\PatientMedicalHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MedicalHistorySubmitted;
 
 class PatientMedicalHistoryController extends Controller
 {
@@ -137,8 +138,13 @@ class PatientMedicalHistoryController extends Controller
     // ✅ dd check (temporary)
     // dd($validated);
 
-    PatientMedicalHistory::create($validated);
+    // PatientMedicalHistory::create($validated);
 
+$history = PatientMedicalHistory::create($validated);
+
+if (!empty($history->email_address)) {
+    Mail::to($history->email_address)->send(new MedicalHistorySubmitted($history));
+}
     return $request->expectsJson()
         ? response()->json(['status' => 'success', 'message' => 'Medical history form submitted successfully!'])
         : back()->with('success', 'Medical history form submitted successfully!');

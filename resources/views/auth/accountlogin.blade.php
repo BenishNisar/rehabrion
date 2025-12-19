@@ -229,6 +229,82 @@
                 font-size:20px;
             }
         }
+
+        .alt-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:12px;
+}
+
+.signin-btn{
+  width:100%;
+  background:#ffffff;
+  color:var(--primary);
+  padding:10px 14px;
+  border:1px solid rgba(122,149,143,0.45);
+  border-radius:999px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.02em;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+.signin-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 12px 26px rgba(97,117,111,.18);
+  background:rgba(186,224,219,0.18);
+}
+
+.signin-btn:active{
+  transform:translateY(0);
+}
+
+
+/* sucess message  */
+.success-alert{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:12px 14px;
+  border-radius:14px;
+  margin:10px 0 14px;
+
+  background: rgba(186,224,219,0.45);
+  border: 1px solid rgba(122,149,143,0.35);
+  box-shadow: 0 12px 26px rgba(15,23,42,0.08);
+}
+
+.success-icon{
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#7a958f;
+  color:#fff;
+  flex:0 0 auto;
+  margin-top:2px;
+}
+
+.success-text h4{
+  margin:0;
+  font-size:14px;
+  font-weight:800;
+  color:#0f172a;
+}
+
+.success-text p{
+  margin:2px 0 0;
+  font-size:12.5px;
+  color:#334155;
+  line-height:1.35;
+}
+
+
     </style>
 </head>
 <body style="background-image:url('https://i.pinimg.com/1200x/0b/ca/e8/0bcae84115f447708fb06843fcb5fd82.jpg');
@@ -239,10 +315,21 @@ background-position:cover;background-size:cover;">
             <div class="logo">
                 <img src="{{ asset('Dashboard_assets/img/logo.png') }}" alt="Rehabrion  ">
             </div>
+@if(session('success'))
+  <div class="success-alert">
+    <div class="success-icon">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <div class="success-text">
+      <h4>Registration successful</h4>
+      <p>{{ session('success') }}</p>
+    </div>
+  </div>
+@endif
 
-            <div class="pill">
+            {{-- <div class="pill">
                 <i class="fas fa-stethoscope"></i> Rehabrion   Admin Portal
-            </div>
+            </div> --}}
 
             <h1 class="login-title">Welcome back</h1>
             <p class="login-subtitle">Sign in to manage your physiotherapy appointments and patients.</p>
@@ -253,7 +340,9 @@ background-position:cover;background-size:cover;">
                 <!-- Email Field -->
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="email" placeholder="Username" required>
+                    {{-- <input type="text" name="email" placeholder="Please Enter Your Email" required> --}}
+                    <input type="email" name="email" placeholder="Please Enter Your Email" required autocomplete="off">
+
                 </div>
                 @error('email')
                     <span class="error-text">{{ $message }}</span>
@@ -262,7 +351,9 @@ background-position:cover;background-size:cover;">
                 <!-- Password Field -->
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    {{-- <input type="password" id="password" name="password" placeholder="Password" required> --}}
+                    <input type="password" id="password" name="password" placeholder="Password" required autocomplete="new-password">
+
                     <i class="far fa-eye" id="togglePassword" style="cursor:pointer;"></i>
                 </div>
                 @error('password')
@@ -278,6 +369,11 @@ background-position:cover;background-size:cover;">
                 </div>
 
                 <button type="submit" class="login-btn">LOGIN</button>
+                <div class="alt-actions">
+  <a href="{{ route('auth.register') }}" class="signin-btn" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">
+    SIGN IN
+  </a>
+</div>
             </form>
 
         </div>
@@ -293,5 +389,37 @@ background-position:cover;background-size:cover;">
             this.classList.toggle('fa-eye-slash');
         });
     </script>
+
+    {{-- suceess message --}}
+    <script>
+  const alertBox = document.querySelector('.success-alert');
+  if(alertBox){
+    setTimeout(() => {
+      alertBox.style.opacity = '0';
+      alertBox.style.transform = 'translateY(-6px)';
+      alertBox.style.transition = '0.35s ease';
+      setTimeout(()=> alertBox.remove(), 400);
+    }, 5000);
+  }
+</script>
+
+
+{{-- RESET  --}}
+<script>
+  window.addEventListener('pageshow', function (e) {
+    const email = document.querySelector('input[name="email"]');
+    const pass  = document.querySelector('input[name="password"]');
+
+    if (email) email.value = "";
+    if (pass) pass.value = "";
+
+    // optional: remember me unchecked
+    const remember = document.querySelector('input[name="remember"]');
+    if (remember) remember.checked = false;
+  });
+</script>
+
+
+
 </body>
 </html>

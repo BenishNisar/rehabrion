@@ -50,39 +50,82 @@ class ContactController extends Controller
     // }
 
 
+// public function store(Request $request)
+// {
+//     $v = Validator::make($request->all(), [
+//         'name'    => 'required|string|max:255',
+//         'email'   => 'required|email',
+//         'country' => 'required|string|max:100',
+//         'phone'   => 'required|regex:/^[0-9+\-\s()]{7,20}$/',
+//         'message' => 'required|string',
+//     ], [
+//         'country.required' => 'Please enter your country.',
+//         'phone.regex'      => 'Please enter a valid phone number.',
+//     ]);
+
+//     if ($v->fails()) {
+//         // AJAX => 422 JSON | Normal => back with errors
+//         if ($request->ajax() || $request->wantsJson()) {
+//             return response()->json(['errors' => $v->errors()], 422);
+//         }
+//         return back()->withErrors($v)->withInput();
+//     }
+
+//     $contact = Contact::create($v->validated());
+
+//     try { Mail::to('benishk800@gmail.com')->send(new ContactMail($contact)); } catch (\Throwable $e) {}
+//     try { Mail::to($contact->email)->send(new UserThankYouMail($contact)); } catch (\Throwable $e) {}
+
+//     $msg = 'Thank you for message submitting.';
+//     // ✅ AJAX => JSON; Non-AJAX => redirect back with toast
+//     if ($request->ajax() || $request->wantsJson()) {
+//         return response()->json(['message' => $msg]);
+//     }
+//     return back()->with('toast.ok', $msg);
+// }
+
 public function store(Request $request)
 {
     $v = Validator::make($request->all(), [
-        'name'    => 'required|string|max:255',
-        'email'   => 'required|email',
-        'country' => 'required|string|max:100',
-        'phone'   => 'required|regex:/^[0-9+\-\s()]{7,20}$/',
-        'message' => 'required|string',
-    ], [
-        'country.required' => 'Please enter your country.',
-        'phone.regex'      => 'Please enter a valid phone number.',
+        'name'    => 'required|string|max:800',
+        'email'   => 'required|email|max:900',
+        'country' => 'required|string|max:900',
+        'phone'   => 'required|string|max:900',
+        'message' => 'required|string|max:900',
     ]);
 
     if ($v->fails()) {
-        // AJAX => 422 JSON | Normal => back with errors
         if ($request->ajax() || $request->wantsJson()) {
-            return response()->json(['errors' => $v->errors()], 422);
+            return response()->json([
+                'ok' => false,
+                'errors' => $v->errors()
+            ], 422);
         }
         return back()->withErrors($v)->withInput();
     }
 
     $contact = Contact::create($v->validated());
 
-    try { Mail::to('benishk800@gmail.com')->send(new ContactMail($contact)); } catch (\Throwable $e) {}
-    try { Mail::to($contact->email)->send(new UserThankYouMail($contact)); } catch (\Throwable $e) {}
-
-    $msg = 'Thank you for message submitting.';
-    // ✅ AJAX => JSON; Non-AJAX => redirect back with toast
-    if ($request->ajax() || $request->wantsJson()) {
-        return response()->json(['message' => $msg]);
+    try {
+        Mail::to('benishk800@gmail.com')->send(new ContactMail($contact));
+    } catch (\Throwable $e) {
+        Log::error('Admin mail failed: '.$e->getMessage());
     }
-    return back()->with('toast.ok', $msg);
-}
 
+    try {
+        Mail::to($contact->email)->send(new UserThankYouMail($contact));
+    } catch (\Throwable $e) {
+        Log::error('User mail failed: '.$e->getMessage());
+    }
+
+    if ($request->ajax() || $request->wantsJson()) {
+        return response()->json([
+            'ok' => true,
+            'message' => 'Thank you. Your message has been submitted.'
+        ]);
+    }
+
+    return back()->with('toast.ok', 'Thank you. Your message has been submitted.');
+}
 
 }

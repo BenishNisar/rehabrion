@@ -1,424 +1,425 @@
 @extends("Layout.layout")
 @section("Content")
 
-   <main class="conditions-we-treat-page">
-        <!-- Intro -->
-        <section id="hero" class="relative overflow-hidden overlay-100 mb-60 mb-sm-40 mb-xs-40">
-            <div class="bg-hero bg-pos-y-70 bg-pos-md-x-center bg-pos-sm-x-70 bg-pos-xs-x-70"
-                style="background-image: url(https://public-assets.getRehabrion .com/images/conditions_bg.jpg)"></div>
-            <!-- Trigger to change Phone style on Header -->
-            <span class="trigger-header-phone"></span>
-            <!-- .Trigger -->
-            <div class="wrapper py-100 py-sm-80 py-xs-80">
-                <h1 class="mb-15 text-center font-weight-normal">Conditions we treat</h1>
-                <h3 class="mt-0 font-weight-normal text-center color-base-100 px-xs-15 px-sm-15">We have <span
-                        class="color-teal-500">specialists</span> for every PT condition</h3>
-            </div>
-        </section>
-        <!-- EndIntro -->
+@php
+  $active = $selectedCondition;
 
-        <!-- ConditionsCategories -->
-        <section id="conditions" class="wrapper mb-40 mb-sm-25 mb-xs-25">
-    <div class="row">
-                    <div class="col-12 mb-25">
-                <h2 class="color-purple-800 mt-0 font-weight-normal mb-25">Back &amp; Neck Pain</h2>
-                <div class="row">
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-acute-whiplash">
-                            Acute whiplash
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-ankylosing-spondylitis">
-                            Ankylosing spondylitis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-bulging-disc">
-                            Bulging discs
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-degenerative-disc-disease">
-                            Degenerative disc disease
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-herniated-disc">
-                            Disc herniation
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-headaches">
-                            Headaches
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-lower-back-pain">
-                            Lower back pain
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-mid-back-pain">
-                            Mid back pain
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-neck-injuries">
-                            Neck injuries
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-neck-pain">
-                            Neck pain
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-sciatica">
-                            Sciatica
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-spinal-stenosis">
-                            Spinal stenosis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-spondylosis">
-                            Spondylosis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-thoracic-outlet-syndrome">
-                            Thoracic outlet syndrome
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-upper-back-pain">
-                            Upper back pain
-                        </a>
-                                        <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/appointment" target="_blank">
-                        And More...
-                    </a>
-                </div>
-            </div>
+  $heroBg = $active && $active->hero_image_url
+    ? $active->hero_image_url
+    : "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=80";
 
-                <div class="col-12 mb-20">
-                    <hr class="border-base-400 border-sm-base-400 border-xs-base-400">
-                </div>
-                                <div class="col-12 mb-25">
-                <h2 class="color-purple-800 mt-0 font-weight-normal mb-25">Focused Training</h2>
-                <div class="row">
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-core-stabilization">
-                            Core stabilization
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-core-strengthening">
-                            Core strengthening
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-gait-analysis">
-                            Gait analysis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-movement-analysis">
-                            Movement analysis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-returning-to-golf">
-                            Return to golf
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-returning-to-the-gym">
-                            Return to gym
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-returning-to-running">
-                            Return to running
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-returning-to-throwing">
-                            Return to throwing
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-strengthening">
-                            Strengthening program
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-vestibular-rehab">
-                            Vestibular rehab
-                        </a>
-                                        <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/appointment" target="_blank">
-                        And More...
-                    </a>
-                </div>
-            </div>
+  $badge = $active && $active->badge_text ? $active->badge_text : "Care";
 
-                <div class="col-12 mb-20">
-                    <hr class="border-base-400 border-sm-base-400 border-xs-base-400">
-                </div>
-                                <div class="col-12 mb-25">
-                <h2 class="color-purple-800 mt-0 font-weight-normal mb-25">Orthopedic/Sports Injuries</h2>
-                <div class="row">
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-adhesive-capsulitis">
-                            Adhesive capsulitis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-ankle-injuries">
-                            Ankle injuries
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-bone-fractures">
-                            Bone fractures
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-bursitis">
-                            Bursitis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-carpal-tunnel">
-                            Carpal tunnel syndrome
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-dislocated-shoulder">
-                            Dislocated shoulder
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-femoroacetabular-impingement">
-                            Femoroacetabular impingement
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-foot-injuries">
-                            Foot injuries
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-golf-elbow">
-                            Golfer’s elbow
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-heel-pain">
-                            Heel pain
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-heel-spurs">
-                            Heel spurs
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-knee-pain">
-                            Knee pain
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-labral-tears">
-                            Labral tears
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-ligament-injuries">
-                            Ligament injuries
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-meniscus-injuries">
-                            Meniscus injuries
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-plantar-fasciitis">
-                            Plantar fasciitis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-rotator-cuff-impingement">
-                            Rotator cuff impingement
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-shin-splints">
-                            Shin splints
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-tendonitis">
-                            Tendonitis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-tennis-elbow">
-                            Tennis elbow
-                        </a>
-                                        <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/appointment" target="_blank">
-                        And More...
-                    </a>
-                </div>
-            </div>
+  $title = $active ? $active->title : $subcategory->name;
 
-                <div class="col-12 mb-20">
-                    <hr class="border-base-400 border-sm-base-400 border-xs-base-400">
-                </div>
-                                <div class="col-12 mb-25">
-                <h2 class="color-purple-800 mt-0 font-weight-normal mb-25">Post-Surgical Rehabilitation</h2>
-                <div class="row">
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-acl-injury">
-                            ACL reconstruction
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-arthroscopic-procedures">
-                            Arthroscopic procedures
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-hip-replacement">
-                            Hip replacement
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-joint-replacement">
-                            Joint replacement
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-labral-repairs">
-                            Labral repairs
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-meniscal-repairs">
-                            Meniscal repairs
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-rehab-post-fracture-fixation">
-                            Rehab post fracture fixation
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-reverse-total-shoulder-arthroplasty">
-                            Reverse total shoulder arthroplasty
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-rotator-cuff-tears">
-                            Rotator cuff repairs
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-spinal-fusion">
-                            Spinal fusion
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-spinal-procedures">
-                            Spinal procedures
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-total-knee-replacement">
-                            Total knee replacement
-                        </a>
-                                        <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/appointment" target="_blank">
-                        And More...
-                    </a>
-                </div>
-            </div>
+  $desc = $active && $active->hero_description
+    ? $active->hero_description
+    : "Select a condition to see its recovery roadmap, causes, symptoms, and plan.";
 
-                <div class="col-12 mb-20">
-                    <hr class="border-base-400 border-sm-base-400 border-xs-base-400">
-                </div>
-                                <div class="col-12 mb-25">
-                <h2 class="color-purple-800 mt-0 font-weight-normal mb-25">Senior Care</h2>
-                <div class="row">
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-arthritis">
-                            Arthritis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-balance-disorders">
-                            Balance disorders
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-degenerative-joint-disease">
-                            Degenerative joint disease
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-difficulty-with-gait">
-                            Difficulty with gait
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-fall-prevention">
-                            Fall prevention
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-general-deconditioning">
-                            General deconditioning
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-hip-pain">
-                            Hip pain
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-muscle-weakness">
-                            Muscle weakness
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-osteoarthritis">
-                            Osteoarthritis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-osteoporosis">
-                            Osteoporosis
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-posture-training">
-                            Posture training
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-and-prehab-for-joint-replacement">
-                            Prehab before joint replacement
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-urinary-incontinence">
-                            Urinary incontinence
-                        </a>
-                                        <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/appointment" target="_blank">
-                        And More...
-                    </a>
-                </div>
-            </div>
+  $sessions = $active && $active->estimated_sessions ? $active->estimated_sessions : "4 to 8";
+  $stat1 = $active && $active->stat_one ? $active->stat_one : "Home";
+  $stat2 = $active && $active->stat_two ? $active->stat_two : "Targeted";
+  $stat3 = $active && $active->stat_three ? $active->stat_three : "Guided";
 
-                <div class="col-12 mb-20">
-                    <hr class="border-base-400 border-sm-base-400 border-xs-base-400">
-                </div>
-                                <div class="col-12 mb-25">
-                <h2 class="color-purple-800 mt-0 font-weight-normal mb-25">Specialty Care</h2>
-                <div class="row">
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-als">
-                            Amyotrophic lateral sclerosis (ALS)
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-cerebral-palsy">
-                            Cerebral palsy
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-crps">
-                            CRPS
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-de-quervains">
-                            De Quervain’s
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-diastasis-recti">
-                            Diastasis recti
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-fibromyalgia">
-                            Fibromyalgia
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-itb-syndrome">
-                            ITB syndrome
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-multiple-sclerosis">
-                            Multiple sclerosis (MS)
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-neurological-conditions">
-                            Neurologic therapy
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-patellofemoral-syndrome">
-                            Patellofemoral pain syndrome
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-pelvic-floor-dysfunction">
-                            Pelvic floor therapy
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-piriformis-syndrome">
-                            Piriformis syndrome
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-pregnancy-and-postpartum-recovery">
-                            Pregnancy &amp; postpartum care
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-stroke">
-                            Stroke
-                        </a>
-                                            <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/conditions/physical-therapy-for-womens-health-therapy">
-                            Women’s health therapy
-                        </a>
-                                        <a class="col-4 col-md-6 col-sm-6 col-xs-12 mb-15" href="/appointment" target="_blank">
-                        And More...
-                    </a>
-                </div>
-            </div>
-                        </div>
-</section>        <!-- End ConditionsCategories -->
+  $causes = is_array($active->causes ?? null) ? $active->causes : [];
+  $symptoms = is_array($active->symptoms ?? null) ? $active->symptoms : [];
+  $roadmap = is_array($active->roadmap_steps ?? null) ? $active->roadmap_steps : [];
 
-        <!-- BookBtns -->
-        <section id="book-pt-section" class="py-40 py-xs-25 py-sm-25  bg-base-200 ">
-    <div class="wrapper-full">
-        <h2 class="font-weight-normal color-purple-800 text-center mb-40 mt-0">We’ve got your back. Book a PT today.</h2>
+  $ctaHeading = $active && $active->cta_heading ? $active->cta_heading : "Book your session";
+  $ctaText = $active && $active->cta_text ? $active->cta_text : "Get matched with a therapist and start recovery with a clear, personalized plan.";
+  $ctaBtnText = $active && $active->cta_button_text ? $active->cta_button_text : "Book Now";
+  $ctaBtnLink = $active && $active->cta_button_link ? $active->cta_button_link : "/submit-medical-history";
+@endphp
 
-        <div id="fold-buttons" class="mt-xs-10 mt-sm-10  text-center ">
-    <a
-                    class="button cta-phone-desktop d-xxl-flex-inline d-xl-flex-inline d-lg-flex-inline d-md-none d-sm-none d-xs-none button-purple flex-middle flex-center "
-                href="tel:866-525-3175">
-        Call 866-525-3175
-    </a>
+<style>
+  .neck-roadmap-page{
+    --primary:#7a958f;
+    --primary-light:#bae0db;
+    --primary-dark:#6a857f;
+    --dark:#1f2d2a;
+    --soft:#f5fbfa;
+    --border:rgba(122,149,143,.22);
+    --shadow:0 14px 40px rgba(31,45,42,.10);
+  }
 
-            <a
-                            class="button cta-modal-mobile d-xxl-none d-xl-none d-lg-none d-md-flex-inline d-sm-flex-inline d-xs-flex button-purple d-flex-inline flex-middle flex-center mb-xs-20 "
-                        href="tel:866-525-3175"
-            role="button">
-            Call 866-525-3175
-        </a>
+  .neck-roadmap-page{ margin-top:0 !important; padding-top:0 !important; }
 
-    <span
-                    class=" mx-10 d-xs-none"
-                >
-        or
-    </span>
-    <a
-                    class="button cta-check-availability button button-purple outline d-xxl-flex-inline d-xl-flex-inline d-lg-flex-inline d-md-flex-inline d-sm-flex-inline d-xs-flex flex-middle flex-center "
-                href="/appointment">
-        Check Availability
-    </a>
+  .neck-hero{
+    background:#7a958f;
+    background-size:cover;
+    background-position:center;
+    color:#fff;
+    padding: 34px 0 26px;
+    border-bottom: 1px solid rgba(255,255,255,.28);
+  }
 
-</div>
+  .neck-hero .badge-soft{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 16px;
+    border-radius:999px;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.24);
+    backdrop-filter: blur(10px);
+    font-weight:600;
+    font-size:14px;
+  }
+
+  .neck-hero .badge-dot{
+    width:10px;
+    height:10px;
+    border-radius:999px;
+    background:#fff;
+    opacity:.9;
+  }
+
+  .neck-hero h1{
+    font-size: 40px;
+    font-weight: 800;
+    margin: 14px 0 10px;
+    letter-spacing: .2px;
+    text-shadow: 0 10px 30px rgba(0,0,0,.20);
+  }
+
+  .neck-hero p{
+    max-width: 760px;
+    margin: 0 auto;
+    opacity: .95;
+    font-size: 16px;
+  }
+
+  .neck-wrap{ margin-top: -18px; padding-bottom: 10px; }
+
+  .section-head{ text-align:center; margin-bottom: 18px; }
+  .section-head h2{
+    color: var(--dark);
+    font-weight: 800;
+    font-size: 28px;
+    margin: 0 0 10px;
+  }
+
+  .accent-line{
+    width: 74px;
+    height: 6px;
+    border-radius: 999px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, var(--primary-light), var(--primary));
+  }
+
+  .stats-strip{
+    padding: 18px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .stat{ text-align:center; padding: 10px 8px; }
+  .stat .num{ display:block; font-size: 26px; font-weight: 900; color: var(--primary); line-height: 1; }
+  .stat .lbl{ display:block; margin-top: 6px; color: rgba(31,45,42,.70); font-size: 13px; font-weight: 600; }
+
+  .cause-card{
+    height: 100%;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background:#fff;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .cause-card:hover{ transform: translateY(-4px); box-shadow: 0 18px 45px rgba(31,45,42,.12); }
+
+  .symptom{
+    display:flex;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(122,149,143,.18);
+    background:#fff;
+    height: 100%;
+  }
+  .symptom .tick{
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    background: rgba(186,224,219,.55);
+    border: 1px solid rgba(122,149,143,.18);
+    flex: 0 0 34px;
+    margin-top: 2px;
+    position: relative;
+  }
+  .symptom .tick:before{
+    content:"";
+    position:absolute;
+    left: 10px;
+    top: 14px;
+    width: 12px;
+    height: 6px;
+    border-left: 3px solid var(--primary);
+    border-bottom: 3px solid var(--primary);
+    transform: rotate(-45deg);
+  }
+  .symptom p{ margin:0; color: rgba(31,45,42,.72); line-height: 1.55; }
+
+  .roadmap{
+    overflow:hidden;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    background:#fff;
+  }
+  .roadmap-head{
+    padding: 28px 18px;
+    text-align:center;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color:#fff;
+    position:relative;
+  }
+  .roadmap-head .inner{ position:relative; }
+  .roadmap-head .step{
+    width: 74px;
+    height: 74px;
+    border-radius: 999px;
+    margin: 0 auto 12px;
+    background:#fff;
+    color: var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight: 900;
+    font-size: 30px;
+    border: 6px solid rgba(186,224,219,.75);
+    box-shadow: 0 12px 25px rgba(0,0,0,.18);
+  }
+
+  .roadmap-body{ padding: 26px 18px; }
+  .roadmap-body ul{
+    margin: 0;
+    padding-left: 18px;
+    color: rgba(31,45,42,.78);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .roadmap-body li{ margin-bottom: 8px; }
+
+  .cta{
+    margin: 18px 0 14px;
+    padding: 20px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(122,149,143,.95), rgba(186,224,219,.92));
+    border: 1px solid rgba(255,255,255,.30);
+    color:#0f1b18;
+    box-shadow: var(--shadow);
+    text-align:center;
+  }
+
+  .btn-book{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background:#fff;
+    border: 1px solid rgba(15,27,24,.10);
+    color: var(--dark);
+    font-weight: 800;
+    text-decoration:none;
+    transition: transform .2s ease, box-shadow .2s ease;
+    min-width: 200px;
+  }
+  .btn-book:hover{ transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,.12); color: var(--dark); }
+
+  .cond-pills{
+    background:#fff;
+    border:1px solid var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 18px;
+    padding: 14px;
+    margin-top: -18px;
+  }
+  .cond-pill{
+    display:inline-flex;
+    align-items:center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border:1px solid rgba(122,149,143,.22);
+    background: rgba(245,251,250,.85);
+    font-weight:700;
+    color: rgba(31,45,42,.85);
+    text-decoration:none;
+    margin: 6px 6px 0 0;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .cond-pill:hover{ transform: translateY(-1px); box-shadow: 0 12px 25px rgba(31,45,42,.10); color: rgba(31,45,42,.95); }
+  .cond-pill.active{
+    background: rgba(186,224,219,.65);
+    border-color: rgba(122,149,143,.35);
+    color: rgba(31,45,42,.95);
+  }
+
+  @media (max-width: 767.98px){
+    .neck-hero h1{ font-size: 28px; }
+    .neck-hero{ padding: 26px 0 22px; }
+    .neck-wrap{ margin-top: -14px; padding-bottom: 6px; }
+  }
+</style>
+
+<main class="neck-roadmap-page">
+
+  <section class="neck-hero">
+    <div class="container text-center">
+      <div class="badge-soft">
+        <span class="badge-dot"></span>
+        {{ $badge }}
+      </div>
+      <h1>{{ $title }}</h1>
+      <p>{{ $desc }}</p>
     </div>
-</section>        <!-- EndBookBtns -->
+  </section>
 
-        <!-- DownloadApp -->
+  {{-- <div class="container"> --}}
+{{--
+    <div class="cond-pills">
+      <div class="fw-bold mb-2" style="color: rgba(31,45,42,.85);">
+        {{ $subcategory->name }} conditions
+      </div>
 
-        <!-- EndDownloadApp -->
-
-        <!-- ModalMap -->
-        <!-- Modal-Maps -->
-<section class="modal-container p-15 mw-900-px" id="modal-map" >
-    <div class="modal-body ">
-        <a role="button" class="modal-close close c-pointer z-index-1 overflow-hidden">
-            <img alt="close" class="lazyload w-100" data-src="https://public-assets.getRehabrion .com/images/close-button.svg" width="20px" height="18px"/>
+      @forelse($conditions as $c)
+        <a
+          class="cond-pill {{ $active && $active->id === $c->id ? 'active' : '' }}"
+          href="{{ route('Home.conditions.we.treat', $subcategory->slug) }}?condition={{ $c->slug }}"
+        >
+          {{ $c->title }}
         </a>
-        <span class="d-block text-center">
-        <img class="lazyload" data-src="https://public-assets.getRehabrion .com/images/line_title.svg" alt="Separator" width="45px" height="6px">
-    </span>
-    <h2 class="color-purple-800 mt-0 text-center font-weight-normal">Where we serve</h2>
+      @empty
+        <div class="text-muted">No conditions found in this subcategory.</div>
+      @endforelse
+    </div> --}}
 
+  {{-- </div> --}}
+{{--  --}}
+  <div class="container neck-wrap">
 
+    @if(!$active)
+      <div class="alert alert-light border mt-4">
+        Please add conditions for this subcategory from the dashboard.
+      </div>
+    @else
 
-        <div class="row flex-center" id="map-container">
-  <div class="col-7 col-sm-12 col-xs-12 c-pointer">
-    <div id="regions_div"></div>
+      <div class="stats-strip mb-4">
+        <div class="row g-0">
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <span class="num">{{ $sessions }}</span>
+              <span class="lbl">Estimated sessions</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <span class="num">{{ $stat1 }}</span>
+              <span class="lbl">In home sessions</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <span class="num">{{ $stat2 }}</span>
+              <span class="lbl">Plan built for you</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat">
+              <span class="num">{{ $stat3 }}</span>
+              <span class="lbl">Home exercise support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="mb-5">
+        <div class="section-head">
+          <div class="accent-line mb-3"></div>
+          <h2>What Causes This</h2>
+        </div>
+
+        <div class="row g-4">
+          @forelse($causes as $c)
+            <div class="col-lg-4 col-md-6">
+              <div class="cause-card">
+                <h4 class="mb-0">{{ $c }}</h4>
+              </div>
+            </div>
+          @empty
+            <div class="col-12">
+              <div class="alert alert-light border">No causes added yet.</div>
+            </div>
+          @endforelse
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <div class="section-head">
+          <div class="accent-line mb-3"></div>
+          <h2>Symptoms</h2>
+        </div>
+
+        <div class="row g-3">
+          @forelse($symptoms as $s)
+            <div class="col-lg-4 col-md-6">
+              <div class="symptom">
+                <div class="tick"></div>
+                <div><p>{{ $s }}</p></div>
+              </div>
+            </div>
+          @empty
+            <div class="col-12">
+              <div class="alert alert-light border">No symptoms added yet.</div>
+            </div>
+          @endforelse
+        </div>
+      </section>
+
+      <section class="mb-4">
+        <div class="section-head">
+          <div class="accent-line mb-3"></div>
+          <h2>Rehab Roadmap</h2>
+        </div>
+
+        <div class="roadmap">
+          <div class="roadmap-head">
+            <div class="inner">
+              <div class="step">1</div>
+              <h3>Assessment and targeted treatment plan</h3>
+              <p>{{ $desc }}</p>
+              <div class="sessions-badge">
+                <span class="dot"></span>
+                Estimated sessions: {{ $sessions }}
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-body">
+            <ul>
+              @forelse($roadmap as $r)
+                <li>{{ $r }}</li>
+              @empty
+                <li>No roadmap steps added yet.</li>
+              @endforelse
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h4>{{ $ctaHeading }}</h4>
+        <p>{{ $ctaText }}</p>
+
+        <a class="btn-book" href="{{ asset('/submit-medical-history') }}">
+Book Now        </a>
+      </section>
+
+    @endif
+
   </div>
-  <div class="col-12 d-xxl-none d-xl-none d-lg-none d-md-none">
-    <div class="form-item align-left mb-20">
-      <select name="states-map" id="states-map"  class="input-element mt-5">
-        <option value="" disabled selected>Select a state</option>
-      </select>
-    </div>
-  </div>
-  <div class="col-5 col-sm-12 col-xs-12 d-none" id="regions-content">
-  </div>
-  <div class="col-12 d-flex flex-center flex-middle mt-30 d-sm-block d-xs-block shadow-center-sm-3 shadow-center-xs-3 p-sm-20 p-xs-20 text-xs-center text-sm-center">
-    <img alt="Rehabrion  Logo" class="modal-logo mw-70-px d-sm-block d-xs-block m-sm-auto m-xs-auto mr-10 h-auto" src="https://public-assets.getRehabrion .com/images/logo.svg" width="70px" height="20px">
-    <p class="mb-0 mt-5 color-purple-600 d-sm-block d-xs-block pl-10 p-sm-0 p-xs-0 border-left border-sm-0 border-xs-0 body-small"><a href="/locations">See our full service area list</a></p>
-  </div>
-</div>
- </div>
-</section>
+</main>
 
-
-   </main>
 @endsection

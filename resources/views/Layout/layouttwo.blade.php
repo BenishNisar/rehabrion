@@ -184,7 +184,7 @@
 
             <!-- Notification Icon -->
 <!-- Notification Icon -->
-<li class="nav-item dropdown">
+{{-- <li class="nav-item dropdown">
     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" style="color:#f71381;" title="Notifications">
         <i class="bi bi-bell"></i>
         @if(count($notifications) > 0)
@@ -216,7 +216,7 @@
             </li>
         @endforelse
     </ul>
-</li>
+</li> --}}
 
 
 
@@ -260,7 +260,7 @@
         <li><hr class="dropdown-divider"></li>
 
         <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ asset('/profile') }}">
+            <a class="dropdown-item d-flex align-items-center" href="{{ url('dashboard/profile') }}">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
             </a>
@@ -268,7 +268,7 @@
         <li><hr class="dropdown-divider"></li>
 
         <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ asset('/account_settings') }}">
+            <a class="dropdown-item d-flex align-items-center" href="{{ url('dashboard/account_settings') }}">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
             </a>
@@ -276,7 +276,7 @@
         <li><hr class="dropdown-divider"></li>
 
         <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ asset('/need_help') }}">
+            <a class="dropdown-item d-flex align-items-center" href="{{ url('dashboard/need_help') }}">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
             </a>
@@ -284,14 +284,14 @@
         <li><hr class="dropdown-divider"></li>
 
         <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('auth.logout') }}"
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
             </a>
         </li>
 
-       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+       <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
     </ul><!-- End Profile Dropdown Items -->
@@ -300,7 +300,7 @@
 
             <!-- Logout Icon -->
             <li class="nav-item">
-                <a class="nav-link nav-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: darkgray; transition: none; font-size: 15px;" title="Logout">
+                <a class="nav-link nav-icon" href="{{ route('auth.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: darkgray; transition: none; font-size: 15px;" title="Logout">
                     <i class="bi bi-box-arrow-right"></i>
                 </a>
             </li><!-- End Logout Icon -->
@@ -320,7 +320,7 @@
 
   <!-- Dashboard -->
   <li class="nav-item">
-    <a class="nav-link" href="{{ asset('dashboard') }}">
+    <a class="nav-link" href="{{ url('dashboard') }}">
       <i class="fa-solid fa-gauge fa-fw me-2"></i>
       <span>Dashboard</span>
     </a>
@@ -335,7 +335,7 @@
     </a>
     <ul id="users-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{ asset('users') }}">
+        <a href="{{ url('dashboard/users') }}">
           <i class="fa-regular fa-circle me-2"></i><span>All Users</span>
         </a>
       </li>
@@ -343,7 +343,7 @@
 
 
       <li>
-        <a href="{{ asset('roles') }}">
+        <a href="{{ url('dashboard/roles') }}">
           <i class="fa-solid fa-user-shield me-2"></i><span>Roles</span>
         </a>
       </li>
@@ -361,13 +361,20 @@
     </a>
     <ul id="patient-history" class="nav-content collapse" data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{ asset('patient_history') }}">
+        <a href="{{ url('dashboard/patient_history') }}">
           <i class="fa-regular fa-rectangle-list me-2"></i><span>Patient History</span>
         </a>
       </li>
        <li>
-        <a href="{{ asset('patient_consent') }}">
+        <a href="{{ url('dashboard/patient_consent') }}">
           <i class="fa-regular fa-rectangle-list me-2"></i><span>Patient Consent</span>
+        </a>
+      </li>
+
+
+        <li>
+        <a href="{{ url('dashboard/conditions') }}">
+          <i class="fa-regular fa-rectangle-list me-2"></i><span>Conditions</span>
         </a>
       </li>
     </ul>
@@ -386,15 +393,30 @@
     </a>
     <ul id="articles-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{ asset('blog') }}">
+        <a href="{{ url('dashboard/blog') }}">
           <i class="fa-solid fa-blog me-2"></i><span>Blogs</span>
         </a>
       </li>
       <li>
-        <a href="{{ asset('category') }}">
+        <a href="{{ url('dashboard/category') }}">
           <i class="fa-solid fa-tags me-2"></i><span>Categories</span>
         </a>
       </li>
+
+      <li>
+        <a href="{{ url('dashboard/conditions-categories') }}">
+          <i class="fa-solid fa-tags me-2"></i><span>Conditions Categories</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url('dashboard/subcategories') }}">
+          <i class="fa-solid fa-tags me-2"></i><span>SubCategories</span>
+        </a>
+      </li>
+
+
+
     </ul>
   </li>
 
@@ -406,13 +428,13 @@
       <i class="fa-solid fa-chevron-down ms-auto toggle-icon"></i>
     </a>
     <ul id="home-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-      <li>
-        <a href="{{ asset('banner') }}">
+      {{-- <li>
+        <a href="{{ url('dashboard/banner') }}">
           <i class="fa-solid fa-image me-2"></i><span>Banner</span>
         </a>
-      </li>
+      </li> --}}
       <li>
-        <a href="{{ asset('inner_banner') }}">
+        <a href="{{ url('dashboard/inner_banner') }}">
           <i class="fa-solid fa-images me-2"></i><span>Inner Page Banners</span>
         </a>
       </li>
@@ -420,7 +442,7 @@
   </li>
 
   <!-- Services -->
-  <li class="nav-item">
+  {{-- <li class="nav-item">
     <a class="nav-link collapsed" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">
       <i class="fa-solid fa-briefcase fa-fw me-2"></i>
       <span>Services</span>
@@ -433,7 +455,7 @@
         </a>
       </li>
     </ul>
-  </li>
+  </li> --}}
 
   <!-- Contacts -->
   <li class="nav-item">
@@ -444,12 +466,12 @@
     </a>
     <ul id="contacts-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
       <li>
-        <a href="{{ asset('contactus') }}">
+        <a href="{{ url('dashboard/contactus') }}">
           <i class="fa-solid fa-envelope me-2"></i><span>Contact</span>
         </a>
       </li>
       <li>
-        <a href="{{ asset('contact-settings') }}">
+        <a href="{{ url('dashboard/contact-settings') }}">
           <i class="fa-solid fa-gear me-2"></i><span>Contact Settings</span>
         </a>
       </li>
@@ -571,6 +593,8 @@
   };
 </script>
 
+
+{{--  --}}
 
 
     </html>

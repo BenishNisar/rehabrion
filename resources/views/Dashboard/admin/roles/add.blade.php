@@ -21,7 +21,7 @@
 
         <!-- Submit and cancel Buttons -->
         <div class="mb-3" style="display: flex; justify-content: flex-end; margin-top: 2vh">
-            <a href="{{ url('roles') }}" class="btn square-button" style="background-color:#6c757d;color:white;margin-right:10px;">Cancel</a>
+            <a href="{{ url('dashboard/roles') }}" class="btn square-button" style="background-color:#6c757d;color:white;margin-right:10px;">Cancel</a>
             <button style="background-color:#1d3a7d ;color:white;" type="submit" class="btn square-button">Save</button>
         </div>
     </form>

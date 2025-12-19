@@ -120,7 +120,7 @@
 
         <div class="search-container">
             <input type="text" class="search-input" placeholder="Search roles...">
-            <a href="{{ url('roles/add') }}" class="add-new-btn">Add New </a>
+            <a href="{{ url('dashboard/roles/add') }}" class="add-new-btn">Add New </a>
         </div>
     </div>
 
@@ -147,8 +147,8 @@
                     </td> --}}
 
                     <td class="actions">
-                        <a href="{{ url('roles/view') }}/{{ $item->id }}"><i class="fas fa-eye" title="View"></i> </a>
-                        <a href="{{ url('roles/edit') }}/{{ $item->id }}"><i class="fas fa-edit" title="Edit"></i> </a>
+                        <a href="{{ url('dashboard/roles/view') }}/{{ $item->id }}"><i class="fas fa-eye" title="View"></i> </a>
+                        <a href="{{ url('dashboard/roles/edit') }}/{{ $item->id }}"><i class="fas fa-edit" title="Edit"></i> </a>
 <form action="{{ route('Dashboard.admin.roles.delete', $item->id) }}" method="POST" >
                             @csrf
                             @method('DELETE')

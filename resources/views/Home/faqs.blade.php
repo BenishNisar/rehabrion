@@ -2,211 +2,172 @@
 @section("Content")
 
 <!-- FAQs -->
-<section id="faq" class="py-40 py-xs-25 py-sm-25 py-md-0 py-sm-0 py-xs-0 pb-md-40 pb-xs-40 pb-sm-40 d-flex flex-end d-sm-block d-xs-block d-md-block relative overflow-hidden">
-
-    <div class="bg bg-pos-y-top bg-pos-x-25 lazy absolute left-0 top-0 right-0 m-auto d-xs-none d-md-none d-sm-none h-100 mnh-1100-px"
-         data-src="https://public-assets.getluna.com/images/faq-bg.webp"></div>
-
-    <img
-        alt="Background"
-        class="d-none d-sm-block d-xs-block d-md-block lazy w-100 relative h-auto"
-        data-src="https://public-assets.getluna.com/images/faq-bg-mobile-2.webp"
-        width="991px"
-        height="660px">
-
-    <div class="z-index-2 mw-1400-px mx-auto w-100 d-flex flex-end d-sm-block d-xs-block d-md-block">
-        <div class="p-40 p-xs-0 p-sm-0 shadow-none-md shadow-none-sm shadow-none-xs mw-800-px mx-md-auto w-100-p shadow-center-3 bg-base-100">
-
-            <span class="d-none text-center mb-10 mt-md-30 mt-sm-25 mt-xs-25 d-xs-block d-sm-block d-md-block">
-                <img class="lazy" data-src="https://public-assets.getluna.com/images/line_title.svg" alt="Separator" width="45px" height="6px">
-            </span>
-
-            <h2 class="color-purple-800 font-weight-normal mt-0 px-xs-15 px-sm-15 text-xs-center text-sm-center text-md-center mb-sm-0 mb-xs-0 mb-md-0">
-                Frequently Asked Questions (FAQs)
-            </h2>
-
-            <div class="accordion wrapper">
-
-                {{-- 1 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom active">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            Do I need a doctor’s referral to book a session?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            No. You can directly book a physiotherapy consultation with Rehabrion.
-                            If you already have medical reports or prescriptions, our therapist will review them during assessment.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 2 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            Do you provide home-care physiotherapy?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            Yes. Home-care physiotherapy is one of our core services.
-                            Our licensed physiotherapists visit you at your home and provide one-on-one treatment.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 3 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            Do you offer online or virtual consultations?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            Yes. We offer online physiotherapy consultations and guided rehab sessions when in-person visits are not required or feasible.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 4 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            How long is a physiotherapy session?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            Session duration depends on your condition, but typically ranges between 45 to 60 minutes to ensure effective and focused treatment.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 5 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            What conditions do you treat?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>We treat a wide range of conditions including:</p>
-                        <ul class="pl-30">
-                            <li>Musculoskeletal (MSK) pain</li>
-                            <li>Back, neck, and joint pain</li>
-                            <li>Post-surgical rehabilitation</li>
-                            <li>Sports injuries</li>
-                            <li>Mobility and posture issues</li>
-                            <li>Chronic pain conditions</li>
-                        </ul>
-                    </div>
-                </article>
-
-                {{-- 6 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            How many sessions will I need?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            Recovery time varies for each patient. After your initial consultation, your therapist will recommend a treatment plan and estimated number of sessions.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 7 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            Will the same therapist visit me every time?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            Yes, whenever possible. We aim to maintain continuity of care by assigning the same therapist throughout your treatment.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 8 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            Is home physiotherapy safe?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            Yes. Home physiotherapy is safe, effective, and widely recommended — especially for patients who prefer treatment in a comfortable and familiar environment.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 9 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            What should I prepare before a home session?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            Please ensure a clean space with enough room to move. Wear comfortable clothing.
-                            If you have medical reports or imaging, keep them available.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 10 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            How do I book an appointment?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            You can book a session through our website or by contacting our team directly.
-                            Our support team will guide you through the process.
-                        </p>
-                    </div>
-                </article>
-
-                {{-- 11 --}}
-                <article class="accordion-item py-25 py-sm-20 py-xs-20 border-xs-bottom border-md-bottom border-xs-bottom">
-                    <a class="accordion-toogle relative c-pointer no-decoration" role="button">
-                        <span class="accordion-icon mr-10 top-sm-0 top-xs-0"></span>
-                        <h3 class="font-weight-400 color-purple-600 mb-10 pl-30 d-inline-block mt-0">
-                            What payment options do you accept?
-                        </h3>
-                    </a>
-                    <div class="accordion-content pl-30">
-                        <p>
-                            We offer transparent self-pay options and customized rehabilitation packages.
-                            All pricing is shared clearly before treatment begins.
-                        </p>
-                    </div>
-                </article>
-
-            </div>
-        </div>
+<section class="rb-faq py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <span class="rb-pill mb-2 d-inline-flex align-items-center gap-2">
+        <i class="fa-solid fa-circle-question"></i> FAQs
+      </span>
+      <h2 class="fw-bold mb-2">Frequently Asked Questions</h2>
+      <p class="text-muted mb-0 mx-auto rb-faq-sub">
+        Quick answers about booking, sessions, home care, and treatment.
+      </p>
     </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+        <div class="rb-faq-card p-3 p-md-4">
+          <div class="accordion rb-acc" id="faqAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true" aria-controls="c1">
+                  Do I need a doctor's referral to book a session?
+                </button>
+              </h2>
+              <div id="c1" class="accordion-collapse collapse show" aria-labelledby="h1" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  No. You can directly book a physiotherapy consultation with Rehabrion. If you already have medical reports or prescriptions, our therapist will review them during assessment.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false" aria-controls="c2">
+                  Do you provide home-care physiotherapy?
+                </button>
+              </h2>
+              <div id="c2" class="accordion-collapse collapse" aria-labelledby="h2" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes. Home-care physiotherapy is one of our core services. Our licensed physiotherapists visit you at your home and provide one-on-one treatment.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false" aria-controls="c3">
+                  Do you offer online or virtual consultations?
+                </button>
+              </h2>
+              <div id="c3" class="accordion-collapse collapse" aria-labelledby="h3" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes. We offer online physiotherapy consultations and guided rehab sessions when in-person visits are not required or feasible.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4" aria-expanded="false" aria-controls="c4">
+                  How long is a physiotherapy session?
+                </button>
+              </h2>
+              <div id="c4" class="accordion-collapse collapse" aria-labelledby="h4" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Session duration depends on your condition, but typically ranges between 45 to 60 minutes to ensure effective and focused treatment.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5" aria-expanded="false" aria-controls="c5">
+                  What conditions do you treat?
+                </button>
+              </h2>
+              <div id="c5" class="accordion-collapse collapse" aria-labelledby="h5" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We treat MSK pain, back, neck and joint pain, post-surgical rehab, sports injuries, mobility and posture issues, and chronic pain conditions.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6" aria-expanded="false" aria-controls="c6">
+                  How many sessions will I need?
+                </button>
+              </h2>
+              <div id="c6" class="accordion-collapse collapse" aria-labelledby="h6" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Recovery time varies. After your initial consultation, your therapist will recommend a treatment plan and an estimated number of sessions.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h7">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7" aria-expanded="false" aria-controls="c7">
+                  Will the same therapist visit me every time?
+                </button>
+              </h2>
+              <div id="c7" class="accordion-collapse collapse" aria-labelledby="h7" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes, whenever possible. We aim to maintain continuity of care by assigning the same therapist throughout your treatment.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h8">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8" aria-expanded="false" aria-controls="c8">
+                  Is home physiotherapy safe?
+                </button>
+              </h2>
+              <div id="c8" class="accordion-collapse collapse" aria-labelledby="h8" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes. Home physiotherapy is safe, effective, and widely recommended, especially for patients who prefer treatment in a comfortable environment.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h9">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9" aria-expanded="false" aria-controls="c9">
+                  What should I prepare before a home session?
+                </button>
+              </h2>
+              <div id="c9" class="accordion-collapse collapse" aria-labelledby="h9" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Keep a clean space with enough room to move, wear comfortable clothing, and keep any medical reports or imaging available.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0">
+              <h2 class="accordion-header" id="h10">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c10" aria-expanded="false" aria-controls="c10">
+                  How do I book an appointment?
+                </button>
+              </h2>
+              <div id="c10" class="accordion-collapse collapse" aria-labelledby="h10" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  You can book through our website or contact our team directly. Our support team will guide you through the process.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="rb-faq-cta mt-4 p-3 p-md-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+            <div>
+              <div class="fw-bold">Still have questions?</div>
+              <div class="text-muted small">Talk to our team and get quick guidance.</div>
+            </div>
+            <div class="d-flex gap-2">
+              <a href="tel:+971 50 565 3483" class="btn rb-btn px-3">Call Now</a>
+              <a href="/appointment" class="btn rb-btn-outline px-3">Book Appointment</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- End FAQs -->
 
 @endsection

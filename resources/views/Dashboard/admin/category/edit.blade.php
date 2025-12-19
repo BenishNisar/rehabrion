@@ -89,10 +89,12 @@
                     <input type="text" class="form-control" name="name" value="{{ old('name', $customer->name) }}" required />
                 </div>
 
+
+
                            </div>
 
             <div class="d-flex justify-content-end mt-3">
-                <a href="{{ url('category') }}" class="btn btn-secondary custom-btn">Cancel</a>
+                <a href="{{ url('dashboard/category') }}" class="btn btn-secondary custom-btn">Cancel</a>
                 <button type="submit" style="background-color:#1d3a7d ;color:white;" class="btn  custom-btn ms-2">Update</button>
             </div>
         </form>

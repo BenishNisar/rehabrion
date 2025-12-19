@@ -403,7 +403,7 @@
 
                 <!-- Actions -->
                 <div class="mb-2 mt-1 d-flex justify-content-end actions-row">
-                    <a href="{{ url('users') }}" class="btn btn-chip btn-cancel">Cancel</a>
+                    <a href="{{ route('Dashboard.admin.users.index') }}" class="btn btn-chip btn-cancel">Cancel</a>
                     <button type="submit" class="btn btn-chip btn-save">Save</button>
                 </div>
 

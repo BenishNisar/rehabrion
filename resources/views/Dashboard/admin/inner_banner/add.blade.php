@@ -104,7 +104,7 @@
       <button type="submit" class="btn btn-danger">Save</button>
             </div> --}}
                 <div class="d-flex justify-content-end mt-3">
-                <a href="{{ url('inner_banner') }}" class="btn btn-secondary custom-btn">Cancel</a>
+                <a href="{{ url('dashboard/inner_banner') }}" class="btn btn-secondary custom-btn">Cancel</a>
                 <button type="submit" class="btn  custom-btn ms-2" style="background-color: #1d3a7d;color:white;">Save</button>
             </div>
         </form>

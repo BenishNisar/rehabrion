@@ -319,7 +319,7 @@
 </table>
 @endcomponent
 
-@component('mail::button', ['url' => config('app.url')])
+@component('mail::button', ['url' => config('https://rehabrion.com.pk/')])
 Open Website
 @endcomponent
 
@@ -327,6 +327,5 @@ Open Website
   This email contains confidential patient information intended for clinical review only.
 </div>
 
-Thanks,<br>
-{{ config('app.name') }}
+
 @endcomponent

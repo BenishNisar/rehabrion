@@ -8,37 +8,27 @@ use Illuminate\Support\Facades\Auth;
 
 class AccountLogin
 {
-    public function handle(Request $request, Closure $next)
+  public function handle(Request $request, Closure $next)
     {
+        // Check if user is authenticated
         if (!Auth::check()) {
-            return redirect()->route('auth.accountlogin');
+            return redirect()->route('auth.accountlogin');  // Redirect to login if not logged in
         }
 
         $user = Auth::user();
 
-        // ADMIN allow only dashboard area
+        // If user is admin (role_id = 1), allow access to all routes
         if ((int)$user->role_id === 1) {
-            if (!$request->is('dashboard') && !$request->is('dashboard/*')) {
-                return redirect()->route('Dashboard.admin.dashboard');
-            }
-            return $next($request);
+            return $next($request);  // Admin is allowed to access any route
         }
 
-        // PATIENT allow only medical history routes
+        // If user is patient (role_id = 2), redirect to the home/welcome page
         if ((int)$user->role_id === 2) {
-            if (
-                $request->routeIs('Home.submit-medical-history') ||
-                $request->routeIs('Home.patient-medical-history.store') ||
-                $request->routeIs('Home.patient-consent.store')
-            ) {
-                return $next($request);
-            }
-
-            return redirect()->route('Home.submit-medical-history');
+            return redirect()->route('welcome');  // Redirect patient to /welcome page
         }
 
+        // If no valid role, log out and redirect to login page
         Auth::logout();
-        return redirect()->route('auth.accountlogin')
-            ->withErrors(['error' => 'Unauthorized access']);
+        return redirect()->route('auth.accountlogin')->withErrors(['error' => 'Unauthorized access']);
     }
 }

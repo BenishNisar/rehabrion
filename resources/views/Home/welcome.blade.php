@@ -1,873 +1,743 @@
 @extends("Layout.layout")
 @section("Content")
 
+<header class="hero-section-seek d-flex align-items-center">
+    <div class="container position-relative z-2">
+        <div class="row align-items-center">
 
-    <!-- Hero Section - UPDATED -->
-    <section id="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <div class="hero-badge floating-icon">
-                            <i class="fas fa-badge-check"></i> Trusted by 50,000+ Patients
-                        </div>
+            <div class="col-lg-6 col-md-10 col-12">
+                <div class="job-search-card animate-up">
 
-                        <h1 class="display-4 fw-bold mb-3">Rehab & Physical Care,
-<br><span class="text-dark">Delivered to You</span></h1>
-
-                        <p class="lead mb-4">Personalized rehabilitation and musculoskeletal care — wherever you are, whenever you need it.
-</p>
-
-                        <div class="hero-cta-buttons">
-                            <a href="{{ asset('/submit-medical-history') }}" class="btn btn-hero-primary">
-                                <i class="fas fa-calendar-check"></i> Book Consultation
-                            </a>
-
-                            <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information"
-       target="_blank"
-       rel="noopener" class="btn btn-hero-secondary">
-                               <i class="fas fa-phone-volume "></i>
-+971 50 565 3483
-                            </a>
-                        </div>
-
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">3,000+</div>
-                                <div class="stat-label">Licensed Therapists</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">States Covered</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">98%</div>
-                                <div class="stat-label">Patient Satisfaction</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Support Available</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expert Vetted Therapists -->
-    <section id="expert-vetted" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="section-title">Expert Physiotherapy & Rehabilitation Team</h2>
-                    <p class="section-subtitle">
-At Rehabrion, your recovery is guided by trained, experienced, and compassionate professionals who specialize in musculoskeletal (MSK) care and modern rehabilitation techniques.
+                    <h1 class="card-title mb-3">
+                        Find your <span class="text-pink">Job Portal</span> today.
+                    </h1>
+                    <p class="card-subtitle mb-4">
+                        Our AI-powered platform matches you with the right companies, fast.
                     </p>
+{{--
+                    <form action="#" class="search-form-vertical">
+
+                        <div class="form-group mb-3 position-relative">
+                            <i class="fas fa-search field-icon"></i>
+                            <input type="text" class="form-control form-control-lg ps-5" placeholder="Search for keywords">
+                        </div>
+
+                        <div class="form-group mb-3 position-relative">
+                            <i class="fas fa-map-marker-alt field-icon"></i>
+                            <input type="text" class="form-control form-control-lg ps-5" placeholder="Location">
+                        </div>
+
+                        <div class="form-group mb-4 position-relative">
+                            <i class="fas fa-briefcase field-icon"></i>
+                            <select class="form-select form-select-lg ps-5 cursor-pointer">
+                                <option selected>All Sectors</option>
+                                <option>Information Technology</option>
+                                <option>Healthcare</option>
+                                <option>Marketing & Sales</option>
+                                <option>Engineering</option>
+                            </select>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </div>
+
+                        <button type="submit" class="btn btn-custom w-100 py-3 fw-bold fs-5 shadow-sm">
+                            Search
+                        </button>
+                    </form> --}}
+
+                    <form action="{{ route('Home.jobs') }}" method="GET" class="search-form-vertical">
+
+    <div class="form-group mb-3 position-relative">
+        <i class="fas fa-search field-icon"></i>
+        <input type="text" name="q" class="form-control form-control-lg ps-5"
+               placeholder="Search for keywords" value="{{ request('q') }}">
+    </div>
+
+    <div class="form-group mb-3 position-relative">
+        <i class="fas fa-map-marker-alt field-icon"></i>
+        <input type="text" name="location" class="form-control form-control-lg ps-5"
+               placeholder="Location" value="{{ request('location') }}">
+    </div>
+
+    {{-- <div class="form-group mb-4 position-relative">
+        <i class="fas fa-briefcase field-icon"></i>
+
+        <select name="sector" class="form-select form-select-lg ps-5 cursor-pointer">
+            <option value="">All Sectors</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Marketing & Sales">Marketing & Sales</option>
+            <option value="Engineering">Engineering</option>
+        </select>
+
+        <i class="fas fa-chevron-down dropdown-icon"></i>
+    </div> --}}
+
+    <button type="submit" class="btn btn-custom w-100 py-3 fw-bold fs-5 shadow-sm">
+        Search
+    </button>
+</form>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <p class="mb-0 text-muted small">
+                            <i class="fas fa-chart-line text-pink me-2"></i>
+                            <span class="fw-bold text-dark">10,500+</span> jobs added today
+                        </p>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Therapists Carousel -->
-            <div class="position-relative mt-4">
-                <div class="owl-carousel owl-theme" id="therapists-carousel">
-                    <!-- Therapist 1 -->
-                    <div class="item">
-                        <div class="therapist-card">
-                            <div class="therapist-img-container">
-                                <img src="https://prpphysio.com/wp-content/uploads/2022/10/PRP-Web-56-819x1024.webp" class="therapist-img" alt="Amanda F.">
-                                <div class="therapist-badge">
-                                    <i class="fas fa-award me-1"></i> Expert
-                                </div>
-                            </div>
-                            <div class="therapist-info">
-                                <h4 class="fw-bold">Amanda F.</h4>
-                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Doctor of Physical Therapy</h6>
-                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
-                                <p class="specialty-list">Geriatric, Orthopedics and Sport Medicine</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-6 d-none d-lg-block"></div>
+        </div>
+    </div>
+</header>
+{{-- header finish --}}
 
-                    <!-- Therapist 2 -->
-                    <div class="item">
-                        <div class="therapist-card">
-                            <div class="therapist-img-container">
-                                <img src="https://public-assets.getluna.com/images/therapists/20230314_100348_joshua_arellano.webp" class="therapist-img" alt="Joshua A.">
-                                <div class="therapist-badge">
-                                    <i class="fas fa-award me-1"></i> Expert
-                                </div>
-                            </div>
-                            <div class="therapist-info">
-                                <h4 class="fw-bold">Joshua A.</h4>
-                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Physical Therapist</h6>
-                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
-                                <p class="specialty-list">Geriatrics, Orthopedics and Sports Medicine, Sports Injuries, ACL Rehab, Spinal Rehab</p>
-                            </div>
-                        </div>
-                    </div>
+{{-- section about us --}}
+<section class="about-section py-5 position-relative overflow-hidden">
+    <div class="bg-blob-1"></div>
 
-                    <!-- Therapist 3 -->
-                    <div class="item">
-                        <div class="therapist-card">
-                            <div class="therapist-img-container">
-                                <img src="https://public-assets.getluna.com/images/therapists/20230314_100356_karen_khuu.webp" class="therapist-img" alt="Karen K.">
-                                <div class="therapist-badge">
-                                    <i class="fas fa-award me-1"></i> Expert
-                                </div>
-                            </div>
-                            <div class="therapist-info">
-                                <h4 class="fw-bold">Karen K.</h4>
-                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Doctor of Physical Therapy</h6>
-                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
-                                <p class="specialty-list">Orthopedics and Sports Medicine, Pelvic Floor</p>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container py-5 position-relative z-2">
+        <div class="row align-items-center">
 
-                    <!-- Did You Know Card -->
-                    <div class="item">
-                        <div class="know-card">
-                            <h3 class="fw-bold mb-3"><i class="fas fa-lightbulb me-2"></i> Did you know?</h3>
-                            <p class="mb-4">100% of Rehabrion therapists are licensed board-certified physical therapists and on average have more than 10 years of experience.</p>
-                            <a href="/appointment" class="btn"><i class="fas fa-calendar-check me-2"></i> Book Consultation</a>
-                        </div>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="mosaic-grid">
+                    <div class="mosaic-item item-1 animate-hover">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80" alt="Team">
                     </div>
-
-                    <!-- Therapist 4 -->
-                    <div class="item">
-                        <div class="therapist-card">
-                            <div class="therapist-img-container">
-                                <img src="https://public-assets.getluna.com/images/therapists/20230314_100303_mika_toribara.webp" class="therapist-img" alt="Mika T.">
-                                <div class="therapist-badge">
-                                    <i class="fas fa-award me-1"></i> Expert
-                                </div>
-                            </div>
-                            <div class="therapist-info">
-                                <h4 class="fw-bold">Mika T.</h4>
-                                <h6 class="text-secondary mb-3"><i class="fas fa-graduation-cap me-2"></i> Doctor of Physical Therapy</h6>
-                                <p class="mb-2"><strong><i class="fas fa-star me-2"></i> Specializes in:</strong></p>
-                                <p class="specialty-list">Sports Rehab, Movement Based Approach, Spinal Rehab, Health Coaching</p>
-                            </div>
-                        </div>
+                    <div class="mosaic-item item-2 animate-hover">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&q=80" alt="Meeting">
                     </div>
-                </div>
-
-                <!-- Carousel Navigation -->
-                <div class="luna-carousel-nav prev d-none d-md-flex">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="luna-carousel-nav next d-none d-md-flex">
-                    <i class="fas fa-chevron-right"></i>
+                    <div class="mosaic-item item-3 animate-hover">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80" alt="Office">
+                    </div>
+                    <div class="mosaic-item item-4 animate-hover">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=500&q=80" alt="Work">
+                    </div>
+                    <div class="mosaic-item item-5 animate-hover">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="Professional">
+                    </div>
+                    <div class="mosaic-item item-6 animate-hover">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=500&q=80" alt="Group">
+                    </div>
                 </div>
             </div>
 
-            <!-- CTA Buttons -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-8 text-center">
-                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-                  <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information"
-       target="_blank"
-       rel="noopener" class="btn btn-purple">
-                           <i class="fas fa-phone-volume"></i>
-+971 50 565 3483
-                        </a>
-                        <span class="d-none d-md-inline">or</span>
-                        <a href="{{ asset('/submit-medical-history') }}" class="btn btn-outline-purple">
-                            <i class="fas fa-calendar-check"></i> Book Consultation
-                        </a>
+            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center position-relative">
+                <h2 class="vertical-text">ABOUT US</h2>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="about-content ps-lg-4">
+                    <span class="badge bg-pink-light text-pink mb-3 px-3 py-2 rounded-pill fw-bold">Who We Are</span>
+                    <h2 class="fw-bold display-5 mb-4 text-dark-blue">
+                        We build bridges between <span class="text-pink">Talent</span> and <span class="text-pink">Opportunity</span>.
+                    </h2>
+                    <p class="text-muted lead mb-4">
+                        JobPortalPro is not just a job board; we are the advanced AI-driven ecosystem connecting the world's most ambitious professionals with future-forward companies.
+                    </p>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-6">
+                            <div class="p-3 border rounded-4 bg-white shadow-sm d-flex align-items-center">
+                                <i class="fas fa-users fs-2 text-pink me-3"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">150k+</h4>
+                                    <small class="text-muted">Daily Users</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 border rounded-4 bg-white shadow-sm d-flex align-items-center">
+                                <i class="fas fa-briefcase fs-2 text-pink me-3"></i>
+                                <div>
+                                    <h4 class="fw-bold mb-0">50k+</h4>
+                                    <small class="text-muted">Companies</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <a href="#" class="btn btn-custom rounded-pill px-5 py-3 fw-bold">Learn More About Us <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+{{-- section about us --}}
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="section-title">How It Works</h2>
-                    <p class="section-subtitle">Three simple steps to get expert physical therapy delivered to your doorstep</p>
-                </div>
-            </div>
 
-            <div class="row mt-5 row-equal-height">
-                <!-- Step 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <div class="step-icon">
-                            <i class="fas fa-user-check floating-icon"></i>
-                        </div>
-                        <h4 class="step-title">Get Matched With a Therapist</h4>
-                        <p>We assess your condition, goals, and lifestyle before pairing you with the right rehab expert.</p>
-                    </div>
-                </div>
+{{-- logo --}}
+<section class="sectors-stream py-5 position-relative overflow-hidden">
+    <div class="stream-glow"></div>
 
-                <!-- Step 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <div class="step-icon">
-                            <i class="fas fa-home floating-icon"></i>
-                        </div>
-                        <h4 class="step-title">Sessions On Your Schedule</h4>
-                        <p>Get therapy at home or online – no clinic stress, no waiting lines, no travel required.</p>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <div class="step-icon">
-                            <i class="fas fa-heartbeat floating-icon"></i>
-                        </div>
-                        <h4 class="step-title">Heal Faster With Expert Care</h4>
-                        <p>Track progress, improve mobility, and reduce pain with consistent guided sessions.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Buttons -->
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-8 text-center">
-                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-                        <a href="tel:+971 50 565 3483" class="btn btn-purple">
-                           <i class="fas fa-phone-volume me-2"></i>
- Call +971 50 565 3483
-                        </a>
-                        <span class="d-none d-md-inline">or</span>
-                        <a href="/appointment" class="btn btn-outline-purple">
-                            <i class="fas fa-calendar-check"></i> Book Consultation
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials - LUNA STYLE -->
-<!-- Testimonials -->
-<!-- Testimonials -->
-<section id="testimonials" class="py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <div class="divider"></div>
-        <h2 class="section-title">
-          Thousands of patients <i class="fas fa-heart text-danger mx-2"></i> Rehabrion
+    <div class="container text-center mb-5 position-relative z-2">
+        <span class="badge bg-white text-pink shadow-sm px-3 py-2 rounded-pill fw-bold ls-1 mb-3">
+            <i class="fas fa-bolt me-2"></i>TRENDING INDUSTRIES
+        </span>
+        <h2 class="display-5 fw-bold text-dark-blue">
+            Opportunities across <span class="text-pink text-gradient">Global Sectors</span>
         </h2>
-      </div>
     </div>
 
-    <div class="testimonials-luna-container position-relative mt-5">
+    <div class="stream-wrapper">
+        <div class="stream-fade-left"></div>
+        <div class="stream-fade-right"></div>
 
-      <!-- Row 1 -->
-      <div class="luna-carousel-row-1">
-        <div class="owl-carousel owl-theme" id="testimonials-carousel-1">
+        <div class="stream-track">
 
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"I feel lucky I found a company called Rehabrion."</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Anton S.</p>
-                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
-              </div>
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="card-info">
+                    <h5>Technology</h5>
+                    <span>1,200+ Jobs</span>
+                </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"I was able to setup an appointment within a few days. Other places I called could not get me in for another 2-3 weeks."</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Anthony K.</p>
-                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
-              </div>
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                <div class="card-info">
+                    <h5>Finance</h5>
+                    <span>850+ Jobs</span>
+                </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"I can't imagine why I would ever go back to an actual PT office. Bottom line I love Rehabrion."</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> T.C.</p>
-                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
-              </div>
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                <div class="card-info">
+                    <h5>Healthcare</h5>
+                    <span>2,000+ Jobs</span>
+                </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"Fantastic! It was so convenient having my daughter treated at home. My daughter loved her therapist!"</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Linda F.</p>
-                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
-              </div>
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
+                <div class="card-info">
+                    <h5>Construction</h5>
+                    <span>500+ Jobs</span>
+                </div>
             </div>
-          </div>
 
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"We feel blessed to have such a wonderful physical therapist. Thank you Rehabrion."</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Darleen B.</p>
-                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
-              </div>
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="card-info">
+                    <h5>Marketing</h5>
+                    <span>340+ Jobs</span>
+                </div>
             </div>
-          </div>
+
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="card-info">
+                    <h5>Education</h5>
+                    <span>600+ Jobs</span>
+                </div>
+            </div>
+
+             <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="card-info">
+                    <h5>Technology</h5>
+                    <span>1,200+ Jobs</span>
+                </div>
+            </div>
+
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                <div class="card-info">
+                    <h5>Finance</h5>
+                    <span>850+ Jobs</span>
+                </div>
+            </div>
+
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                <div class="card-info">
+                    <h5>Healthcare</h5>
+                    <span>2,000+ Jobs</span>
+                </div>
+            </div>
+
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
+                <div class="card-info">
+                    <h5>Construction</h5>
+                    <span>500+ Jobs</span>
+                </div>
+            </div>
+
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="card-info">
+                    <h5>Marketing</h5>
+                    <span>340+ Jobs</span>
+                </div>
+            </div>
+
+            <div class="stream-card">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="card-info">
+                    <h5>Education</h5>
+                    <span>600+ Jobs</span>
+                </div>
+            </div>
 
         </div>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="luna-carousel-row-2">
-        <div class="owl-carousel owl-theme" id="testimonials-carousel-2">
-
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"This was my first visit with the therapist and I must say it was great. He was very professional and knowledgeable."</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Evelina F.</p>
-                <span class="luna-source" title="Yelp Review"><i class="fab fa-yelp"></i></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"Personally, it seems like a no brainer to have a physical therapist come to my office."</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Scott S.</p>
-                <span class="luna-source" title="Yelp Review"><i class="fab fa-yelp"></i></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"Amazing experience! I definitely recommend Rehabrion!"</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Carol L.</p>
-                <span class="luna-source" title="Yelp Review"><i class="fab fa-yelp"></i></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"I have been through PT twice and working with Rehabrion has been much better than dealing with an actual clinic."</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Tyler H.</p>
-                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="luna-testimonial-card">
-              <p class="luna-testimonial-text">"All of the treatment time is devoted to me as a patient without distraction, bravo!"</p>
-              <div class="luna-testimonial-footer">
-                <p class="luna-testimonial-author"><span class="luna-avatar"></span> Robin M.</p>
-                <span class="luna-source" title="Google Review"><i class="fab fa-google"></i></span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Your existing nav buttons can stay if you use them -->
-      <div class="luna-carousel-nav prev d-none d-md-flex"><i class="fas fa-chevron-left"></i></div>
-      <div class="luna-carousel-nav next d-none d-md-flex"><i class="fas fa-chevron-right"></i></div>
-
     </div>
-  </div>
 </section>
+{{-- logo --}}
 
-<!-- Exclusive Provider -->
-<section id="exclusive-provider">
-  <div class="container ep-inner">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-6 col-md-12 ep-left">
-        <img src="{{ asset('assets/images/logo/logo.png') }}"
-             alt="Rehabrion Provider"
-             class="img-fluid mb-3 ep-logo">
 
-        <h3 class="ep-title text-white">Trusted Care. Professional Standards</h3>
+{{-- featured jobs --}}
+<section class="featured-jobs py-5 bg-white position-relative">
+    <div class="container py-4">
 
-        <p class="ep-text">
-          Rehabrion follows strict ethical and professional rehabilitation standards. Our methods are built for safety,
-          comfort, and real recovery outcomes.
-        </p>
-
-        <div class="d-flex gap-2 justify-content-lg-start justify-content-center flex-wrap">
-          <a href="{{ asset('/submit-medical-history') }}" class="btn btn-hero-primary">
-            <i class="fas fa-calendar-check"></i> Book Consultation
-          </a>
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-8">
+                <span class="badge bg-pink-light text-pink px-3 py-2 rounded-pill fw-bold ls-1 mb-2">
+                    <i class="fas fa-star me-2"></i>TOP OPPORTUNITIES
+                </span>
+                <h2 class="display-5 fw-bold text-dark-blue">
+                    Latest <span class="text-pink">Featured Jobs</span>
+                </h2>
+                <p class="text-muted lead mb-0">Hand-picked jobs from top companies.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold">View All Jobs <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
         </div>
-      </div>
 
-      <div class="col-lg-6 col-md-12">
-        <div class="ep-card">
-          <h4>
-            Why Choose Rehabrion
-          </h4>
+        <div class="row g-4">
 
-          <ul class="list-unstyled mb-0 ep-list">
-            <li>
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Evidence based:</strong> Our treatments follow clinically proven methods supported by modern medical research.
-              </div>
-            </li>
+            <div class="col-lg-4 col-md-6">
+                <div class="job-card h-100">
+                    <div class="card-top">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="company-logo">
+                                <i class="fab fa-google text-primary fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="job-title mb-1">Senior UI/UX Designer</h5>
+                                <p class="company-name mb-0">Google Inc. <i class="fas fa-check-circle text-primary small"></i></p>
+                            </div>
+                        </div>
+                        <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
 
-            <li>
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Medically guided:</strong> Each therapy plan is supervised by qualified professionals and delivered safely at your home.
-              </div>
-            </li>
+                    <div class="card-body px-0 pt-3">
+                        <div class="job-tags">
+                            <span><i class="fas fa-map-marker-alt"></i> NY, USA</span>
+                            <span><i class="fas fa-wallet"></i> $150k</span>
+                            <span class="badge-tag tag-urgent"><i class="fas fa-bolt me-1"></i>Urgent</span>
+                        </div>
+                    </div>
 
-            <li>
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Patient first focused:</strong> We prioritize comfort care and recovery with consistently high patient satisfaction.
-              </div>
-            </li>
+                    <div class="card-footer-custom">
+                        <div class="posted-time">
+                            <i class="far fa-clock me-1"></i> 2 hours ago
+                        </div>
+                        <a href="#" class="btn btn-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
 
-            <li class="mb-0">
-              <i class="fas fa-check"></i>
-              <div>
-                <strong>Outcome driven:</strong> Our approach is focused on measurable recovery results with support from major health coverage plans.
-              </div>
-            </li>
-          </ul>
+            <div class="col-lg-4 col-md-6">
+                <div class="job-card h-100 highlight-border">
+                    <div class="card-top">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="company-logo">
+                                <i class="fab fa-spotify text-success fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="job-title mb-1">Product Manager</h5>
+                                <p class="company-name mb-0">Spotify <i class="fas fa-check-circle text-primary small"></i></p>
+                            </div>
+                        </div>
+                        <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+
+                    <div class="card-body px-0 pt-3">
+                        <div class="job-tags">
+                            <span><i class="fas fa-clock"></i> Contract</span>
+                            <span><i class="fas fa-wallet"></i> $110k</span>
+                            <span class="badge-tag tag-remote"><i class="fas fa-wifi me-1"></i>Remote</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer-custom">
+                        <div class="posted-time">
+                            <i class="far fa-clock me-1"></i> 5 hours ago
+                        </div>
+                        <a href="#" class="btn btn-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="job-card h-100">
+                    <div class="card-top">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="company-logo">
+                                <i class="fab fa-amazon text-warning fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="job-title mb-1">Software Engineer</h5>
+                                <p class="company-name mb-0">Amazon <i class="fas fa-check-circle text-primary small"></i></p>
+                            </div>
+                        </div>
+                        <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+
+                    <div class="card-body px-0 pt-3">
+                        <div class="job-tags">
+                            <span><i class="fas fa-map-marker-alt"></i> Seattle</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-wallet"></i> $180k</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer-custom">
+                        <div class="posted-time">
+                            <i class="far fa-clock me-1"></i> 1 day ago
+                        </div>
+                        <a href="#" class="btn btn-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="job-card h-100">
+                    <div class="card-top">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="company-logo">
+                                <i class="fab fa-apple text-dark fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="job-title mb-1">iOS Developer</h5>
+                                <p class="company-name mb-0">Apple <i class="fas fa-check-circle text-primary small"></i></p>
+                            </div>
+                        </div>
+                        <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+
+                    <div class="card-body px-0 pt-3">
+                        <div class="job-tags">
+                            <span><i class="fas fa-map-marker-alt"></i> California</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-wallet"></i> $130k+</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer-custom">
+                        <div class="posted-time">
+                            <i class="far fa-clock me-1"></i> 2 days ago
+                        </div>
+                        <a href="#" class="btn btn-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="job-card h-100">
+                    <div class="card-top">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="company-logo">
+                                <i class="fab fa-figma text-danger fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="job-title mb-1">Brand Designer</h5>
+                                <p class="company-name mb-0">Figma <i class="fas fa-check-circle text-primary small"></i></p>
+                            </div>
+                        </div>
+                        <button class="bookmark-btn"><i class="far fa-bookmark"></i></button>
+                    </div>
+
+                    <div class="card-body px-0 pt-3">
+                        <div class="job-tags">
+                            <span><i class="fas fa-clock"></i> Part Time</span>
+                            <span><i class="fas fa-wallet"></i> $60/hr</span>
+                            <span class="badge-tag tag-hot"><i class="fas fa-fire me-1"></i>Hot</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer-custom">
+                        <div class="posted-time">
+                            <i class="far fa-clock me-1"></i> 3 days ago
+                        </div>
+                        <a href="#" class="btn btn-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="job-card h-100 bg-dark-blue text-white border-0 position-relative overflow-hidden d-flex flex-column justify-content-center align-items-center text-center">
+                    <div class="position-relative z-2">
+                        <div class="icon-box mb-3 bg-white text-pink rounded-circle mx-auto shadow-sm" style="width: 60px; height: 60px; display:grid; place-items:center; font-size:1.5rem;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="fw-bold mb-2">Hiring?</h3>
+                        <p class="text-white-50 mb-4">Post a job and find top talent in minutes.</p>
+                        <a href="#" class="btn btn-custom w-100 rounded-pill fw-bold">Post a Job</a>
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-blob-2" style="opacity: 0.1;"></div>
+                </div>
+            </div>
+
         </div>
-      </div>
-
     </div>
-  </div>
 </section>
-    <!-- Exclusive Provider -->
+{{-- featured jobs --}}
 
+{{-- testimonials --}}
+<section class="reviews-section py-5 position-relative bg-light overflow-hidden">
+    <div class="container py-4">
+        <div class="row align-items-center">
 
-    <!-- FAQ -->
-    {{-- <section id="faq" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="divider"></div>
-                    <h2 class="section-title text-center">Frequently Asked Questions</h2>
-                    <p class="section-subtitle text-center">Get answers to common questions about our home physical therapy services</p>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="review-sticky-content pe-lg-5">
+                    <span class="badge bg-white text-pink shadow-sm px-3 py-2 rounded-pill fw-bold ls-1 mb-3">
+                        <i class="fas fa-heart me-2"></i>WALL OF LOVE
+                    </span>
+                    <h2 class="display-5 fw-bold text-dark-blue mb-3">
+                        Trusted by <span class="text-pink">10,000+</span> Users
+                    </h2>
+                    <p class="text-muted lead mb-4">
+                        See what job seekers and employers are saying about their success stories.
+                    </p>
 
-                    <div class="accordion mt-4" id="faqAccordion">
-                        <!-- FAQ 1 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="faq1">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                    <i class="fas fa-map-marker-alt me-3"></i> Where are Rehabrion therapists seeing patients?
-                                </button>
-                            </h2>
-                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Rehabrion therapists provide care in homes across 50+ states. You can book directly with Rehabrion. <a href="#" class="text-primary fw-bold">See our service areas.</a>
-                                </div>
+                    <div class="rating-box bg-white p-4 rounded-4 shadow-sm border border-light">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" width="80" alt="Google">
+                                <span class="fw-bold text-dark small ms-2">Reviews</span>
                             </div>
+                            <span class="badge bg-success-subtle text-success px-3 py-2 rounded fw-bold">Excellent</span>
                         </div>
-
-                        <!-- FAQ 2 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="faq2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    <i class="fas fa-home me-3"></i> Do you offer home visits?
-                                </button>
-                            </h2>
-                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes! At-home physiotherapy is one of our core services. Our licensed therapists come directly to your home, office, or wherever is most convenient for you.
+                        <div class="d-flex align-items-end gap-3">
+                            <h1 class="mb-0 fw-bold text-dark-blue display-3">4.9</h1>
+                            <div class="mb-2">
+                                <div class="mb-1 text-warning fs-5">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 3 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="faq3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    <i class="fas fa-laptop-medical me-3"></i> Do you provide online sessions?
-                                </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Absolutely! Virtual rehab sessions are available for those who prefer telehealth. <a href="#" class="text-primary fw-bold">Read more about prescriptions.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 4 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="faq4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                    <i class="fas fa-clock me-3"></i> How long will recovery take?
-                                </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Every case is different. Your therapist will guide you clearly through a personalized recovery plan. <a href="/how-it-works" class="text-primary fw-bold">See our clinic comparison chart.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ 5 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="faq5">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                    <i class="fas fa-user-md me-3"></i> Can I see the same physical therapist every session?
-                                </button>
-                            </h2>
-                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We strive to have a single therapist work with each patient for their entire course of care. In very rare cases, your scheduling priorities may require adjustments, but you'll always know who is seeing you for your appointment in advance.
-                                </div>
+                                <p class="mb-0 text-muted small">Based on 2,500+ global reviews</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section> --}}
-<!-- FAQ -->
-{{-- <section id="faq" class="py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
 
-                <div class="divider"></div>
-                <h2 class="section-title text-center">Frequently Asked Questions</h2>
-                <p class="section-subtitle text-center">
-                    Get answers to common questions about our home physical therapy services
-                </p>
+            <div class="col-lg-8">
+                <div class="reviews-wrapper-mask">
+                    <div class="row g-4 reviews-grid">
 
-                <div class="accordion mt-4" id="faqAccordion">
+                        <div class="col-md-4 col-12">
+                            <div class="marquee-vertical marquee-up">
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=1" alt="User"><div><h5>Sarah Jenkins</h5><small>Hired at Google</small></div></div>
+                                    <p>"I applied on Monday and got hired by Friday. Best portal ever!"</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=3" alt="User"><div><h5>Mike Ross</h5><small>Employer</small></div></div>
+                                    <p>"Found the perfect developer in 24 hours. The AI matching is real."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
 
-                    <!-- FAQ 1 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse1" aria-expanded="true">
-                                <i class="fas fa-map-marker-alt me-3"></i>
-                                Where are Rehabrion therapists seeing patients?
-                            </button>
-                        </h2>
-                        <div id="collapse1" class="accordion-collapse collapse show"
-                            data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Rehabrion therapists provide care in homes across 50+ states.
-                                You can book directly with Rehabrion.
-                                <a href="#" class="text-primary fw-bold">See our service areas.</a>
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=1" alt="User"><div><h5>Sarah Jenkins</h5><small>Hired at Google</small></div></div>
+                                    <p>"I applied on Monday and got hired by Friday. Best portal ever!"</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=3" alt="User"><div><h5>Mike Ross</h5><small>Employer</small></div></div>
+                                    <p>"Found the perfect developer in 24 hours. The AI matching is real."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- FAQ 2 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq2">
-                            <button class="accordion-button collapsed" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                <i class="fas fa-home me-3"></i>
-                                Do you offer home visits?
-                            </button>
-                        </h2>
-                        <div id="collapse2" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Yes! At home physiotherapy is one of our core services.
-                                Our licensed therapists come directly to your home, office,
-                                or wherever is most convenient for you.
+                        <div class="col-md-4 col-12 d-none d-md-block">
+                            <div class="marquee-vertical marquee-down">
+                                <div class="review-card highlight-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=8" alt="User"><div><h5>David Kim</h5><small>CTO, TechFlow</small></div></div>
+                                    <p>"This platform saved us thousands in recruitment fees. Brilliant."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=9" alt="User"><div><h5>Anna Belle</h5><small>Hired at Amazon</small></div></div>
+                                    <p>"Resume builder feature is a game changer. Got noticed instantly."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+
+                                <div class="review-card highlight-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=8" alt="User"><div><h5>David Kim</h5><small>CTO, TechFlow</small></div></div>
+                                    <p>"This platform saved us thousands in recruitment fees. Brilliant."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=9" alt="User"><div><h5>Anna Belle</h5><small>Hired at Amazon</small></div></div>
+                                    <p>"Resume builder feature is a game changer. Got noticed instantly."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- FAQ 3 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq3">
-                            <button class="accordion-button collapsed" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                <i class="fas fa-laptop-medical me-3"></i>
-                                Do you provide online sessions?
-                            </button>
-                        </h2>
-                        <div id="collapse3" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Absolutely! Virtual rehab sessions are available for those
-                                who prefer telehealth.
-                                <a href="#" class="text-primary fw-bold">
-                                    Read more about prescriptions.
-                                </a>
+                        <div class="col-md-4 col-12 d-none d-lg-block">
+                            <div class="marquee-vertical marquee-up">
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=15" alt="User"><div><h5>Lucas M.</h5><small>Designer</small></div></div>
+                                    <p>"Finally a job portal that focuses on UI/UX roles specifically."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=20" alt="User"><div><h5>Jessica</h5><small>HR Manager</small></div></div>
+                                    <p>"Quality of candidates is far superior to LinkedIn. Great work."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=15" alt="User"><div><h5>Lucas M.</h5><small>Designer</small></div></div>
+                                    <p>"Finally a job portal that focuses on UI/UX roles specifically."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <div class="review-card">
+                                    <div class="review-header"><img src="https://i.pravatar.cc/150?img=20" alt="User"><div><h5>Jessica</h5><small>HR Manager</small></div></div>
+                                    <p>"Quality of candidates is far superior to LinkedIn. Great work."</p>
+                                    <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- FAQ 4 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq4">
-                            <button class="accordion-button collapsed" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse4">
-                                <i class="fas fa-clock me-3"></i>
-                                How long will recovery take?
-                            </button>
-                        </h2>
-                        <div id="collapse4" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Every case is different. Your therapist will guide you
-                                clearly through a personalized recovery plan.
-                                <a href="/how-it-works" class="text-primary fw-bold">
-                                    See our clinic comparison chart.
-                                </a>
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq5">
-                            <button class="accordion-button collapsed" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse5">
-                                <i class="fas fa-user-md me-3"></i>
-                                Can I see the same physical therapist every session?
-                            </button>
-                        </h2>
-                        <div id="collapse5" class="accordion-collapse collapse"
-                            data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                We strive to have one therapist for your entire course of care.
-                                In rare cases, scheduling priorities may require changes,
-                                but you will always know in advance.
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
             </div>
+
         </div>
     </div>
-</section> --}}
-<!-- FAQs -->
-<section class="rb-faq py-5" id="faq">
-  <div class="container">
-
-    <div class="text-center mb-4">
-      <span class="rb-pill mb-2 d-inline-flex align-items-center gap-2">
-        <i class="fa-solid fa-circle-question"></i> FAQs
-      </span>
-
-      <h2 class="fw-bold mb-2">Frequently Asked Questions</h2>
-
-      <p class="text-muted mb-0 mx-auto rb-faq-sub">
-        Get answers to common questions about our home physical therapy services
-      </p>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-9">
-
-        <div class="rb-faq-card p-3 p-md-4">
-          <div class="accordion rb-acc" id="faqAccordion">
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">
-                  <i class="fas fa-map-marker-alt me-3"></i>
-                  Do I need a referral to start therapy?
-                </button>
-              </h2>
-              <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  You can book directly with Rehabrion.
-                  <a href="{{ asset('/submit-medical-history') }}" class="fw-bold" style="color:var(--s)">Book Now</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">
-                  <i class="fas fa-home me-3"></i>
-                  Do you offer home visits?
-                </button>
-              </h2>
-              <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Yes, at home physiotherapy is one of our core services.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">
-                  <i class="fas fa-laptop-medical me-3"></i>
-                  Do you provide online sessions?
-                </button>
-              </h2>
-              <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                 Virtual rehab sessions are available.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">
-                  <i class="fas fa-clock me-3"></i>
-                  How long will recovery take?
-                </button>
-              </h2>
-              <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-Every case is different. Your therapist will guide you clearly.
-                </div>
-              </div>
-            </div>
-
-            {{-- <div class="accordion-item border-0">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">
-                  <i class="fas fa-user-md me-3"></i>
-                  Can I see the same therapist every session?
-                </button>
-              </h2>
-              <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  We aim to assign one therapist for continuity of care whenever possible.
-                </div>
-              </div>
-            </div> --}}
-
-          </div>
-
-          <!-- CTA -->
-          {{-- <div class="rb-faq-cta mt-4 p-3 p-md-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
-            <div class="text-center text-md-start">
-              <div class="fw-bold">Still have questions?</div>
-              <div class="text-muted small">Talk to our team and get quick guidance.</div>
-            </div>
-            <div class="d-flex gap-2 flex-wrap justify-content-center">
-              <a href="tel:+971505653483" class="btn rb-btn">Call Now</a>
-              <a href="/appointment" class="btn rb-btn-outline">Book Appointment</a>
-            </div>
-          </div> --}}
-
-        </div>
-
-      </div>
-    </div>
-
-  </div>
 </section>
+{{-- testimonials --}}
+{{--blogs  --}}
+<section class="blog-section py-5 position-relative bg-white">
+    <div class="container py-4">
 
-<!-- End FAQs -->
-
-    <!-- Why In-Home Physiotherapy -->
-    <section id="why-in-home" class="py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="section-title">Why In-Home Physiotherapy Is Better</h2>
-                    <p class="section-subtitle">Why Rehabrion's care model works better for your recovery and lifestyle</p>
-                </div>
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-8">
+                <span class="badge bg-pink-light text-pink px-3 py-2 rounded-pill fw-bold ls-1 mb-2">
+                    <i class="fas fa-newspaper me-2"></i>LATEST NEWS
+                </span>
+                <h2 class="display-5 fw-bold text-dark-blue">
+                    Career <span class="text-pink">Insights & Tips</span>
+                </h2>
+                <p class="text-muted lead mb-0">Stay ahead with the latest trends in recruitment.</p>
             </div>
-
-            <div class="row mt-4 row-equal-height">
-                <!-- Reason 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="why-grid-card">
-                        <div class="why-icon-wrapper">
-                            <i class="fas fa-user-check why-icon floating-icon"></i>
-                        </div>
-                        <h4 class="fw-bold mt-3">Personalized One-on-One Care</h4>
-                        <p>Every session is dedicated entirely to you for focused treatment and faster, more effective recovery.</p>
-                    </div>
-                </div>
-
-                <!-- Reason 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="why-grid-card">
-                        <div class="why-icon-wrapper">
-                            <i class="fas fa-home why-icon floating-icon"></i>
-                        </div>
-                        <h4 class="fw-bold mt-3">No Travel Stress</h4>
-                        <p>No traffic, no parking, no waiting rooms. Your physiotherapist comes directly to your home.</p>
-                    </div>
-                </div>
-
-                <!-- Reason 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="why-grid-card">
-                        <div class="why-icon-wrapper">
-                            <i class="fas fa-clock why-icon floating-icon"></i>
-                        </div>
-                        <h4 class="fw-bold mt-3">Flexible Scheduling</h4>
-                        <p>Book sessions at times that easily fit your routine and daily lifestyle.</p>
-                    </div>
-                </div>
-
-                <!-- Reason 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="why-grid-card">
-                        <div class="why-icon-wrapper">
-                            <i class="fas fa-heartbeat why-icon floating-icon"></i>
-                        </div>
-                        <h4 class="fw-bold mt-3">Faster recovery in familiar environment</h4>
-                        <p>Healing in a familiar environment increases comfort, confidence, and speeds up progress.</p>
-                    </div>
-                </div>
-
-                <!-- Reason 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="why-grid-card">
-                        <div class="why-icon-wrapper">
-                            <i class="fas fa-user-md why-icon floating-icon"></i>
-                        </div>
-                        <h4 class="fw-bold mt-3">Consistent Therapist Support</h4>
-                        <p>You work with the same therapist throughout your treatment for better tracking and continuity of care.</p>
-                    </div>
-                </div>
-
-                <!-- Reason 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="why-grid-card">
-                        <div class="why-icon-wrapper">
-                            <i class="fas fa-clipboard-check why-icon floating-icon"></i>
-                        </div>
-                        <h4 class="fw-bold mt-3">Better Adherence to Rehab Plans</h4>
-                        <p>Home-based care improves consistency and helps you complete your rehab program successfully.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-8 text-center">
-                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-                        <a href="{{ asset('/submit-medical-history') }}" class="btn btn-purple">
-                            <i class="fas fa-calendar-check me-2"></i> Book Consultation
-                        </a>
-                        <span class="d-none d-md-inline">or</span>
-                        <a href="tel:+971 50 565 3483" class="btn btn-outline-purple">
-                           <i class="fas fa-phone-volume me-2"></i>
- Call +971 50 565 3483
-                        </a>
-                    </div>
-                </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold">Read All Articles <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
         </div>
-    </section>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <article class="blog-card h-100">
+                    <div class="blog-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Blog 1">
+                        <span class="category-tag">Career Advice</span>
+                        <div class="date-badge">
+                            <span class="fw-bold d-block fs-4">24</span>
+                            <small class="text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="meta-info mb-2">
+                            <span><i class="far fa-clock me-1"></i> 5 min read</span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#">How to Ace Your Job Interview in 2026: Top AI Tools to Use</a>
+                        </h4>
+                        <p class="blog-excerpt">Discover the new AI-driven interview techniques and how to prepare...</p>
+
+                        <div class="blog-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/150?img=60" alt="Author">
+                                <div>
+                                    <h6 class="mb-0">Sarah J.</h6>
+                                    <small>HR Specialist</small>
+                                </div>
+                            </div>
+                            <a href="#" class="read-btn"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <article class="blog-card h-100">
+                    <div class="blog-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="Blog 2">
+                        <span class="category-tag tag-blue">Remote Work</span>
+                        <div class="date-badge">
+                            <span class="fw-bold d-block fs-4">22</span>
+                            <small class="text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="meta-info mb-2">
+                            <span><i class="far fa-clock me-1"></i> 3 min read</span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#">The Future of Remote Work: What Companies Expect</a>
+                        </h4>
+                        <p class="blog-excerpt">Remote work is evolving. Learn about the hybrid models dominating the market...</p>
+
+                        <div class="blog-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/150?img=32" alt="Author">
+                                <div>
+                                    <h6 class="mb-0">David Ross</h6>
+                                    <small>Tech Recruiter</small>
+                                </div>
+                            </div>
+                            <a href="#" class="read-btn"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <article class="blog-card h-100">
+                    <div class="blog-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="Blog 3">
+                        <span class="category-tag tag-purple">Resume Tips</span>
+                        <div class="date-badge">
+                            <span class="fw-bold d-block fs-4">18</span>
+                            <small class="text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="meta-info mb-2">
+                            <span><i class="far fa-clock me-1"></i> 7 min read</span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#">10 Resume Mistakes That Are Costing You the Job</a>
+                        </h4>
+                        <p class="blog-excerpt">Avoid these common pitfalls to ensure your resume stands out in the ATS...</p>
+
+                        <div class="blog-footer">
+                            <div class="author">
+                                <img src="https://i.pravatar.cc/150?img=11" alt="Author">
+                                <div>
+                                    <h6 class="mb-0">Emma W.</h6>
+                                    <small>Career Coach</small>
+                                </div>
+                            </div>
+                            <a href="#" class="read-btn"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section>
+{{-- blogs --}}
 @endsection

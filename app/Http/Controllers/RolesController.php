@@ -6,12 +6,25 @@ use App\Models\Role;
 class RolesController extends Controller
 {
     //
-    public function index()
-    {
-        $roles = Role::all();
-        return view('Dashboard.admin.roles.index', compact('roles'));
-    }
+    // public function index()
+    // {
+    //     $roles = Role::all();
+    //     return view('Dashboard.admin.roles.index', compact('roles'));
+    // }
 
+public function index(Request $request)
+{
+    $q = $request->q;
+
+    $roles = Role::when($q, function($query) use ($q){
+                $query->where('role_name','like','%'.$q.'%');
+            })
+            ->orderBy('id','desc')
+            ->paginate(10)
+            ->appends(['q' => $q]);
+
+    return view('Dashboard.admin.roles.index', compact('roles','q'));
+}
 
     public function add()
     {

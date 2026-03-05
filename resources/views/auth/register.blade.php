@@ -1,251 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rehabrion Register</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobPortal · Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <style>
-    :root{
-      --primary:#7a958f;
-      --primary-dark:#61756f;
-      --bg-soft:#f3faf9;
-      --text-main:#0f172a;
-      --text-muted:#6b7280;
-      --border:#d1d5db;
-    }
-    *{ box-sizing:border-box; }
-    body{
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      min-height:100vh;
-      margin:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:16px;
-      color:var(--text-main);
-      background-image:url('https://i.pinimg.com/1200x/0b/ca/e8/0bcae84115f447708fb06843fcb5fd82.jpg');
-      background-size:cover;
-      background-position:center;
-    }
-    .box{
-      width:100%;
-      max-width:520px;
-      background:rgba(255,255,255,0.95);
-      backdrop-filter: blur(6px);
-      border-radius:18px;
-      padding:22px;
-      box-shadow:0 18px 45px rgba(15,23,42,0.16);
-      border-top:5px solid var(--primary);
-    }
-    .top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-    }
-    .top h1{ font-size:20px; margin:0; }
-    .top p{ margin:6px 0 0; color:var(--text-muted); font-size:13px; }
-    .top a{
-      color:var(--primary);
-      text-decoration:none;
-      font-weight:600;
-      font-size:13px;
-      white-space:nowrap;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin-top:12px;
-    }
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      position:relative;
-    }
-    label{
-      font-size:12px;
-      color:var(--text-muted);
-    }
-    input{
-      padding:11px 12px;
-      border:1px solid var(--border);
-      border-radius:10px;
-      outline:none;
-      font-size:14px;
-      background:#f9fafb;
-    }
-    input:focus{
-      border-color:var(--primary);
-      background:#fff;
-      box-shadow:0 0 0 4px rgba(122,149,143,0.15);
-    }
-    .full{ grid-column: 1 / -1; }
-    .error{
-      color:#b91c1c;
-      font-size:12px;
-      margin-top:6px;
-    }
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --border: #d1d5db;
+        }
 
-    /* password eye */
-    .pw-wrap{
-      position:relative;
-    }
-    .pw-input{
-      padding-right:44px;
-    }
-    .pw-toggle{
-      position:absolute;
-      right:10px;
-      top:50%;
-      transform:translateY(-50%);
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      border:1px solid rgba(15,23,42,0.08);
-      background:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      color:var(--text-muted);
-      transition: all .15s ease;
-      user-select:none;
-    }
-    .pw-toggle:hover{
-      color:var(--primary);
-      border-color: rgba(122,149,143,0.35);
-      box-shadow:0 10px 18px rgba(15,23,42,0.08);
-    }
-    .pw-toggle:active{
-      transform:translateY(-50%) scale(0.98);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
 
-    .btn{
-      width:100%;
-      margin-top:14px;
-      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-      color:#fff;
-      padding:12px;
-      border:none;
-      border-radius:999px;
-      font-weight:700;
-      cursor:pointer;
-      font-size:14px;
-    }
-    .hint{
-      margin-top:10px;
-      font-size:13px;
-      color:var(--text-muted);
-      text-align:center;
-    }
-    @media(max-width:640px){
-      .grid{ grid-template-columns:1fr; }
-    }
-  </style>
+        body {
+            background-color: #fff;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* Left Side: Form Section */
+        .form-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 8%;
+            max-width: 700px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .login-text {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .login-text a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Grid for Inputs */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .full { grid-column: 1 / -1; }
+
+        .form-group {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        input {
+            width: 100%;
+            padding: 11px 16px;
+            font-size: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        /* Password Wrapper */
+        .pw-wrap { position: relative; }
+        .pw-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .signup-btn {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .signup-btn:hover { background: var(--primary-hover); }
+
+        .error {
+            color: #ef4444;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* Right Side: Image Section */
+        .image-section {
+            flex: 1.2;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 992px) {
+            .image-section { display: none; }
+            .form-section { max-width: 100%; padding: 40px 10%; }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="box">
-    <div class="top">
-      <div>
-        <h1>Create Patient Account</h1>
-        <p>Quick signup so you can login and start your assessment.</p>
-      </div>
-      <a href="{{ route('auth.accountlogin') }}">Back to Login</a>
+<div class="main-container">
+    <div class="form-section">
+        <a href="/" class="logo">
+            <i class="fas fa-briefcase"></i> JobPortal
+        </a>
+
+        <h2>Create your account</h2>
+        <div class="login-text">
+            Already have an account? <a href="{{ route('auth.accountlogin') }}">Sign in instead</a>
+        </div>
+
+        <form method="POST" action="{{ route('auth.register.store') }}">
+            @csrf
+
+            <div class="grid">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="firstname" value="{{ old('firstname') }}" required>
+                    @error('firstname') <div class="error">{{ $message }}</div> @enderror
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="lastname" value="{{ old('lastname') }}" required>
+                    @error('lastname') <div class="error">{{ $message }}</div> @enderror
+                </div>
+
+                <div class="form-group full">
+                    <label>Email address</label>
+                    <input type="email" name="email" value="{{ old('email') }}" required>
+                    @error('email') <div class="error">{{ $message }}</div> @enderror
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" value="{{ old('phone') }}" required>
+                    @error('phone') <div class="error">{{ $message }}</div> @enderror
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile (Optional)</label>
+                    <input type="tel" name="mobile_phone" value="{{ old('mobile_phone') }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="pw-toggle" data-target="password">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    @error('password') <div class="error">{{ $message }}</div> @enderror
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="password_confirmation" name="password_confirmation" required>
+                        <button type="button" class="pw-toggle" data-target="password_confirmation">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="signup-btn">Create Account</button>
+        </form>
     </div>
 
-    @if ($errors->any())
-      <div class="error">
-        Please fix the highlighted errors and try again.
-      </div>
-    @endif
+    <div class="image-section"></div>
+</div>
 
-    <form method="POST" action="{{ route('auth.register.store') }}">
-      @csrf
-
-      <div class="grid">
-        <div class="field">
-          <label>First Name</label>
-          <input name="firstname" value="{{ old('firstname') }}" required>
-          @error('firstname') <div class="error">{{ $message }}</div> @enderror
-        </div>
-
-        <div class="field">
-          <label>Last Name</label>
-          <input name="lastname" value="{{ old('lastname') }}" required>
-          @error('lastname') <div class="error">{{ $message }}</div> @enderror
-        </div>
-
-        <div class="field full">
-          <label>Email</label>
-          <input type="email" name="email" value="{{ old('email') }}" required>
-          @error('email') <div class="error">{{ $message }}</div> @enderror
-        </div>
-
-        <div class="field">
-          <label>Phone</label>
-          <input name="phone" value="{{ old('phone') }}" required>
-          @error('phone') <div class="error">{{ $message }}</div> @enderror
-        </div>
-
-        <div class="field">
-          <label>Mobile Phone (Optional)</label>
-          <input name="mobile_phone" value="{{ old('mobile_phone') }}">
-        </div>
-
-        <div class="field">
-          <label>Password</label>
-          <div class="pw-wrap">
-            <input id="password" class="pw-input" type="password" name="password" required>
-            <button type="button" class="pw-toggle" data-target="password" aria-label="Show password">
-              <i class="fa-solid fa-eye"></i>
-            </button>
-          </div>
-          @error('password') <div class="error">{{ $message }}</div> @enderror
-        </div>
-
-        <div class="field">
-          <label>Confirm Password</label>
-          <div class="pw-wrap">
-            <input id="password_confirmation" class="pw-input" type="password" name="password_confirmation" required>
-            <button type="button" class="pw-toggle" data-target="password_confirmation" aria-label="Show confirm password">
-              <i class="fa-solid fa-eye"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <button class="btn" type="submit">Create Account</button>
-
-      <div class="hint">
-        After login, you can complete your medical history in the next step.
-      </div>
-    </form>
-  </div>
-
-  <script>
+<script>
     document.querySelectorAll('.pw-toggle').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var id = btn.getAttribute('data-target');
-        var input = document.getElementById(id);
-        var icon = btn.querySelector('i');
+        btn.addEventListener('click', function(){
+            const targetId = btn.getAttribute('data-target');
+            const input = document.getElementById(targetId);
+            const icon = btn.querySelector('i');
 
-        if(!input) return;
-
-        var isHidden = input.type === 'password';
-        input.type = isHidden ? 'text' : 'password';
-
-        icon.classList.toggle('fa-eye', !isHidden);
-        icon.classList.toggle('fa-eye-slash', isHidden);
-        btn.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
-      });
+            if(input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
     });
-  </script>
+</script>
 
 </body>
 </html>

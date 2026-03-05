@@ -12,7 +12,7 @@ use App\Models\Banner;
 
 class WelcomeController extends Controller
 {
-    //
+    
 public function index() {
     $featuredBlog = Blog::find(6);
 

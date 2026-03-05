@@ -337,7 +337,7 @@
         </div>
       @endif
 
-      <form method="POST" action="{{ route('Dashboard.admin.conditions.store') }}">
+<form method="POST" action="{{ route('Dashboard.admin.conditions.store') }}" enctype="multipart/form-data">
         @csrf
 
         <div class="glass-card">
@@ -411,8 +411,12 @@
                 </div>
 
                 <div class="col-12">
-                  <label class="form-label">Hero Image URL</label>
-                  <input class="form-control" name="hero_image_url" placeholder="https://">
+                  {{-- <label class="form-label">Hero Image URL</label>
+                  <input class="form-control" name="hero_image_url" placeholder="https://"> --}}
+                  <label class="form-label">Hero Image</label>
+<input type="file" class="form-control" name="hero_image" accept="image/png,image/jpeg,image/webp">
+<div class="helper">Image will be saved in public/assets/images/conditions</div>
+
                 </div>
               </div>
             </div>

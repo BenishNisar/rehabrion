@@ -1,501 +1,327 @@
 @extends('Layout.layout')
 @section('Content')
 
-
-@php
-  $blogs = $blogs ?? \App\Models\Blog::orderBy('id','desc')->limit(3)->get();
-@endphp
-
-
-    <!-- Hero Section - UPDATED -->
-    <section id="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <div class="hero-badge floating-icon">
-                            <i class="fas fa-badge-check"></i> Trusted by 50,000+ Patients
-                        </div>
-
-                        <h1 class="display-4 fw-bold mb-3">Join one of the <span class="accent-text">fastest-growing</span> health-tech companies today!</h1>
-
-                        <p class="lead mb-4">Expert care at home. Recover faster with personalized treatment from licensed physical therapists.</p>
-
-                        <div class="hero-cta-buttons">
-                            <a href="{{ asset('/submit-medical-history') }}" class="btn btn-hero-primary">
-                                <i class="fas fa-calendar-check"></i> Book Consultation
-                            </a>
-
-                                 <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information"
-       target="_blank"
-       rel="noopener" class="btn btn-hero-secondary">
-                               <i class="fas fa-phone-volume "></i>
-+971 50 565 3483
-                            </a>
-                        </div>
-
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">3,000+</div>
-                                <div class="stat-label">Licensed Therapists</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">States Covered</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">98%</div>
-                                <div class="stat-label">Patient Satisfaction</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Support Available</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section -->
-    {{-- <section id="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <h1 class="hero-title mb-4">Join one of the <span class="accent-text">fastest-growing</span> health-tech companies today!</h1>
-                        <a class="btn btn-hero" href="https://jobs.lever.co/Rehabrion physicaltherapy" target="_blank" rel="noreferrer noopener">
-                            <i class="fas fa-briefcase me-2"></i> See all open positions
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-  <!-- HERO -->
-  <section class="py-5 py-lg-5">
-    <div class="container">
-           <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="section-title">About Rehabrion</h2>
-                </div>
-            </div>
-      <div class="row align-items-center g-4">
-        <div class="col-lg-6">
-          <div class="pe-lg-4">
-            <h1  class="display-4 fw-bold mb-3">Rehabrion was born from a simple belief:
-</h1>
-            <p class="brand-muted mb-4">
-                Everyone deserves access to effective, personalized rehab and physical-health care — wherever they are and whenever they need it.
-            We exist to remove barriers in rehabilitation and restore dignity to healing.
-
-            </p>
-
-            {{-- <div class="d-flex flex-wrap gap-2">
-              <a class="btn btn-brand px-4 py-2" href="/appointment">Check availability</a>
-              <a class="btn btn-outline-brand px-4 py-2" href="/conditions-we-treat" target="_blank">Conditions we treat</a>
-            </div> --}}
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <img
-            src="{{ asset("assets/images/rehabrion/help.webp") }}"
-            class="img-fluid w-100 rounded-xxl shadow-soft"
-            alt="In home physiotherapy"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-    <!-- About Us Section -->
-    <section id="about-us">
-        <div class="container">
-            {{-- <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="section-title">About Rehabrion</h2>
-                </div>
-            </div> --}}
-
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-8">
-                    <div class="about-content">
-                        <h3>OUR MISSION</h3>
-                        <p>
-                            At Rehabrion, we believe your mobility and comfort matter more than anything. We're dedicated to transforming musculoskeletal (MSK) care and rehabilitation — making it accessible, flexible, and deeply human.
-                        </p>
-
-                        <h3>Our goal is simple:</h3>
-                        <p>Help you move beyond pain, regain strength, and live fully — with confidence.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Work For Us -->
-    <section id="how-it-works">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="section-title">Why work for Rehabrion</h2>
-                </div>
-            </div>
-
-            <div class="row mt-5 row-equal-height">
-                <!-- Feature 1 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="https://public-assets.getluna.com/images/icons/payment.svg" alt="Personalized Therapy">
-                        </div>
-                        <h4 class="feature-title">Personalized Physical Therapy & Rehab Plans</h4>
-                        <p class="feature-description">Every body is different. We design tailor-made recovery plans for injury rehab, chronic pain, post-surgery care, and preventive therapy.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="https://public-assets.getluna.com/images/icons/schedule.svg" alt="Convenient Care">
-                        </div>
-                        <h4 class="feature-title">Convenient & Accessible Care</h4>
-                        <p class="feature-description">Healing comes to your home — or online when needed. No waiting rooms, no travel stress.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="https://public-assets.getluna.com/images/icons/engaged-patients.svg" alt="Expert Rehab">
-                        </div>
-                        <h4 class="feature-title">Expert-Led Rehabilitation</h4>
-                        <p class="feature-description">Your care is guided only by trained and experienced professionals.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="https://public-assets.getluna.com/images/icons/schedule.svg" alt="Holistic Recovery">
-                        </div>
-                        <h4 class="feature-title">Holistic & Sustainable Recovery</h4>
-                        <p class="feature-description">We focus on long-term strength, posture, movement, and injury prevention.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    {{-- <section id="gallery">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="gallery-title">
-                        Picture yourself at Rehabrion
-                        <i class="fas fa-heart text-danger"></i>
-                    </h2>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <!-- Large Image -->
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <img src="https://public-assets.getluna.com/images/Rehabrion-photo-1.webp" class="gallery-img" alt="Rehabrion Team 1">
-                </div>
-
-                <!-- Two Small Images -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <img src="https://public-assets.getluna.com/images/Rehabrion-photo-2.webp" class="gallery-img" alt="Rehabrion Team 2">
-                </div>
-
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <img src="https://public-assets.getluna.com/images/Rehabrion-photo-3.webp" class="gallery-img" alt="Rehabrion Team 3">
-                </div>
-
-                <!-- Left Column with Two Images -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <img src="https://public-assets.getluna.com/images/Rehabrion-photo-4.webp" class="gallery-img mb-4" alt="Rehabrion Team 4">
-                    <img src="https://public-assets.getluna.com/images/Rehabrion-photo-5.webp" class="gallery-img" alt="Rehabrion Team 5">
-                </div>
-
-                <!-- Middle Tall Image -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <img src="https://public-assets.getluna.com/images/Rehabrion-photo-6.webp" class="gallery-img" alt="Rehabrion Team 6" style="height: 100%; object-fit: cover;">
-                </div>
-
-                <!-- Right Large Image -->
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <img src="https://public-assets.getluna.com/images/Rehabrion-photo-7.webp" class="gallery-img" alt="Rehabrion Team 7">
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-    <!-- Why Rehabrion Is Different -->
-    <section id="why-different">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="difference-card">
-                        <h2 class="section-title text-center mb-4">WHY REHABRION IS DIFFERENT?</h2>
-
-                        <p class="text-center mb-4">
-                            Rehabrion is built around <strong>you</strong> — your life, your goals, and your long-term mobility.
-                        </p>
-
-                        <ul class="difference-list">
-                            <li><strong>You at the center</strong></li>
-                            <li><strong>Flexible & lifestyle-friendly care</strong></li>
-                            <li><strong>Human touch + professional excellence</strong></li>
-                            <li><strong>Transparent, ethical treatment</strong></li>
-                            <li><strong>No unnecessary procedures</strong></li>
-                        </ul>
-
-                        <div class="contact-info mt-5">
-                            <p class="body-small">
-                                or email us at
-                                <a href="mailto:info@Rehabrion.com?subject=Contact">info@Rehabrion.com</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Contact Address -->
-                    <div class="text-center mt-5">
-                        <p class="h5 mb-3">Corporate Headquarters</p>
-                        <p>
-                            <i class="fas fa-map-marker-alt me-2"></i>
-House No. 123, Street 45, Sector G 11
-Islamabad, Pakistan                        </p>
-                        <p>
-                            {{-- <i class="fas fa-phone me-2"></i> --}}
-                            {{-- <a href="tel:(866) 525-3175">(866) 525-3175</a> --}}
-
-                            <a href="https://wa.me/971505653483?text=Hi%20I%20need%20more%20information"
-       target="_blank"
-       rel="noopener" class="btn btn-hero-secondary">
-                               <i class="fas fa-phone-volume "></i>
-+971 50 565 3483
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Vision Section -->
-    <section id="our-vision">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="vision-card">
-                        <h2 class="section-title text-center mb-4">OUR VISION</h2>
-
-                        <p class="text-center mb-4">
-                            We imagine a world where rehab and musculoskeletal health are not luxuries,
-                            but a basic right for every person.
-                        </p>
-
-                        <p class="text-center mb-4">
-                            With Rehabrion, recovery becomes:
-                        </p>
-
-                        <ul class="difference-list ">
-                            <li><strong>Personal</strong> – shaped around your body and your goals.</li>
-                            <li><strong>Proactive</strong> – focusing on prevention, not just pain relief.</li>
-                            <li><strong>Accessible</strong> – support at home or online, when you need it.</li>
-                            <li><strong>Empowering</strong> – helping you understand, move, and live with confidence.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section id="final-cta">
-        <div class="container">
-            <div class="journey-cta-inner">
-                <div class="journey-cta-left">
-                    <div class="journey-pill">FINAL STEP</div>
-                    <h2 class="journey-heading">Join Us on the Journey</h2>
-
-                    <p class="journey-text">
-                        If you're ready to reclaim your movement, strength, and a pain-free life — we're here.
-                    </p>
-
-                    <p class="journey-text">
-                        From your first consultation to full recovery and beyond — Rehabrion stands beside you.
-                    </p>
-
-                    <ul class="journey-list">
-                        <li>Because for us — it's not just therapy.</li>
-                        <li>It's transformation.</li>
-                    </ul>
-
-                    <a href="{{ asset('/submit-medical-history') }}" class="journey-btn">
-                        <i class="fas fa-calendar-check me-2"></i> Book your first consultation
-                    </a>
-                </div>
-
-                <div class="journey-cta-right">
-                    <div class="journey-highlight-card">
-                        <h3>Ready to begin?</h3>
-                        <p>
-                            Tell us about your pain, goals, and daily routine — we'll help you build
-                            a rehab plan that fits your life.
-                        </p>
-
-                        <div class="journey-contact">
-                            <strong>Call us or WhatsApp:</strong><br>
-                            <span>+92 XXX XXXXXXX</span>
-                        </div>
-
-                        <div class="journey-contact">
-                            <strong>Or Email:</strong><br>
-                            <a href="mailto:info@Rehabrion.com">info@Rehabrion.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Blogs Section -->
-    {{-- <section id="related-blogs">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="divider"></div>
-                    <h2 class="section-title">Related articles</h2>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <!-- Blog 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-img-container">
-                            <img src="https://public-assets.getluna.com/images/posts/c3e4a5cc_2f98_41c4_a39b_8c5feb346bf7/20250425_140401_cover.png" class="blog-img" alt="Scaling Success">
-                        </div>
-                        <div class="blog-content">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="blog-category">Employees</span>
-                                <span class="blog-date">Apr 30, 2025</span>
-                            </div>
-                            <h4 class="blog-title">Scaling Success: How Rehabrion Builds Careers Like a Well-Planned Supply Chain</h4>
-                            <p class="blog-excerpt">Rehabrion doesn't just scale headcount—it scales careers. Learn how a structured promotion system, intentional leadership development, and employee-led initiatives shape career growth across the organization.</p>
-                            <a href="/blog/scaling-success-career-growth-at-Rehabrion" class="blog-link">Read more →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-img-container">
-                            <img src="https://public-assets.getluna.com/images/posts/d94c91d3_a853_4bfa_94ea_3e13f08624be/20250318_150356_cover.png" class="blog-img" alt="Forbes Ranking">
-                        </div>
-                        <div class="blog-content">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="blog-category">Employees</span>
-                                <span class="blog-date">Apr 28, 2025</span>
-                            </div>
-                            <h4 class="blog-title">Forbes Ranks Rehabrion #1 in MSK Care, #3 in Healthcare, and #61 Among Best Startup Employers in 2025</h4>
-                            <p class="blog-excerpt">Rehabrion has been ranked #61 on Forbes' 2025 Best Startup Employers list, rising from #111 in 2024 and securing the #1 spot in MSK care.</p>
-                            <a href="/blog/2025-forbes-announcement" class="blog-link">Read more →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-img-container">
-                            <img src="https://public-assets.getluna.com/images/posts/753f5a5b_26ce_4630_b834_4827627f6d58/20250228_130237_cover.png" class="blog-img" alt="Meet John Seguin">
-                        </div>
-                        <div class="blog-content">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="blog-category">Partners</span>
-                                <span class="blog-date">Mar 7, 2025</span>
-                            </div>
-                            <h4 class="blog-title">Meet John Seguin: Building Lasting Healthcare Partnerships at Rehabrion</h4>
-                            <p class="blog-excerpt">John Seguin, VP of Health System Partnerships at Rehabrion, shares insights on his career, what drew him to Rehabrion, and his vision for building lasting health system collaborations.</p>
-                            <a href="/blog/meet-john-seguin" class="blog-link">Read more →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <a href="/blog" class="btn btn-all-articles">
-                        <i class="fas fa-newspaper me-2"></i> See All Related Articles
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- Related Blogs Section -->
-<section id="related-blogs">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <div class="divider"></div>
-        <h2 class="section-title">Related articles</h2>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      @forelse($blogs as $item)
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="blog-card h-100">
-            <div class="blog-img-container">
-              <img src="{{ asset($item->featured_image) }}"
-                   class="blog-img"
-                   alt="{{ $item->title }}">
-            </div>
-
-            <div class="blog-content">
-              <div class="d-flex align-items-center mb-3">
-                <span class="blog-category">Articles</span>
-                <span class="blog-date">
-                  {{ \Carbon\Carbon::parse($item->date)->format('M d, Y') }}
+{{-- 1. Initial Banner Section --}}
+<section class="about-banner-initial bg-dark-blue text-white text-center py-5 position-relative overflow-hidden" id="initialBanner">
+    <div class="theme-overlay"></div>
+    <div class="container py-lg-5 position-relative z-2">
+        <div class="row justify-content-center align-items-center min-vh-50">
+            <div class="col-lg-10">
+                <span class="badge bg-pink-light text-pink px-3 py-2 rounded-pill fw-bold mb-3 animate__animated animate__fadeInDown">
+                    <i class="fas fa-rocket me-2"></i>THE FUTURE OF RECRUITMENT
                 </span>
-              </div>
-
-              <h4 class="blog-title">{{ $item->title }}</h4>
-
-              <p class="blog-excerpt">
-                {{ \Illuminate\Support\Str::limit(strip_tags($item->short_description), 150) }}
-              </p>
-
-              <a href="{{ route('Home.blogs_details', $item->slug) }}" class="blog-link">
-                Read more →
-              </a>
+                <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeInUp">
+                    Connecting <span class="text-pink">Australia</span> to the World
+                </h1>
+                <p class="lead text-white-50 animate__animated animate__fadeInUp animate__delay-1s mx-auto" style="max-width: 700px;">
+                    We are more than a job portal; we are your career partners in the digital age.
+                </p>
+                <button id="exploreAbout" class="btn btn-custom btn-lg rounded-pill fw-bold mt-4 shadow-lg animate__animated animate__zoomIn animate__delay-2s">
+                    Explore Our Story <i class="fas fa-arrow-down ms-2"></i>
+                </button>
             </div>
-          </div>
         </div>
-      @empty
-        <div class="col-12 text-center">
-          <p>No articles found.</p>
-        </div>
-      @endforelse
     </div>
-  </div>
+</section>
+
+{{-- 2. Advance Carousel Section (Modern 2026) --}}
+<section id="aboutCarouselSection" class="about-carousel-section d-none position-relative">
+    <div id="aboutCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <div class="carousel-indicators d-none d-md-flex">
+            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-img-container">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200" class="d-block w-100 ken-burns" alt="Innovation" loading="lazy">
+                </div>
+                <div class="carousel-overlay d-flex align-items-center justify-content-center">
+                    <div class="carousel-caption-content bg-white p-4 p-md-5 rounded-4 shadow-2xl text-center mx-3">
+                        <h2 class="text-dark-blue fw-bold mb-2 mb-md-3 fs-3 fs-md-2">Innovation & Growth</h2>
+                        <p class="text-muted mb-0 small-mobile">Building AI-integrated recruitment solutions for the modern workforce.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-img-container">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200" class="d-block w-100 ken-burns" alt="Talent" loading="lazy">
+                </div>
+                <div class="carousel-overlay d-flex align-items-center justify-content-center">
+                    <div class="carousel-caption-content bg-white p-4 p-md-5 rounded-4 shadow-2xl text-center mx-3">
+                        <h2 class="text-dark-blue fw-bold mb-2 mb-md-3 fs-3 fs-md-2">Our Commitment</h2>
+                        <p class="text-muted mb-0 small-mobile">Dedicated to transparency and building lasting professional relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-carousel-nav">
+            <button class="nav-btn prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-btn next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
 </section>
 
 
-@endsection
+{{-- 3. Modern Leadership Section --}}
+{{-- 3. High-End Leadership Section --}}
+{{-- 3. Modern Leadership Section --}}
+<section class="leadership-section py-5 bg-white overflow-hidden">
+    <div class="container py-lg-5">
+        <div class="row align-items-center g-5">
 
+            {{-- Left Side: Stylish Image Wrapper --}}
+            <div class="col-lg-5 position-relative">
+                <div class="leader-image-frame animate__animated animate__fadeInLeft">
+                    <div class="frame-border"></div>
+                    <img src="https://i.pravatar.cc/600?img=68" alt="General Manager" class="img-fluid rounded-4 shadow-2xl main-leader-img">
+
+                    {{-- Floating Experience Tag --}}
+                    <div class="experience-tag bg-pink text-white p-3 rounded-4 shadow-lg animate__animated animate__bounceIn animate__delay-1s">
+                        <span class="d-block h4 fw-bold mb-0">25+</span>
+                        <small class="text-uppercase ls-1">Years Experience</small>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Right Side: Professional Content --}}
+            <div class="col-lg-7 ps-lg-5 animate__animated animate__fadeInRight">
+                <div class="leadership-content">
+                    <span class="text-pink fw-bold text-uppercase ls-2 small mb-2 d-block">Leadership Message</span>
+
+                    {{-- Stylish Name Header --}}
+                    <h2 class="display-5 fw-bold text-dark-blue mb-1">Adrian <span class="text-pink">Roberts</span></h2>
+                    <h5 class="text-muted fw-medium mb-4 italic-role">General Manager - JobPortal Pro</h5>
+
+                    <div class="content-divider mb-4"></div>
+
+                    <p class="lead text-dark-blue fw-medium mb-4">
+                        "Recruitment is not just about filling roles; it's about building legacies for businesses and candidates alike."
+                    </p>
+
+                    <p class="text-muted lh-lg mb-5">
+                        Adrian brings over two decades of international recruitment expertise to Australia. His vision for 2026 is to blend human empathy with AI efficiency, ensuring that every connection made through JobPortal Pro is meaningful, transparent, and long-lasting. He believes that honesty and deep industry knowledge are the keys to a successful placement.
+                    </p>
+
+                    {{-- Contact/Social Links --}}
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="signature-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Jon_Kirsch_Signature.png" alt="Signature" class="img-fluid signature-img">
+                        </div>
+                        <div class="social-links-minimal">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="leadership-section py-5 bg-white overflow-hidden">
+    <div class="container py-lg-5">
+        <div class="row align-items-center g-5">
+
+            {{-- <div class="col-lg-5 position-relative">
+                <div class="leader-image-frame animate__animated animate__fadeInLeft">
+                    <div class="frame-border"></div>
+                    <img src="https://i.pravatar.cc/600?img=68" alt="General Manager" class="img-fluid rounded-4 shadow-2xl main-leader-img">
+
+                    <div class="experience-tag bg-pink text-white p-3 rounded-4 shadow-lg animate__animated animate__bounceIn animate__delay-1s">
+                        <span class="d-block h4 fw-bold mb-0">25+</span>
+                        <small class="text-uppercase ls-1">Years Experience</small>
+                    </div>
+                </div>
+            </div> --}}
+
+            {{-- Right Side: Professional Content --}}
+            <div class="col-lg-7 ps-lg-5 animate__animated animate__fadeInRight">
+                <div class="leadership-content">
+                    <span class="text-pink fw-bold text-uppercase ls-2 small mb-2 d-block">Leadership Message</span>
+
+                    {{-- Stylish Name Header --}}
+                    <h2 class="display-5 fw-bold text-dark-blue mb-1">Adrian <span class="text-pink">Roberts</span></h2>
+                    <h5 class="text-muted fw-medium mb-4 italic-role">General Manager - JobPortal Pro</h5>
+
+                    <div class="content-divider mb-4"></div>
+
+                    <p class="lead text-dark-blue fw-medium mb-4">
+                        "Recruitment is not just about filling roles; it's about building legacies for businesses and candidates alike."
+                    </p>
+
+                    <p class="text-muted lh-lg mb-5">
+                        Adrian brings over two decades of international recruitment expertise to Australia. His vision for 2026 is to blend human empathy with AI efficiency, ensuring that every connection made through JobPortal Pro is meaningful, transparent, and long-lasting. He believes that honesty and deep industry knowledge are the keys to a successful placement.
+                    </p>
+
+                    {{-- Contact/Social Links --}}
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="signature-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Jon_Kirsch_Signature.png" alt="Signature" class="img-fluid signature-img">
+                        </div>
+                        <div class="social-links-minimal">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="col-lg-5 position-relative">
+                <div class="leader-image-frame animate__animated animate__fadeInLeft">
+                    <div class="frame-border"></div>
+                    <img src="https://i.pravatar.cc/600?img=68" alt="General Manager" class="img-fluid rounded-4 shadow-2xl main-leader-img">
+
+                    {{-- Floating Experience Tag --}}
+                    <div class="experience-tag bg-pink text-white p-3 rounded-4 shadow-lg animate__animated animate__bounceIn animate__delay-1s">
+                        <span class="d-block h4 fw-bold mb-0">25+</span>
+                        <small class="text-uppercase ls-1">Years Experience</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- purpouses --}}
+{{-- 4. Our Purpose & Values: 2026 High-End Edition --}}
+<section class="purpose-section py-5 position-relative overflow-hidden bg-white">
+    <div class="container py-lg-5">
+
+        {{-- Section Header --}}
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-9 text-center">
+                <h6 class="text-pink fw-bold ls-3 mb-2 animate__animated animate__fadeIn">OUR CORE IDENTITY</h6>
+                <h2 class="display-5 fw-bold text-dark-blue mb-4">Our <span class="text-pink">Purpose & Values</span></h2>
+                <div class="purpose-quote-box p-4 rounded-4 shadow-sm mb-4">
+                    <p class="fst-italic text-dark-blue lead mb-0">
+                        "We create connections to change businesses and candidates' lives through passion and exceptional service, always with honesty & integrity."
+                    </p>
+                </div>
+                <p class="text-muted mx-auto" style="max-width: 800px;">
+                    JobPortalPro recruitment doesn't simply fill vacancies. We believe we create connections and build relationships with the aim of changing businesses and lives for the better.
+                </p>
+            </div>
+        </div>
+
+        {{-- Advance Values Grid --}}
+        <div class="row g-4 mt-2">
+            @php
+                $values = [
+                    [
+                        'title' => 'Respect',
+                        'icon' => 'fa-hands-helping',
+                        'desc' => 'We show respect to all people – our candidates and clients alike. We understand the importance of the "right fit" and working with you to achieve a successful outcome.'
+                    ],
+                    [
+                        'title' => 'Experience',
+                        'icon' => 'fa-award',
+                        'desc' => 'We honour and pride ourselves on our experience. We continue to educate ourselves and seek out knowledge relevant to our industry, which in turn empowers our clients and candidates to make the right choices.'
+                    ],
+                    [
+                        'title' => 'Partnership',
+                        'icon' => 'fa-handshake',
+                        'desc' => 'Our one and only model - We believe in partnerships to achieve the best outcomes. We work as an extension of our clients business to provide accurate and detailed information to ensure success for all parties.'
+                    ],
+                    [
+                        'title' => 'Teamwork',
+                        'icon' => 'fa-users-cog',
+                        'desc' => 'We understand that there’s no "I" in team and we work together in an inclusive and open environment where collaboration and celebration are an everyday experience.'
+                    ]
+                ];
+            @endphp
+
+            @foreach($values as $v)
+            <div class="col-lg-6 col-xl-3">
+                <div class="value-card-advance h-100 p-4 shadow-sm border-0 rounded-4 position-relative overflow-hidden">
+                    <div class="value-icon-bg"><i class="fas {{ $v['icon'] }}"></i></div>
+                    <div class="position-relative z-2">
+                        <div class="v-icon-main mb-4">
+                            <i class="fas {{ $v['icon'] }}"></i>
+                        </div>
+                        <h4 class="fw-bold text-dark-blue mb-3">{{ $v['title'] }}</h4>
+                        <p class="text-muted small lh-base mb-0">{{ $v['desc'] }}</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+{{-- purposes --}}
+{{-- 5. Join The Team: 2026 Ultra-Modern Edition --}}
+<section class="join-team-section py-5 position-relative overflow-hidden">
+    {{-- Decorative Background Glows --}}
+    <div class="glow-element glow-1"></div>
+    <div class="glow-element glow-2"></div>
+
+    <div class="container py-lg-5 position-relative z-2">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <h2 class="display-4 fw-bold text-dark-blue mb-4 animate__animated animate__fadeInUp">Join The <span class="text-pink">Team</span></h2>
+                <p class="text-muted lead mb-0">Building relationships is at the heart of our culture. At JobPortalPro, we welcome discussion of current opportunities with experienced recruiters and dedicated professionals wanting to transition into recruiting.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center">
+            {{-- Left Side: Benefits Grid --}}
+            <div class="col-lg-7">
+                <div class="benefits-grid">
+                    <div class="row g-3">
+                        @php
+                            $benefits = [
+                                ['icon' => 'fa-user-tie', 'text' => 'Supportive & present management'],
+                                ['icon' => 'fa-users', 'text' => 'A tight-knit, collaborative team'],
+                                ['icon' => 'fa-heart', 'text' => 'Work-life balance is a core value'],
+                                ['icon' => 'fa-graduation-cap', 'text' => 'Encouragement for further education'],
+                                ['icon' => 'fa-gift', 'text' => 'Real rewards & team target days'],
+                                ['icon' => 'fa-briefcase', 'text' => '25+ years of industry backing']
+                            ];
+                        @endphp
+
+                        @foreach($benefits as $b)
+                        <div class="col-md-6">
+                            <div class="benefit-item d-flex align-items-center p-3 rounded-4 shadow-sm bg-white border-start border-pink border-4">
+                                <div class="b-icon me-3 text-pink fs-5">
+                                    <i class="fas {{ $b['icon'] }}"></i>
+                                </div>
+                                <span class="fw-medium text-dark-blue small">{{ $b['text'] }}</span>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            {{-- Right Side: High-Conversion CTA --}}
+            <div class="col-lg-5">
+                <div class="cta-glass-card p-5 rounded-5 shadow-2xl text-center position-relative overflow-hidden">
+                    <div class="cta-inner-content position-relative z-2">
+                        <h4 class="fw-bold text-dark-blue mb-3">Ready to Make an Impact?</h4>
+                        <p class="text-muted mb-4 small">For a confidential discussion regarding your potential future with us, let's talk today.</p>
+
+                        {{-- 2026 Pulse Button --}}
+                        <a href="{{ url('/contact') }}" class="btn-pulse-pink">
+                            Get In Touch <i class="fas fa-paper-plane ms-2"></i>
+                        </a>
+
+                        <div class="mt-4 pt-3 border-top">
+                            <p class="fst-italic text-pink mb-0 small">"I enjoy working here, it's the perfect balance of hard work and fun." - Team Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@endsection

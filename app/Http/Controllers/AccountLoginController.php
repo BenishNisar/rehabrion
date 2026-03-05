@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Password;
+
 use Illuminate\Support\Str;
 
 class AccountLoginController extends Controller
@@ -73,7 +77,7 @@ public function store(Request $request)
         }
 
         if ($user->role_id == 2) {
-            return redirect()->route("Home.submit-medical-history");
+            return redirect()->route("Home.welcome");
         }
 
         Auth::logout();
@@ -95,31 +99,63 @@ public function logout(Request $request){
         return view('auth.forget-password');
     }
 
-    public function submitForgetForm(Request $request){
-        $request->validate(['email' => 'required|email|exists:users,email']);
-        $token = Str::random(64);
+//     public function submitForgetForm(Request $request){
+//         $request->validate(['email' => 'required|email|exists:users,email']);
+//         $token = Str::random(64);
 
-        PasswordReset::create([
-            'email' => $request->email,
-            'token' => $token,
-            'created_at' => now()
-        ]);
+//         PasswordReset::create([
+//             'email' => $request->email,
+//             'token' => $token,
+//             'created_at' => now()
+//         ]);
 
-        // ✅ Correct Reset Link
-        $link = url('/reset-password/'.$token.'?email='.$request->email);
+//         // ✅ Correct Reset Link
+//         $link = url('/reset-password/'.$token.'?email='.$request->email);
 
-        // ✅ Send Mail
-        Mail::raw("Reset your password using this link: ".$link, function($message) use($request){
-            $message->to($request->email);
-            $message->subject('Password Reset Link');
-        });
+//         // ✅ Send Mail
+//         // Mail::raw("Reset your password using this link: ".$link, function($message) use($request){
+//         //     $message->to($request->email);
+//         //     $message->subject('Password Reset Link');
+//         // });
 
-        // ✅ Pass Link to View using Session
-        return back()->with([
-            'message' => 'Reset link sent successfully.',
-            'reset_link' => $link
-        ]);
-    }
+// Mail::send([], [], function ($message) use ($request, $link) {
+//     $message->to($request->email)
+//         ->subject('Password Reset Link')
+//         ->html('
+//             <div style="font-family:Arial,sans-serif;max-width:520px;margin:0 auto;padding:20px;border:1px solid #e5e7eb;border-radius:12px;">
+//               <h2 style="margin:0 0 10px;color:#111827;">Reset your password</h2>
+//               <p style="margin:0 0 14px;color:#374151;line-height:1.5;">
+//                 You requested a password reset. Click the button below to set a new password.
+//               </p>
+//               <a href="'.$link.'" style="display:inline-block;background:#7a958f;color:#ffffff;text-decoration:none;padding:10px 16px;border-radius:999px;font-weight:600;">
+//                 Reset Password
+//               </a>
+//               <p style="margin:14px 0 0;color:#6b7280;font-size:12px;line-height:1.5;">
+//                 If you did not request this, you can ignore this email.
+//               </p>
+//             </div>
+//         ');
+// });
+
+
+//         // ✅ Pass Link to View using Session
+//         return back()->with([
+//             'message' => 'Reset link sent successfully.',
+//             'reset_link' => $link
+//         ]);
+//     }
+
+
+public function submitForgetForm(Request $request)
+{
+    $request->validate(['email' => 'required|email']);
+
+    $status = Password::sendResetLink($request->only('email'));
+
+    return back()->with('message', __($status));
+}
+
+
 
 
 
@@ -131,38 +167,75 @@ public function logout(Request $request){
     }
 
 
-    public function submitResetForm(Request $request){
+//  public function submitResetForm(Request $request)
+// {
+//     $request->validate([
+//         'email' => 'required|email',
+//         'password' => 'required|min:6|confirmed',
+//         'token' => 'required'
+//     ]);
 
-        $request->validate([
-            'email' => 'required|email|exists:users,email',
-            'password' => 'required|min:6|confirmed'
-        ]);
+// $email = strtolower(trim($request->email));
+// $hashedToken = hash('sha256', $request->token);
 
-        $updatePassword = PasswordReset::where([
-            'email' => $request->email,
-            'token' => $request->token
-        ])->first();
+// $resetRow = PasswordReset::where('email', $email)
+//     ->where('token', $hashedToken)
+//     ->first();
 
-        if(!$updatePassword){
-            return back()->withErrors(['email' => 'Invalid token!']);
+// if (!$resetRow) {
+//     return back()->withErrors(['email' => 'Invalid or expired link.']);
+// }
+
+// if ($resetRow->created_at && now()->diffInMinutes(Carbon::parse($resetRow->created_at)) > 30) {
+//     PasswordReset::where('email', $email)->delete();
+//     return back()->withErrors(['email' => 'Invalid or expired link.']);
+// }
+
+
+//     $user = User::where('email', $email)->first();
+//     if (!$user) {
+//         return back()->withErrors(['email' => 'Invalid request.']);
+//     }
+
+//     $user->password = Hash::make($request->password);
+//     $user->save();
+
+//     PasswordReset::where('email', $email)->delete();
+
+//     Auth::login($user);
+
+//     if ($user->role_id == 1) return redirect()->route('Dashboard.admin.dashboard')->with('message', 'Password changed successfully');
+//     if ($user->role_id == 2) return redirect()->route('Home.submit-medical-history')->with('message', 'Password changed successfully');
+
+//     Auth::logout();
+//     return redirect('/accountlogin')->withErrors(['error' => 'Unauthorized access']);
+// }
+
+public function submitResetForm(Request $request)
+{
+    $request->validate([
+        'token' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:6|confirmed',
+    ]);
+
+    $status = Password::reset(
+        $request->only('email','password','password_confirmation','token'),
+        function ($user, $password) {
+            $user->password = Hash::make($password);
+            $user->save();
+            Auth::login($user);
         }
+    );
 
-        // Update password
-        User::where('email', $request->email)->update([
-            'password' => Hash::make($request->password)
-        ]);
-
-        // Auto-login
-        $user = User::where('email', $request->email)->first();
-        Auth::login($user);
-
-        // Delete token
-        PasswordReset::where(['email'=> $request->email])->delete();
-
-        return redirect()->route('Dashboard.admin.dashboard')->with('message', 'Password changed and you are now logged in!');
+    if ($status === Password::PASSWORD_RESET) {
+        $user = Auth::user();
+        if ($user->role_id == 1) return redirect()->route('Dashboard.admin.dashboard');
+        if ($user->role_id == 2) return redirect()->route('Home.laywelcome');
     }
 
-
+    return back()->withErrors(['email' => __($status)]);
+}
 
     public function showRegisterForm()
 {

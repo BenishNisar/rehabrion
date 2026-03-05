@@ -157,19 +157,37 @@
 
     tfoot td{ border-top:1px solid #e5e7eb; background:#f9fafb; }
 
-    .pagination{ margin-bottom:0; }
-    .pagination .page-link{
-        border-radius:999px !important;
-        font-size:12px;
-        padding:5px 10px;
-        color:var(--teal-dark);
-        border:none;
-        margin:0 2px;
+    /* Users jaisi pagination wrap and styling */
+    .pagination-wrap{
+        padding: 16px 14px 18px;
+        margin-top: 10px;
+        border-top: 1px solid rgba(122,149,143,.18);
+        background: rgba(186,224,219,.12);
     }
-    .pagination .page-link:hover{ background:#e5f3f1; color:var(--teal-dark); }
-    .pagination .active .page-link{
-        background:linear-gradient(135deg,var(--teal),var(--mint));
-        border:none; color:#0b1620; font-weight:700;
+
+    .pagination{
+        margin:0;
+        gap: 8px;
+    }
+    .pagination .page-link{
+        border-radius: 12px !important;
+        padding: 8px 12px !important;
+        color: var(--teal) !important;
+        border-color: rgba(122,149,143,.22) !important;
+    }
+    .pagination .page-link:hover{
+        background: rgba(186,224,219,.30) !important;
+    }
+    .pagination .page-item.active .page-link{
+        background: var(--teal) !important;
+        border-color: var(--teal) !important;
+        color: #fff !important;
+    }
+    .pagination svg{
+        width: 16px !important;
+        height: 16px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
     }
 
     @media (max-width:768px){
@@ -206,7 +224,6 @@
 <div class="container-fluid users-shell">
     <div class="users-card">
 
-        <!-- Header -->
         <div class="page-head">
             <div class="page-head-title">
                 <h1>Patient Medical History</h1>
@@ -235,7 +252,6 @@
             </div>
         </div>
 
-        <!-- Table -->
         <div class="table-wrapper">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
@@ -246,9 +262,6 @@
                             <th class="hide-sm">DOB</th>
                             <th>Age/Gender</th>
                             <th>Contact</th>
-                            <th class="hide-sm">Complaint</th>
-                            <th>Pain</th>
-                            <th class="hide-sm">Problem Start</th>
                             <th class="hide-sm">Submitted</th>
                             <th style="width:140px" class="text-end">Actions</th>
                         </tr>
@@ -299,21 +312,6 @@
                                 </td>
 
                                 <td class="hide-sm">
-                                    {{ Str::limit($r->primary_complaint, 55) }}
-                                </td>
-
-                                <td>
-                                    <span class="chip {{ $painClass($r->pain_level) }}">
-                                        <span class="chip-dot"></span>
-                                        Pain: {{ $r->pain_level ?? '—' }}
-                                    </span>
-                                </td>
-
-                                <td class="hide-sm">
-                                    {{ Str::limit($r->problem_start, 35) }}
-                                </td>
-
-                                <td class="hide-sm">
                                     {{ optional($r->created_at)->format('d M Y') }}
                                 </td>
 
@@ -329,7 +327,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="10">
+                                <td colspan="7">
                                     <div class="empty-block">
                                         <div class="empty-block-title">No patient medical history found</div>
                                         <div class="empty-block-sub">Try clearing the search or check DB records.</div>
@@ -339,20 +337,15 @@
                         @endforelse
                     </tbody>
 
-                    @if($rows->hasPages())
-                        <tfoot>
-                            <tr>
-                                <td colspan="10" class="p-2">
-                                    <div class="d-flex justify-content-end">
-                                        {{ $rows->withQueryString()->links() }}
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    @endif
-
                 </table>
             </div>
+
+            @if($rows->hasPages())
+                <div class="pagination-wrap">
+                    {{ $rows->withQueryString()->links('pagination::bootstrap-5') }}
+                </div>
+            @endif
+
         </div>
 
     </div>

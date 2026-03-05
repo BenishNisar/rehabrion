@@ -1,446 +1,136 @@
 @extends("Layout.layouttwo")
 @section("AdminContent")
 
-<style>
-    :root{
-        --mint: #bae0db;
-        --teal: #7a958f;
-        --teal-dark: #58716b;
-        --ink: #111827;
-        --muted: #6b7280;
-        --border-soft: #e5e7eb;
-    }
-
-    .users-shell{
-        margin-top: 16px;
-        margin-bottom: 16px;
-    }
-
-    .users-card{
-        background:#ffffff;
-        border-radius:14px;
-        border:1px solid rgba(122,149,143,0.18);
-        box-shadow:0 14px 30px rgba(15,23,42,0.06);
-        padding:14px 14px 10px;
-    }
-
-    /* Header / toolbar */
-    .page-head{
-        display:flex;
-        align-items:flex-start;
-        justify-content:space-between;
-        gap:12px;
-        padding:4px 2px 10px;
-        border-bottom:1px dashed rgba(148,163,184,0.55);
-        margin-bottom:8px;
-    }
-    .page-head-title{
-        display:flex;
-        flex-direction:column;
-        gap:2px;
-    }
-    .page-head-title h1{
-        font-size:22px;
-        font-weight:700;
-        color:var(--ink);
-        margin:0;
-    }
-    .meta{
-        font-size:12px;
-        color:var(--muted);
-    }
-
-    .toolbar{
-        display:flex;
-        align-items:center;
-        gap:8px;
-        flex-wrap:wrap;
-        justify-content:flex-end;
-    }
-
-    .search-wrapper{
-        position:relative;
-    }
-
-    .search-wrapper i{
-        position:absolute;
-        left:11px;
-        top:50%;
-        transform:translateY(-50%);
-        font-size:13px;
-        color:#9ca3af;
-    }
-
-    .search-field{
-        height:36px;
-        border:1px solid var(--border-soft);
-        border-radius:999px;
-        padding:0 12px 0 30px;
-        min-width:240px;
-        outline:none;
-        font-size:13px;
-        color:var(--ink);
-        background:#f9fafb;
-        transition:border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
-    }
-    .search-field::placeholder{
-        color:#9ca3af;
-        font-weight:300;
-    }
-    .search-field:focus{
-        border-color:var(--teal);
-        background:#ffffff;
-        box-shadow:0 0 0 0.12rem rgba(122,149,143,0.28);
-    }
-
-    .btn-primary{
-        background:linear-gradient(135deg,var(--teal),var(--mint));
-        border:none;
-        color:#0b1620;
-        border-radius:999px;
-        padding:8px 15px;
-        font-weight:600;
-        font-size:13px;
-        display:inline-flex;
-        align-items:center;
-        gap:6px;
-    }
-    .btn-primary i{
-        font-size:13px;
-    }
-    .btn-primary:hover{
-        background:linear-gradient(135deg,var(--teal-dark),var(--teal));
-        color:#ffffff;
-    }
-
-    /* Table */
-    .table-wrapper{
-        margin-top:10px;
-    }
-    .table-responsive{
-        border-radius:12px;
-        border:1px solid #eef0f3;
-        overflow:hidden;
-        background:#ffffff;
-    }
-
-    table.table{
-        margin:0;
-        font-size:13px;
-    }
-    thead th{
-        background:linear-gradient(135deg,#f8fafc,#edf6f4);
-        border-bottom:1px solid #e2e8f0;
-        color:#111827;
-        font-weight:600;
-        padding-top:9px;
-        padding-bottom:9px;
-        white-space:nowrap;
-    }
-    tbody td{
-        vertical-align:middle;
-        border-color:#f1f5f9;
-        color:#111827;
-    }
-
-    tbody tr:hover{
-        background:#f9fdfc;
-    }
-
-    /* User cell */
-    .avatar{
-        width:38px;
-        height:38px;
-        border-radius:50%;
-        object-fit:cover;
-        border:2px solid rgba(186,224,219,0.8);
-        background:#f3faf8;
-    }
-    .user-cell{
-        display:flex;
-        align-items:center;
-        gap:10px;
-    }
-    .user-name{
-        font-weight:600;
-        color:#111827;
-        font-size:13px;
-    }
-    .user-sub{
-        font-size:11px;
-        color:#6b7280;
-        line-height:1.1;
-    }
-
-    /* Chips / role */
-    .chip{
-        display:inline-flex;
-        align-items:center;
-        padding:3px 10px;
-        border-radius:999px;
-        font-size:11px;
-        font-weight:600;
-        border:1px solid #e5e7eb;
-        background:#ffffff;
-        color:#374151;
-        gap:6px;
-    }
-    .chip-dot{
-        width:8px;
-        height:8px;
-        border-radius:999px;
-        background:var(--teal);
-    }
-    .chip.role{
-        border-color:rgba(122,149,143,0.4);
-        background:rgba(186,224,219,0.25);
-        color:#1f2933;
-    }
-
-    /* Actions */
-    .actions{
-        display:flex;
-        justify-content:center;
-        gap:6px;
-    }
-    .icon-btn{
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        width:32px;
-        height:32px;
-        border-radius:9px;
-        border:1px solid #e5e7eb;
-        background:#ffffff;
-        color:#4b5563;
-        padding:0;
-        transition:background-color .18s ease, border-color .18s ease, transform .1s ease, color .18s ease;
-    }
-    .icon-btn i{
-        font-size:13px;
-    }
-    .icon-btn:hover{
-        background:#f3faf8;
-        border-color:var(--teal);
-        color:var(--teal-dark);
-        transform:translateY(-1px);
-    }
-
-    .text-end{
-        text-align:end;
-    }
-
-    .empty-block{
-        text-align:center;
-        padding:22px 10px;
-    }
-    .empty-block-title{
-        font-weight:600;
-        font-size:13px;
-        margin-bottom:2px;
-        color:#111827;
-    }
-    .empty-block-sub{
-        font-size:12px;
-        color:#6b7280;
-    }
-
-    tfoot td{
-        border-top:1px solid #e5e7eb;
-        background:#f9fafb;
-    }
-
-    /* Pagination soft styling (Bootstrap) */
-    .pagination{
-        margin-bottom:0;
-    }
-    .pagination .page-link{
-        border-radius:999px !important;
-        font-size:12px;
-        padding:5px 10px;
-        color:var(--teal-dark);
-        border:none;
-        margin:0 2px;
-    }
-    .pagination .page-link:hover{
-        background:#e5f3f1;
-        color:var(--teal-dark);
-    }
-    .pagination .active .page-link{
-        background:linear-gradient(135deg,var(--teal),var(--mint));
-        border:none;
-        color:#0b1620;
-        font-weight:600;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px){
-        .users-card{
-            padding:10px;
-            border-radius:10px;
-        }
-        .page-head{
-            flex-direction:column;
-            align-items:flex-start;
-        }
-        .toolbar{
-            width:100%;
-            justify-content:flex-start;
-        }
-        .search-field{
-            min-width:0;
-            width:100%;
-        }
-        .btn-primary{
-            width:auto;
-        }
-        .hide-sm{
-            display:none;
-        }
-    }
-</style>
-
-<div class="container-fluid users-shell">
-    <div class="users-card">
-        <!-- Header -->
-        <div class="page-head">
-            <div class="page-head-title">
-                <h1>Users</h1>
-                <div class="meta">
-                    Total: {{ $users->total() }} {{ Str::plural('user',$users->total()) }}
-                    @if(!empty($q))
-                        • Search: “{{ $q }}”
-                    @endif
-                </div>
-            </div>
-
-            <div class="toolbar">
-                <form method="GET"
-                      action="{{ route('Dashboard.admin.users.index') }}"
-                      class="d-flex align-items-center flex-wrap"
-                      role="search">
-                    <div class="search-wrapper">
-                        <i class="fas fa-search"></i>
-                        <input type="text"
-                               name="q"
-                               value="{{ $q ?? '' }}"
-                               class="search-field"
-                               placeholder="Search name, email, role, city...">
-                    </div>
-                </form>
-
-                <a href="{{ url('dashboard/users/add') }}" class="btn btn-primary">
-                    <i class="fas fa-plus"></i>
-                    <span>Add New</span>
-                </a>
-            </div>
+<div class="container-fluid">
+    <div class="d-flex align-items-center mb-4 flex-wrap">
+        <h3 class="me-auto">Users</h3>
+        <div>
+            <a href="{{ route('Dashboard.admin.users.add') }}" class="btn btn-primary me-3">
+                <i class="fas fa-plus me-2"></i>Add New User
+            </a>
+            <a href="javascript:void(0);" class="icon-btn me-3"> <i class="fas fa-envelope"></i></a>
+            <a href="javascript:void(0);" class="icon-btn me-3"><i class="fas fa-phone-alt"></i></a>
+            <a href="javascript:void(0);" class="icon-btn"><i class="fas fa-info"></i></a>
         </div>
+    </div>
 
-        <!-- Table -->
-        <div class="table-wrapper">
+    @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
+    <div class="row">
+        <div class="col-xl-12">
             <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
+                <table class="table display mb-4 dataTablesCard job-table table-responsive-xl card-table" id="example5">
                     <thead>
                         <tr>
-                            <th style="width:60px">#</th>
+                            <th>No</th>
                             <th>User</th>
-                            <th class="hide-sm">Location</th>
+                            <th>Location</th>
                             <th>Role</th>
-                            <th class="hide-sm">Zip</th>
-                            <th class="hide-sm">Organization</th>
-                            <th style="width:150px" class="text-end">Actions</th>
+                            <th>Zip</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         @forelse($users as $i => $item)
                             @php
-                                $rowNo = ($users->currentPage()-1)*$users->perPage() + $i + 1;
-                                $img   = $item->profile_img ?: 'assets/profile_images/default.png';
+                                $rowNo = ($users->currentPage() - 1) * $users->perPage() + $i + 1;
+                                $img = $item->profile_img ?: 'assets/profile_images/default.png';
                             @endphp
                             <tr>
                                 <td>{{ $rowNo }}</td>
-
                                 <td>
                                     <div class="user-cell">
                                         <img src="{{ asset($img) }}" alt="Avatar" class="avatar">
                                         <div>
-                                            <div class="user-name">
-                                                {{ $item->firstname }} {{ $item->lastname }}
-                                            </div>
-                                            <div class="user-sub">
-                                                {{ $item->email }}
-                                            </div>
+                                            <div class="user-name">{{ $item->firstname }} {{ $item->lastname }}</div>
+                                            <div class="user-sub">{{ $item->email }}</div>
                                         </div>
                                     </div>
                                 </td>
-
-                                <td class="hide-sm">
-                                    {{ $item->city ? $item->city.', ' : '' }}{{ $item->country }}
-                                </td>
-
+                                <td>{{ $item->city ? $item->city.', ' : '' }}{{ $item->country }}</td>
                                 <td>
                                     <span class="chip role">
                                         <span class="chip-dot"></span>
                                         {{ $item->role_name ?? '—' }}
                                     </span>
                                 </td>
+                                <td>{{ $item->zip_code }}</td>
 
-                                <td class="hide-sm">{{ $item->zip_code }}</td>
-                                <td class="hide-sm">{{ $item->organization }}</td>
-
-                                <td class="text-end">
-                                    <div class="actions">
-                                        <a class="icon-btn"
-                                           href="{{ route('Dashboard.admin.users.view', $item->id) }}"
-                                           title="View">
+                                {{-- <td class="action-btn wspace-no text-end">
+                                    <span>
+                                        <a href="{{ route('Dashboard.admin.users.view', $item->id) }}" title="View">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a class="icon-btn"
-                                           href="{{ route('Dashboard.admin.users.edit', $item->id) }}"
-                                           title="Edit">
+                                    </span>
+                                    <span>
+                                        <a href="{{ route('Dashboard.admin.users.edit', $item->id) }}" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('Dashboard.admin.users.delete', $item->id) }}"
-                                              method="POST"
-                                              onsubmit="return confirm('Delete this user?')"
-                                              style="display:inline;">
+                                    </span>
+                                    <span>
+                                        <form action="{{ route('Dashboard.admin.users.delete', $item->id) }}" method="POST" class="d-inline"
+                                              onsubmit="return confirm('Are you sure you want to delete this user?');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit"
-                                                    class="icon-btn"
-                                                    title="Delete">
-                                                <i class="fas fa-trash-alt"></i>
+                                            <button type="submit" class="border-0 bg-transparent p-0" title="Delete">
+                                                <i class="far fa-trash-alt text-danger"></i>
                                             </button>
                                         </form>
-                                    </div>
-                                </td>
+                                    </span>
+                                </td> --}}
+                                      <td>
+                                            <div class="action-buttons d-flex justify-content-end">
+<a href="{{ route('Dashboard.admin.users.view', $item->id) }}" class="btn btn-success light me-2" title="View">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-main-icon" width="24px" height="24px" viewBox="0 0 32 32" x="0px" y="0px">
+                                                        <g data-name="Layer 21">
+                                                            <path d="M29,14.47A15,15,0,0,0,3,14.47a3.07,3.07,0,0,0,0,3.06,15,15,0,0,0,26,0A3.07,3.07,0,0,0,29,14.47ZM16,21a5,5,0,1,1,5-5A5,5,0,0,1,16,21Z" fill="#000000" fill-rule="nonzero"></path>
+                                                            <circle cx="16" cy="16" r="3" fill="#000000" fill-rule="nonzero"></circle>
+                                                        </g>
+                                                    </svg>
+                                                </a>
+
+                                                <a href="{{ route('Dashboard.admin.users.edit', $item->id) }}" class="btn btn-secondary light me-2" title="Edit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                                            <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) "></path>
+                                                            <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1"></rect>
+                                                        </g>
+                                                    </svg>
+                                                </a>
+
+                                                <form action="{{ route('Dashboard.admin.users.delete', $item->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger light" title="Delete" onclick="return confirm('Are you sure you want to delete this job')">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                                <path d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                                <path d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z" fill="#000000" opacity="0.3"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7">
-                                    <div class="empty-block">
-                                        <div class="empty-block-title">No users found</div>
-                                        <div class="empty-block-sub">
-                                            Try clearing the search or add a new user.
-                                        </div>
-                                    </div>
+                                <td colspan="7" class="text-center text-muted py-4">
+                                    No users found
                                 </td>
                             </tr>
                         @endforelse
                     </tbody>
-
-                    @if($users->hasPages())
-                        <tfoot>
-                            <tr>
-                                <td colspan="7" class="p-2">
-                                    <div class="d-flex justify-content-end">
-                                        {{ $users->links() }}
-                                    </div>
-                                </td>
-                            </tr>
-                        @endif
                 </table>
+
+                <div class="mt-3">
+                    {{ $users->links('pagination::bootstrap-5') }}
+                </div>
             </div>
         </div>
     </div>

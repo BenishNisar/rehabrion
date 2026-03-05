@@ -225,7 +225,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">1. About Rehabrion</h2>
+        <h2 class="t-h2">About Rehabrion</h2>
         <p class="t-muted">
           Rehabrion offers physiotherapy and rehabilitation services including clinic based, home visit, and online sessions
           depending on availability. Service availability may vary by location, therapist schedule, and clinical suitability.
@@ -233,7 +233,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">2. Eligibility and Use of Website</h2>
+        <h2 class="t-h2">Eligibility and Use of Website</h2>
         <ul class="t-ul">
           <li>You must provide accurate information when using our forms, booking requests, or contacting us.</li>
           <li>You agree not to misuse the website, attempt unauthorized access, or interfere with site performance.</li>
@@ -242,7 +242,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">3. Appointments and Bookings</h2>
+        <h2 class="t-h2">Appointments and Bookings</h2>
         <ul class="t-ul">
           <li>Booking requests are subject to confirmation by our team.</li>
           <li>We may request additional information to confirm your appointment and clinical suitability.</li>
@@ -251,7 +251,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">4. Cancellations and Rescheduling</h2>
+        <h2 class="t-h2">Cancellations and Rescheduling</h2>
         <p class="t-muted">
           If you need to cancel or reschedule, please inform us as early as possible. Late cancellations may impact therapist scheduling.
           We may apply a cancellation policy depending on your service type and location.
@@ -259,7 +259,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">5. Payments and Charges</h2>
+        <h2 class="t-h2">Payments and Charges</h2>
         <ul class="t-ul">
           <li>Prices may vary based on service type, session duration, location, and therapist availability.</li>
           <li>Payment terms will be shared at the time of booking confirmation.</li>
@@ -268,7 +268,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">6. Medical Disclaimer</h2>
+        <h2 class="t-h2">Medical Disclaimer</h2>
         <p class="t-muted">
           Rehabrion services are provided by qualified professionals, but outcomes vary by individual. Treatment plans are based on assessment and progress.
           We do not guarantee specific results.
@@ -286,7 +286,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">7. User Responsibilities</h2>
+        <h2 class="t-h2">User Responsibilities</h2>
         <ul class="t-ul">
           <li>Follow therapist instructions during sessions and share accurate medical history.</li>
           <li>Inform us about allergies, major conditions, recent surgeries, or red flag symptoms.</li>
@@ -295,7 +295,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">8. Privacy and Data Protection</h2>
+        <h2 class="t-h2">Privacy and Data Protection</h2>
         <p class="t-muted">
           Your privacy matters. Please review our Privacy Policy to understand how we collect, store, and protect your data.
           By using our services, you agree to our Privacy Policy.
@@ -303,7 +303,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">9. Intellectual Property</h2>
+        <h2 class="t-h2">Intellectual Property</h2>
         <p class="t-muted">
           All content on this website including text, graphics, branding, and design is owned by Rehabrion or licensed to us.
           You may not copy, reuse, or distribute content without written permission.
@@ -311,7 +311,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">10. Limitation of Liability</h2>
+        <h2 class="t-h2">Limitation of Liability</h2>
         <p class="t-muted">
           To the maximum extent permitted by law, Rehabrion will not be liable for indirect damages, lost profits, or any loss arising from the use of this website
           or services, except where liability cannot be excluded by law.
@@ -319,7 +319,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">11. Changes to These Terms</h2>
+        <h2 class="t-h2">Changes to These Terms</h2>
         <p class="t-muted">
           We may update these Terms from time to time. Updates will be effective when posted on this page, and the last updated date will change.
           Continued use means you accept the updated terms.
@@ -327,7 +327,7 @@
 
         <hr class="t-divider">
 
-        <h2 class="t-h2">12. Contact Us</h2>
+        <h2 class="t-h2">Contact Us</h2>
         <p class="t-muted">
           If you have questions about these Terms, contact us using the details below.
         </p>

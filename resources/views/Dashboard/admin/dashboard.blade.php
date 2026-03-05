@@ -1,536 +1,385 @@
 @extends("Layout.layouttwo")
 @section("AdminContent")
 
-<style>
-  :root{
-    --mint:#bae0db;
-    --teal:#7a958f;
-    --teal-dark:#6a857f;
-    --bg:#f6fbfa;
-    --card:#ffffff;
-    --text:#0f172a;
-    --muted:#64748b;
-    --border: rgba(122,149,143,.22);
-    --shadow: 0 12px 30px rgba(15, 23, 42, .08);
-  }
+        {{-- <div class="content-body"> --}}
+			<div class="container-fluid">
+				<div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="javascript:void(0);">Account</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0);">Api Keys</a></li>
+					</ol>
+                </div>
+				<div class="card profile-overview">
+					<div class="card-body d-flex">
+						<div class="clearfix">
+							<div class="d-inline-block position-relative me-sm-4 me-3 mb-3 mb-lg-0">
+								<img src="images/avatar/pic7.jpg" alt="" class="rounded-4 profile-avatar">
+								<span class="fa fa-circle border border-3 border-white text-success position-absolute bottom-0 end-0 rounded-circle"></span>
+							</div>
+						</div>
+						<div class="clearfix d-xl-flex flex-grow-1">
+							<div class="clearfix pe-md-5">
+								<h3 class="fw-semibold mb-1">Franklin<img src="images/blue-tick.png" alt="Blue Tick"></h3>
+								<ul class="d-flex flex-wrap fs-6 align-items-center">
+									<li class="me-3 d-inline-flex align-items-center"><i class="las la-user me-1 fs-18"></i>Web Designer</li>
+									<li class="me-3 d-inline-flex align-items-center"><i class="las la-map-marker me-1 fs-18"></i>420 City Path, AU 123-456</li>
+									<li class="me-3 d-inline-flex align-items-center"><i class="las la-envelope me-1 fs-18"></i>info@gmail.com</li>
+								</ul>
+								<div class="d-md-flex d-none flex-wrap">
+									<div class="border outline-dashed rounded p-2 d-flex align-items-center me-3 mt-3">
+										<div class="avatar avatar-md bg-primary-light text-primary rounded d-flex align-items-center justify-content-center">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M12 1V23" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+										</div>
+										<div class="clearfix ms-2">
+											<h3 class="mb-0 fw-semibold lh-1">$1,250</h3>
+											<span class="fs-14">Total Earnings</span>
+										</div>
+									</div>
+									<div class="border outline-dashed rounded p-2 d-flex align-items-center me-3 mt-3">
+										<div class="avatar avatar-md bg-primary-light text-primary rounded d-flex align-items-center justify-content-center">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+										</div>
+										<div class="clearfix ms-2">
+											<h3 class="mb-0 fw-semibold lh-1">125</h3>
+											<span class="fs-14">New Referrals</span>
+										</div>
+									</div>
+									<div class="border outline-dashed rounded p-2 d-flex align-items-center me-3 mt-3">
+										<div class="avatar avatar-md bg-primary-light text-primary rounded d-flex align-items-center justify-content-center">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+										</div>
+										<div class="clearfix ms-2">
+											<h3 class="mb-0 fw-semibold lh-1">25</h3>
+											<span class="fs-14">New Deals</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix mt-3 mt-xl-0 ms-auto d-flex flex-column col-xl-3">
+								<div class="clearfix mb-3 text-xl-end">
+									<a href="javascript:void(0);" class="btn btn-light mb-2">Follow</a>
+									<a href="javascript:void(0);" class="btn btn-primary ms-2 mb-2">Hire Me</a>
+								</div>
+								<div class="mt-auto d-flex align-items-center">
+									<div class="clearfix me-3">
+										<span class="fw-medium text-black d-block mb-1">Progress</span>
+										<p class="mb-0 d-flex">
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M5.83334 14.1668L14.1667 5.8335" stroke="var(--bs-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+												<path d="M5.83334 5.8335H14.1667V14.1668" stroke="var(--bs-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+											<span class="text-success me-1">+3.50%</span>
+										</p>
+									</div>
+									<div id="chartProfileProgress"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer py-0 d-flex flex-wrap justify-content-between align-items-center">
+						<ul class="nav nav-underline nav-underline-primary nav-underline-text-dark nav-underline-gap-x-0" id="tabMyProfileBottom" role="tablist">
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/overview.html" class="nav-link py-3 border-3 text-dark">Overview</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/settings.html" class="nav-link py-3 border-3 text-dark">Settings</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/security.html" class="nav-link py-3 border-3 text-dark">Security</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/activity.html" class="nav-link py-3 border-3 text-dark">Activity</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/billing.html" class="nav-link py-3 border-3 text-dark">Billing</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/statements.html" class="nav-link py-3 border-3 text-dark">Statements</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/referrals.html" class="nav-link py-3 border-3 text-dark">Referrals</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/api-keys.html" class="nav-link py-3 border-3 text-dark active">API Keys</a>
+							</li>
+							<li class="nav-item ms-1" role="presentation">
+								<a href="account/logs.html" class="nav-link py-3 border-3 text-dark">Logs</a>
+							</li>
+						</ul>
+						<ul class="d-xl-flex d-none py-2">
+							<li class="px-1">
+								<a class="btn btn-light btn-sharp" href="javascript:void(0);">
+									<i class="fa-brands fa-linkedin-in"></i>
+								</a>
+							</li>
+							<li class="px-1">
+								<a class="btn btn-light btn-sharp" href="javascript:void(0);">
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+							</li>
+							<li class="px-1">
+								<a class="btn btn-light btn-sharp" href="javascript:void(0);">
+									<i class="fa-brands fa-facebook-f"></i>
+								</a>
+							</li>
+							<li class="px-1">
+								<a class="btn btn-light btn-sharp" href="javascript:void(0);">
+									<i class="fa-brands fa-telegram"></i>
+								</a>
+							</li>
+							<li class="px-1">
+								<a class="btn btn-light btn-sharp" href="javascript:void(0);">
+									<i class="fa-brands fa-youtube"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 
-  .dash-wrap{
-    padding: 18px 10px 28px;
-    min-height: calc(100vh - 70px);
-  }
+				<div class="tab-content" id="tabContentMyProfileBottom">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <div class="card">
+                                <div class="card-header border-0 py-3 pb-0">
+                                    <h4 class="heading mb-0">API Keys</h4>
+                                    <button class="btn btn-sm btn-primary">Create A Key</button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table mb-1 table-striped-thead table-wide table-md table-border-last-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Label</th>
+                                                    <th>API Keys</th>
+                                                    <th>Created</th>
+                                                    <th>Status</th>
+                                                    <th class="text-end">Edit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>none set</td>
+                                                    <td>
+                                                        <div class="select-text-wrap d-flex justify-content-between">
+                                                            <div class="text-select-copy">hhhhhh5782516nsdzjvn54</div>
+                                                            <button class="btn-select-text btn p-0 border-0 ms-4"><i class="las la-copy fs-4"></i>
+																<span>Copy</span>
+															</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Nov 01, 2020</td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-success light border-0">Active</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Options
+                                                            </button>
+                                                            <ul class="dropdown-menu mw-w100 dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Edit</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Navitare</td>
+                                                    <td>
+                                                        <div class="select-text-wrap d-flex justify-content-between">
+                                                            <div class="text-select-copy">hhhhhh5782516nsdzjvn54</div>
+                                                            <button class="btn-select-text btn p-0 border-0 ms-4"><i class="las la-copy fs-4"></i>
+																<span>Copy</span>
+															</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Sep 27, 2020</td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-info light border-0">Review</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Options
+                                                            </button>
+                                                            <ul class="dropdown-menu mw-w100 dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Edit</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Docs API Key</td>
+                                                    <td>
+                                                        <div class="select-text-wrap d-flex justify-content-between">
+                                                            <div class="text-select-copy">hhhhhh5782516nsdzjvn54</div>
+                                                            <button class="btn-select-text btn p-0 border-0 ms-4"><i class="las la-copy fs-4"></i>
+																<span>Copy</span>
+															</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Jul 09, 2020</td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-danger light border-0">Inactive</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Options
+                                                            </button>
+                                                            <ul class="dropdown-menu mw-w100 dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Edit</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Identity Key</td>
+                                                    <td>
+                                                        <div class="select-text-wrap d-flex justify-content-between">
+                                                            <div class="text-select-copy">jk076590ygghgh324vd3568</div>
+                                                            <button class="btn-select-text btn p-0 border-0 ms-4"><i class="las la-copy fs-4"></i>
+																<span>Copy</span>
+															</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>May 14, 2020</td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-success light border-0">Active</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Options
+                                                            </button>
+                                                            <ul class="dropdown-menu mw-w100 dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Edit</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Remore Interface</td>
+                                                    <td>
+                                                        <div class="select-text-wrap d-flex justify-content-between">
+                                                            <div class="text-select-copy">nzsdvnn584948941</div>
+                                                            <button class="btn-select-text btn p-0 border-0 ms-4"><i class="las la-copy fs-4"></i>
+																<span>Copy</span>
+															</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Dec 30, 2019</td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-success light border-0">Active</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Options
+                                                            </button>
+                                                            <ul class="dropdown-menu mw-w100 dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Edit</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>none set</td>
+                                                    <td>
+                                                        <div class="select-text-wrap d-flex justify-content-between">
+                                                            <div class="text-select-copy">nzsdvnn584948941</div>
+                                                            <button class="btn-select-text btn p-0 border-0 ms-4"><i class="las la-copy fs-4"></i>
+																<span>Copy</span>
+															</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Oct 25, 2019</td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-danger light border-0">Inactive</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Options
+                                                            </button>
+                                                            <ul class="dropdown-menu mw-w100 dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Edit</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Test App</td>
+                                                    <td>
+                                                        <div class="select-text-wrap d-flex justify-content-between">
+                                                            <div class="text-select-copy">nzsdvnn584948941</div>
+                                                            <button class="btn-select-text btn p-0 border-0 ms-4"><i class="las la-copy fs-4"></i>
+																<span>Copy</span>
+															</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Apr 03, 2019</td>
+                                                    <td>
+                                                        <span class="badge badge-sm badge-success light border-0">Active</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Options
+                                                            </button>
+                                                            <ul class="dropdown-menu mw-w100 dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Edit</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="heading mb-0">API Overview</h4>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="clearfix border-bottom p-4 border-dark border-opacity-10">
+                                        <h6>How to set API</h6>
+                                        <p class="fs-14">Elevate your post: Integrate images for impact, smooth flow, humor, and clarity on complex subjects</p>
+                                        <a href="javascript:void(0);" class="btn btn-light">Get Started</a>
+                                    </div>
+                                    <div class="clearfix p-4">
+                                        <h6>Developer Tools</h6>
+                                        <p class="fs-14">Craft your blog post: Choose a topic, outline, research, and fact-check diligently.</p>
+                                        <a href="javascript:void(0);" class="btn btn-light">Create CLI Rule</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
 
-  .dash-shell{
-    margin: 0 10px;
-    background: var(--bg);
-    border-radius: 18px;
-    padding: 14px;
-  }
+			</div>
 
-  .dash-head{
-    background: linear-gradient(135deg, rgba(186,224,219,.60), rgba(122,149,143,.25));
-    border: 1px solid rgba(122,149,143,.25);
-    border-radius: 18px;
-    padding: 16px;
-    box-shadow: 0 10px 22px rgba(122,149,143,.16);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 14px;
-  }
-
-  .dash-head-left h1{
-    margin:0;
-    font-size: 22px;
-    font-weight: 900;
-    color: var(--text);
-    letter-spacing: .2px;
-  }
-
-  .dash-head-left p{
-    margin: 4px 0 0;
-    font-size: 13px;
-    color: rgba(15,23,42,.72);
-  }
-
-  .head-pill{
-    display:inline-flex;
-    align-items:center;
-    gap: 8px;
-    margin-top: 8px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    background: rgba(255,255,255,.65);
-    border: 1px solid rgba(122,149,143,.22);
-    color: rgba(15,23,42,.75);
-  }
-
-  .head-pill .dot{
-    width:8px;
-    height:8px;
-    border-radius: 999px;
-    background: #22c55e;
-    box-shadow: 0 0 0 4px rgba(34,197,94,.12);
-  }
-
-  .mini-profile{
-    display:flex;
-    align-items:center;
-    gap: 12px;
-  }
-
-  .mini-avatar{
-    width: 46px;
-    height: 46px;
-    border-radius: 999px;
-    background: radial-gradient(circle at 30% 30%, rgba(186,224,219,.95) 0%, rgba(122,149,143,.95) 55%, rgba(106,133,127,.95) 100%);
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight: 900;
-    font-size: 16px;
-    box-shadow: 0 12px 22px rgba(122,149,143,.20);
-    border: 1px solid rgba(255,255,255,.55);
-  }
-
-  .mini-name{
-    font-size: 14px;
-    font-weight: 900;
-    color: var(--text);
-    line-height: 1.2;
-  }
-
-  .mini-role{
-    font-size: 12px;
-    color: rgba(15,23,42,.65);
-    font-weight: 700;
-    margin-top: 2px;
-  }
-
-  .grid-gap{
-    margin-top: 16px;
-  }
-
-  .stat-card{
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    padding: 16px;
-    height: 100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transition: .18s;
-    position: relative;
-    overflow:hidden;
-  }
-
-  .stat-card::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    background: radial-gradient(circle at 20% 10%, rgba(186,224,219,.45) 0%, rgba(255,255,255,0) 55%);
-    opacity:.9;
-    pointer-events:none;
-  }
-
-  .stat-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 18px 34px rgba(15,23,42,.12);
-    border-color: rgba(122,149,143,.45);
-  }
-
-  .stat-top{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap: 12px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .icon-wrap{
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    background: rgba(186,224,219,.55);
-    border: 1px solid rgba(122,149,143,.22);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow: 0 12px 20px rgba(122,149,143,.14);
-  }
-
-  .icon-wrap i{
-    font-size: 18px;
-    color: var(--teal);
-  }
-
-  .stat-title{
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 900;
-    color: var(--text);
-    position: relative;
-    z-index: 1;
-  }
-
-  .stat-sub{
-    font-size: 12px;
-    color: rgba(15,23,42,.65);
-    font-weight: 700;
-    margin-top: 3px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .stat-count{
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--text);
-    margin-top: 10px;
-    position: relative;
-    z-index: 1;
-    letter-spacing: .3px;
-  }
-
-  .stat-foot{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 10px;
-    margin-top: 12px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .btn-mini{
-    border-radius: 999px;
-    padding: 8px 14px;
-    font-size: 12px;
-    font-weight: 900;
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    gap: 8px;
-    border: 1px solid rgba(122,149,143,.25);
-    background: rgba(255,255,255,.9);
-    color: rgba(15,23,42,.78);
-    transition: .18s;
-    white-space: nowrap;
-  }
-
-  .btn-mini i{ font-size: 11px; color: var(--teal); }
-
-  .stat-card:hover .btn-mini{
-    background: var(--teal);
-    border-color: var(--teal);
-    color:#fff;
-  }
-
-  .stat-card:hover .btn-mini i{
-    color:#fff;
-  }
-
-  .meta{
-    font-size: 11px;
-    color: rgba(15,23,42,.55);
-    font-weight: 800;
-    white-space: nowrap;
-  }
-
-  .chart-card{
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    padding: 16px;
-    height: 100%;
-  }
-
-  .chart-head{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .chart-title{
-    font-size: 14px;
-    font-weight: 900;
-    color: var(--text);
-    margin:0;
-  }
-
-  .chart-sub{
-    font-size: 12px;
-    font-weight: 700;
-    color: rgba(15,23,42,.65);
-    margin: 4px 0 0;
-  }
-
-  .chart-wrap{
-    position: relative;
-    width: 100%;
-    height: 280px;
-  }
-
-  .hint{
-    font-size: 11px;
-    font-weight: 800;
-    color: rgba(15,23,42,.55);
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(122,149,143,.22);
-    background: rgba(186,224,219,.25);
-    white-space: nowrap;
-  }
-
-  @media (max-width: 767.98px){
-    .dash-head{ flex-direction:column; align-items:stretch; }
-    .mini-profile{ justify-content:space-between; width:100%; }
-    .dash-shell{ margin: 0 6px; }
-  }
-</style>
-
-<div class="dash-wrap">
-  <div class="container-fluid px-0">
-    <div class="dash-shell">
-
-      <div class="dash-head">
-        <div class="dash-head-left">
-          <h1>Welcome {{ auth()->user()->firstname ?? 'User' }}</h1>
-          <p>Quick access to your clinic admin tools and insights.</p>
-          <div class="head-pill">
-            <span class="dot"></span>
-            <span>Dashboard live overview</span>
-          </div>
-        </div>
-
-        <div class="mini-profile">
-          @php
-            $fn = auth()->user()->firstname ?? 'A';
-            $ln = auth()->user()->lastname ?? 'I';
-            $initials = mb_substr($fn,0,1).mb_substr($ln,0,1);
-          @endphp
-
-          <div class="mini-avatar">{{ strtoupper($initials) }}</div>
-
-          <div>
-            <div class="mini-name">
-              {{ auth()->user()->firstname ?? 'Aziz' }}
-              {{ auth()->user()->lastname ?? 'Ismail' }}
-            </div>
-            <div class="mini-role">Admin Rehabrion</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row gy-4 grid-gap">
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="stat-card">
-            <div>
-              <div class="stat-top">
-                <div class="icon-wrap"><i class="fas fa-users"></i></div>
-                <span class="hint">Directory</span>
-              </div>
-              <div class="stat-title">Users</div>
-              <div class="stat-sub">Admins staff and patients</div>
-              <div class="stat-count">{{ \App\Models\User::count() }}</div>
-            </div>
-            <div class="stat-foot">
-              <a href="{{ url('users') }}" class="btn-mini"><i class="fas fa-arrow-right"></i> View</a>
-              <span class="meta">Manage users</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="stat-card">
-            <div>
-              <div class="stat-top">
-                <div class="icon-wrap"><i class="fas fa-user-shield"></i></div>
-                <span class="hint">Security</span>
-              </div>
-              <div class="stat-title">Roles</div>
-              <div class="stat-sub">Permissions and access control</div>
-              <div class="stat-count">{{ \App\Models\Role::count() }}</div>
-            </div>
-            <div class="stat-foot">
-              <a href="{{ url('roles') }}" class="btn-mini"><i class="fas fa-shield-alt"></i> View</a>
-              <span class="meta">Access rules</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="stat-card">
-            <div>
-              <div class="stat-top">
-                <div class="icon-wrap"><i class="fas fa-blog"></i></div>
-                <span class="hint">Content</span>
-              </div>
-              <div class="stat-title">Blogs</div>
-              <div class="stat-sub">Patient education articles</div>
-              <div class="stat-count">{{ \App\Models\Blog::count() }}</div>
-            </div>
-            <div class="stat-foot">
-              <a href="{{ url('blog') }}" class="btn-mini"><i class="fas fa-pen"></i> View</a>
-              <span class="meta">Blog hub</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="stat-card">
-            <div>
-              <div class="stat-top">
-                <div class="icon-wrap"><i class="fas fa-tags"></i></div>
-                <span class="hint">Structure</span>
-              </div>
-              <div class="stat-title">Categories</div>
-              <div class="stat-sub">Organise by condition and topic</div>
-              <div class="stat-count">{{ \App\Models\Category::count() }}</div>
-            </div>
-            <div class="stat-foot">
-              <a href="{{ url('category') }}" class="btn-mini"><i class="fas fa-list-ul"></i> View</a>
-              <span class="meta">Taxonomy</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="stat-card">
-            <div>
-              <div class="stat-top">
-                <div class="icon-wrap"><i class="fas fa-envelope-open-text"></i></div>
-                <span class="hint">Inbox</span>
-              </div>
-              <div class="stat-title">Messages</div>
-              <div class="stat-sub">Website and contact queries</div>
-              <div class="stat-count">{{ \App\Models\Contact::count() }}</div>
-            </div>
-            <div class="stat-foot">
-              <a href="{{ url('contactus') }}" class="btn-mini"><i class="fas fa-inbox"></i> View</a>
-              <span class="meta">Patient messages</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row gy-4 mt-2">
-        <div class="col-lg-6">
-          <div class="chart-card">
-            <div class="chart-head">
-              <div>
-                <div class="chart-title">System Overview</div>
-                <div class="chart-sub">Distribution of users content and messages</div>
-              </div>
-              <div class="hint">Overview</div>
-            </div>
-            <div class="chart-wrap">
-              <canvas id="overviewChart"></canvas>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="chart-card">
-            <div class="chart-head">
-              <div>
-                <div class="chart-title">Content and Communication</div>
-                <div class="chart-sub">Compare blogs versus messages</div>
-              </div>
-              <div class="hint">Compare</div>
-            </div>
-            <div class="chart-wrap">
-              <canvas id="contentChart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const stats = {
-      users: {{ \App\Models\User::count() }},
-      roles: {{ \App\Models\Role::count() }},
-      blogs: {{ \App\Models\Blog::count() }},
-      categories: {{ \App\Models\Category::count() }},
-      messages: {{ \App\Models\Contact::count() }},
-    };
-
-    const ctxOverview = document.getElementById('overviewChart');
-    if (ctxOverview) {
-      new Chart(ctxOverview, {
-        type: 'doughnut',
-        data: {
-          labels: ['Users', 'Blogs', 'Categories', 'Messages'],
-          datasets: [{
-            data: [stats.users, stats.blogs, stats.categories, stats.messages],
-            backgroundColor: ['#7a958f', '#10b981', '#f59e0b', '#3b82f6'],
-            borderWidth: 2,
-            borderColor: '#ffffff'
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          cutout: '68%',
-          plugins: {
-            legend: {
-              position: 'bottom',
-              labels: { boxWidth: 14, boxHeight: 14 }
-            },
-            tooltip: { padding: 10 }
-          }
-        }
-      });
-    }
-
-    const ctxContent = document.getElementById('contentChart');
-    if (ctxContent) {
-      new Chart(ctxContent, {
-        type: 'bar',
-        data: {
-          labels: ['Blogs', 'Messages'],
-          datasets: [{
-            label: 'Count',
-            data: [stats.blogs, stats.messages],
-            backgroundColor: ['#7a958f', '#3b82f6'],
-            borderRadius: 10,
-            maxBarThickness: 44
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            y: {
-              beginAtZero: true,
-              ticks: { precision: 0 }
-            },
-            x: { grid: { display: false } }
-          },
-          plugins: {
-            legend: { display: false },
-            tooltip: { padding: 10 }
-          }
-        }
-      });
-    }
-  });
-</script>
+		{{-- </div> --}}
 
 @endsection

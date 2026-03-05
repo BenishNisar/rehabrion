@@ -34,7 +34,7 @@
     </div>
   @endif
 
-  <form method="POST" action="{{ route('Dashboard.admin.conditions.update', $condition->id) }}">
+  <form method="POST" action="{{ route('Dashboard.admin.conditions.update', $condition->id) }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -67,32 +67,30 @@
         <div class="row g-3 mb-4">
           <div class="col-md-8">
             <label class="fw-bold">Title</label>
-            <input class="form-control" name="title" required
-                   value="{{ old('title', $condition->title) }}">
+            <input class="form-control" name="title" required value="{{ old('title', $condition->title) }}">
           </div>
 
           <div class="col-md-4">
             <label class="fw-bold">Slug</label>
-            <input class="form-control" name="slug" placeholder="auto generate if empty"
-                   value="{{ old('slug', $condition->slug) }}">
+            <input class="form-control" name="slug" placeholder="auto generate if empty" value="{{ old('slug', $condition->slug) }}">
           </div>
 
           <div class="col-md-4">
             <label class="fw-bold">Badge Text</label>
-            <input class="form-control" name="badge_text" placeholder="Musculoskeletal care"
-                   value="{{ old('badge_text', $condition->badge_text) }}">
+            <input class="form-control" name="badge_text" placeholder="Musculoskeletal care" value="{{ old('badge_text', $condition->badge_text) }}">
           </div>
 
           <div class="col-md-8">
             <label class="fw-bold">Hero Description</label>
-            <input class="form-control" name="hero_description"
-                   value="{{ old('hero_description', $condition->hero_description) }}">
+            <input class="form-control" name="hero_description" value="{{ old('hero_description', $condition->hero_description) }}">
           </div>
 
           <div class="col-12">
-            <label class="fw-bold">Hero Image URL</label>
-            <input class="form-control" name="hero_image_url"
-                   value="{{ old('hero_image_url', $condition->hero_image_url) }}">
+            <label class="fw-bold">Hero Image</label>
+            <input class="form-control" type="file" name="hero_image" accept="image/png,image/jpeg,image/webp">
+            @if($condition->hero_image_url)
+              <img src="{{ asset($condition->hero_image_url) }}" alt="Hero Image" class="mt-2" style="max-width: 250px;">
+            @endif
           </div>
         </div>
 
@@ -100,26 +98,22 @@
         <div class="row g-3 mb-4">
           <div class="col-md-3">
             <label class="fw-bold">Estimated Sessions</label>
-            <input class="form-control" name="estimated_sessions"
-                   value="{{ old('estimated_sessions', $condition->estimated_sessions) }}">
+            <input class="form-control" name="estimated_sessions" value="{{ old('estimated_sessions', $condition->estimated_sessions) }}">
           </div>
 
           <div class="col-md-3">
             <label class="fw-bold">Stat One</label>
-            <input class="form-control" name="stat_one"
-                   value="{{ old('stat_one', $condition->stat_one) }}">
+            <input class="form-control" name="stat_one" value="{{ old('stat_one', $condition->stat_one) }}">
           </div>
 
           <div class="col-md-3">
             <label class="fw-bold">Stat Two</label>
-            <input class="form-control" name="stat_two"
-                   value="{{ old('stat_two', $condition->stat_two) }}">
+            <input class="form-control" name="stat_two" value="{{ old('stat_two', $condition->stat_two) }}">
           </div>
 
           <div class="col-md-3">
             <label class="fw-bold">Stat Three</label>
-            <input class="form-control" name="stat_three"
-                   value="{{ old('stat_three', $condition->stat_three) }}">
+            <input class="form-control" name="stat_three" value="{{ old('stat_three', $condition->stat_three) }}">
           </div>
         </div>
 
@@ -127,26 +121,22 @@
         <div class="row g-3 mb-4">
           <div class="col-md-4">
             <label class="fw-bold">CTA Heading</label>
-            <input class="form-control" name="cta_heading"
-                   value="{{ old('cta_heading', $condition->cta_heading) }}">
+            <input class="form-control" name="cta_heading" value="{{ old('cta_heading', $condition->cta_heading) }}">
           </div>
 
           <div class="col-md-4">
             <label class="fw-bold">CTA Text</label>
-            <input class="form-control" name="cta_text"
-                   value="{{ old('cta_text', $condition->cta_text) }}">
+            <input class="form-control" name="cta_text" value="{{ old('cta_text', $condition->cta_text) }}">
           </div>
 
           <div class="col-md-4">
             <label class="fw-bold">CTA Button Text</label>
-            <input class="form-control" name="cta_button_text"
-                   value="{{ old('cta_button_text', $condition->cta_button_text) }}">
+            <input class="form-control" name="cta_button_text" value="{{ old('cta_button_text', $condition->cta_button_text) }}">
           </div>
 
           <div class="col-12">
             <label class="fw-bold">CTA Button Link</label>
-            <input class="form-control" name="cta_button_link"
-                   value="{{ old('cta_button_link', $condition->cta_button_link) }}">
+            <input class="form-control" name="cta_button_link" value="{{ old('cta_button_link', $condition->cta_button_link) }}">
           </div>
         </div>
 

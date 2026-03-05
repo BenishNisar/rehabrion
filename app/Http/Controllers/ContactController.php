@@ -20,7 +20,7 @@ class ContactController extends Controller
         // fallback image if record or path missing
         $bannerImage = $banner?->image ?? 'assets/images/home/contact.jpg';
 
-        return view('Home.contact', compact('bannerImage'));
+        return view('Home.contact-us', compact('bannerImage'));
     }
 
 
